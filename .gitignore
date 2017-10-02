@@ -81,6 +81,7 @@ wp-content/themes/*
 
 # track these mu-plugins, plugins, and themes
 !wp-content/plugins/pe-breadcrumb/
+!wp-content/plugins/pe-member/
 !wp-content/plugins/pe-cesu/
 !wp-content/plugins/pe-offres/
 !wp-content/plugins/pe-partenaire/

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Particulier Emploi Breadcrumb
+ * Plugin Name: ParticulierEmploi Breadcrumb
  * Description: Fil d'ariane pour les pages et les articles de Particulier Emploi
  * Version: 1.0
  *
