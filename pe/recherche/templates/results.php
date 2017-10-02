@@ -100,6 +100,7 @@ if(empty($message)) {
     }
     $exeRecupAnnonces=$wpdb->get_results($reqRecupAnnonces, ARRAY_A);
     $nbAnnonces= $wpdb->num_rows;
+    
     //si on est dans l'espace perso on cherche les annonces en favori de l'utilisateur
     if(isset($_SESSION['utilisateur_id'])) {
         $userFavAnnonces=[];
@@ -189,7 +190,7 @@ if(empty($message)) {
                                 </tr>
                             </thead>
                             <?php
-                            //lien de contact => dépend si recherche authentifiéé ou pas
+                            //lien de contact => dépend si recherche authentifiée ou pas
                             if(isset($_SESSION['utilisateur_id'])) {
                                 $contact_link = '/pe/espace-pe/messagerie/envoyer.php?type_annonce='.$params['type_annonce'];
                             } else {

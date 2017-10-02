@@ -1,6 +1,6 @@
 <?php
 
-/*
+/* 
  * Template Name: offre FEPEM La rémunération
  *
  * @package WordPress
@@ -29,7 +29,7 @@ get_header('without-nav');
                             1
                         </div>
                         <p>
-                            Vous connaissez le coût réel de l’emploi à domicile.
+                            Vous connaissez le coût réel de l’emploi à domicile. 
                         </p>
                     </div>
                     <div class="wrapper">
@@ -37,7 +37,7 @@ get_header('without-nav');
                             2
                         </div>
                         <p>
-                            Vous rémunérez et déclarez votre salarié comme il se doit.
+                            Vous rémunérez et déclarez votre salarié comme il se doit. 
                         </p>
                     </div>
                     <div class="wrapper">
@@ -67,7 +67,7 @@ get_header('without-nav');
                     <div class="sous-bloc-aplat"></div>
                     <div class="bloc-page-wrap">
                         <div class="desc-formule">
-                            <p>Vous avez des questions sur les congés payés ou sur le calcul de la rémunération.
+                            <p>Vous avez des questions sur les congés payés ou sur le calcul de la rémunération. 
                             <br><br>
                             Laissez-nous vous guider !</p>
                         </div>
@@ -115,7 +115,7 @@ get_header('without-nav');
                     <div class="bloc-page-wrap">
                         <div class="desc-formule">
                             <p>Vous avez des questions sur les
-                                congés payés ou sur le calcul de la rémunération et
+                                congés payés ou sur le calcul de la rémunération et 
                                 souhaitez une aide à la rédaction de votre contrat de travail.
                             </p>
                         </div>
@@ -170,7 +170,7 @@ get_header('without-nav');
                         <div class="desc-formule">
                             <p>Vous souhaitez une formule
                                 tout en un : nous vous aidons
-                                à rédiger le contrat de travail (et/ou le vérifions)
+                                à rédiger le contrat de travail (et/ou le vérifions) 
                                 et établissons les bulletins de salaire.
                             </p>
                         </div>
@@ -206,7 +206,7 @@ get_header('without-nav');
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
         <script>
             jQuery(document).ready( function($) {
@@ -220,25 +220,25 @@ get_header('without-nav');
                             $(this).find(".error-msg").hide().text("");
                         }
                     }
-
+                
                     return valid;
                 });
             });
         </script>
-        <p class='nb-formule'><span class='text-super'>*</span> Pour en bénéficier, vous devez vous acquitter
+        <p class='nb-formule'><span class='text-super'>*</span> Pour en bénéficier, vous devez vous acquitter 
             d'un droit d’entrée de 12€, payable 1 fois pour une durée illimitée,<br>
-            vous permettant de devenir membre de la FEPEM et de profiter des « Essentiels
-            du particulier employeur » (modèles, fiches pratiques, réseau social dédié)</p>
-        <div class="bloc-page-offre">
+            vous permettant de devenir membre de la FEPEM et de profiter des « Essentiels 
+            du particulier employeur » (modèles, fiches pratiques, réseau social dédié)</p>      
+        <div class="bloc-page-offre">            
             <div class="bloc-page-wrap">
                <div class="bloc-contacter">
                     <div class="wrapper">
                         <div class="contact-postal">
                             <span class="text-bold">Je préfère souscrire par voie postale</span>
                             <p>
-                                Je télécharge <a class="content-link"
+                                Je télécharge <a class="content-link" 
                                 href="http://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
-                                                 target="_blank">le bulletin pour souscrire aux formules d’accompagnement juridique</a>
+                                                 target="_blank">le bulletin pour souscrire aux formules d’accompagnement juridique</a> 
                                 et le renvoie complété, accompagné d'un règlement par chèque du montant
                                 indiqué : à FEPEM, 79 rue de Monceau, 75008 Paris
                             </p>
@@ -249,7 +249,7 @@ get_header('without-nav');
                             <span class="text-bold">Vous avez besoin de précisions ?</span>
                             <p>
                                 Contactez nos conseillers du lundi au jeudi, de 9h à 18h, 
-                                et le vendredi de 9h à 17h, au
+                                et le vendredi de 9h à 17h, au 
                                 <span class="text-bold">0825 07 64 64</span> (0,15 €/min + prix de l’appel)
                             </p>
                         </div>

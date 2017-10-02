@@ -12,7 +12,7 @@
 if(!isset($_SESSION['utilisateur_id'])) {
     
     ?>
-    <div class="widget">
+    <div class="sidebar-widget-article">
         <div>
             <div class='sidebar-title'>Les avantages de s'inscrire au service Particulier emploi</div>
             <div class='title-separator'></div>
@@ -41,7 +41,7 @@ if(!isset($_SESSION['utilisateur_id'])) {
 <?php
 }
 ?>
-<div class="widget">
+<div class="sidebar-widget-article">
     <div>
         <div class='sidebar-title'>La nouvelle classification de l'emploi des salariés du particulier employeur</div>
         <div class='title-separator'></div>

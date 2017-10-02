@@ -20,7 +20,17 @@
 
     </div><!-- .site container -->
     <div class="overlay-menu"></div><!-- La div overlay pour les effets main menu -->
-
+    
+    <!--avertissement sur l'utilisation des cookies-->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/cookiechoices.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function(event){
+        cookieChoices.showCookieConsentBar("Ce site utilise des cookies à des fins d'analyse d'audience. \n\
+            En poursuivant votre navigation, vous acceptez l’utilisation des cookies.", 
+        "J'accepte", 
+        'En savoir plus', 
+        '<?php echo get_permalink(ID_PAGE_MENTIONS); ?>');
+    });
+    </script>
     <!-- google analytics -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/google-analytics.js"></script>
     

@@ -1,0 +1,10 @@
+Début dernier transfert le 12-09-2017 à 08:20
+Début création fichier 
+Fin création fichier 
+Début transfert fichier
+Array
+(
+    [0] => Votre fichier a bien ete envoye
+)
+Fin transfert fichier 
+Fin dernier transfert le 12-09-2017 à 08:20

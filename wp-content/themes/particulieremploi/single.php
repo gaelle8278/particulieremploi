@@ -8,11 +8,7 @@
  * @since ParticulierEmploi 1.0
  */
 
-//enregistrement et récupération du cp de l'internaute
-set_user_depcode();
-$depCode=get_user_depcode();
 get_header();
-include(locate_template('plugin-form-cp.php'));
 ?>
 <div class="content-central-column">
     <section>
@@ -23,8 +19,7 @@ include(locate_template('plugin-form-cp.php'));
         
             $post_template = get_post_custom();
             if (isset($post_template['metabox_field_post_template'])) {
-                include(locate_template("content-".$post_template['metabox_field_post_template'][0].".php"));
-                //get_template_part('content', $post_template['metabox_field_post_template'][0]);
+                get_template_part('content', $post_template['metabox_field_post_template'][0]);
             } else {
                 get_template_part('content-article-standard', get_post_format());
             }

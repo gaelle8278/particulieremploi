@@ -142,7 +142,6 @@ if(isset($_POST['form-button'])) {
         }
 
         //availability of email
-        // ERREUR dans la requete => plusieurs comptes à l'état VAL avec le même email peuvent existé !
         $queryCheckEmail= " SELECT count(*) as nb "
             . " FROM ".TBL_UTILISATEURS." "
             . " WHERE utilisateur_mail = '".$params['email']."' "

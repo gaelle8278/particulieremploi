@@ -1,8 +1,7 @@
 <?php
+
 /**
- * Template pour l'affichage d'un article "magazine".
  *
- * Les articles magazines sont les articles présents dans le magazine.
  *
  * @package WordPress
  * @subpackage particulieremploi
@@ -44,7 +43,7 @@
 </article><!-- @white-space
 --><aside>
     <?php
-        get_sidebar();
+        get_template_part('sidebar-magazine');
     ?>
 </aside>
 

@@ -1,5 +1,5 @@
 <?php
-/*
+/* 
  * Template Name: offre FEPEM Le contrat de travail
  *
  * @package WordPress
@@ -36,7 +36,7 @@ get_header('without-nav');
                             2
                         </div>
                         <p>
-                            Vous sécurisez votre embauche et la protection de votre salarié.
+                            Vous sécurisez votre embauche et la protection de votre salarié. 
                         </p>
                     </div>
                     <div class="wrapper">
@@ -44,7 +44,7 @@ get_header('without-nav');
                             3
                         </div>
                         <p>
-                            Vous fixez les bonnes missions et la bonne rémunération,
+                            Vous fixez les bonnes missions et la bonne rémunération, 
                             pour un début de contrat serein.
                         </p>
                     </div>
@@ -67,18 +67,18 @@ get_header('without-nav');
                     <div class="sous-bloc-aplat"></div>
                     <div class="bloc-page-wrap">
                         <div class="desc-formule">
-                            <p>Vous souhaitez être aidé pour rédiger ou vérifier un
+                            <p>Vous souhaitez être aidé pour rédiger ou vérifier un 
                                 contrat de travail correspondant à vos besoins tout en respectant les règles applicables.</p>
                         </div>
                         <div>
-                             <form name="declic" id="declic" class='form-offre'
+                             <form name="declic" id="declic" class='form-offre' 
                                    action="http://services.fepem.fr/web/guest/les-offres" method="GET">
                                 <input type="hidden" name="typeFormule" value="fContratDeclic" >
                                 <p class="text-formule">Je choisis une consultation parmi :</p>
                                 <div class="aplat-option aplat-option-choosen">
                                     <div>
                                         <input type="radio" name="consultation" value="cRedactionContratTrav" id="opt1form1">
-                                        <label for="opt1form1">la rédaction du contrat de travail
+                                        <label for="opt1form1">la rédaction du contrat de travail 
                                             et les formalités liées à l’embauche</label>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@ get_header('without-nav');
                                 <div class="aplat-option aplat-option-choosen">
                                     <div>
                                         <input type="radio" name="consultation" value="cVerificatContrat" id="opt2form1">
-                                        <label for="opt2form1">la vérification du contrat de travail
+                                        <label for="opt2form1">la vérification du contrat de travail 
                                             et les éventuelles corrections</label>
                                     </div>
                                 </div>
@@ -117,12 +117,12 @@ get_header('without-nav');
                     <div class="sous-bloc-aplat"></div>
                     <div class="bloc-page-wrap">
                         <div class="desc-formule">
-                            <p>Vous avez des questions sur les congés payés ou sur le coût de
-                            l'emploi à domicile. Nous vous aidons à la rédaction
+                            <p>Vous avez des questions sur les congés payés ou sur le coût de 
+                            l'emploi à domicile. Nous vous aidons à la rédaction 
                             de votre contrat de travail (ou le vérifions).</p>
                         </div>
                         <div>
-                            <form name="securite" id="securite"
+                            <form name="securite" id="securite" 
                                   action="http://services.fepem.fr/web/guest/les-offres" method="GET">
                                <input type="hidden" name="typeFormule" value="fContratSecurite" >
                                 <p class="text-formule">Je bénéficie de la consultation :</p>
@@ -157,7 +157,7 @@ get_header('without-nav');
                     </div>
                 </div>
             </div>
-        </div>
+        </div>     
         <script>
             jQuery(document).ready( function($) {
                 $('form').submit(function () {
@@ -169,26 +169,26 @@ get_header('without-nav');
                     } else {
                         $(this).find(".error-msg").hide().text("");
                     }
-
+                
                     return valid;
                 });
             });
         </script>
-        <p class='nb-formule'><span class='text-super'>*</span> Pour en bénéficier, vous devez vous acquitter
+        <p class='nb-formule'><span class='text-super'>*</span> Pour en bénéficier, vous devez vous acquitter 
             d'un droit d’entrée de 12€, payable 1 fois pour une durée illimitée,<br>
-            vous permettant de devenir membre de la FEPEM et de profiter des « Essentiels
-            du particulier employeur » (modèles, fiches pratiques, réseau social dédié)</p>
-        <div class="bloc-page-offre">
+            vous permettant de devenir membre de la FEPEM et de profiter des « Essentiels 
+            du particulier employeur » (modèles, fiches pratiques, réseau social dédié)</p>      
+        <div class="bloc-page-offre">            
             <div class="bloc-page-wrap">
                 <div class="bloc-contacter">
                     <div class="wrapper">
                         <div class="contact-postal">
                             <span class="text-bold">Je préfère souscrire par voie postale</span>
                             <p>
-                                Je télécharge <a class="content-link"
+                                Je télécharge <a class="content-link" 
                                 href="http://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
                                                  target="_blank">le bulletin pour souscrire aux formules d’accompagnement juridique</a>
-                                et le renvoie complété, accompagné d'un règlement par chèque du montant indiqué
+                                et le renvoie complété, accompagné d'un règlement par chèque du montant indiqué 
                                 : à FEPEM, 79 rue de Monceau, 75008 Paris
                             </p>
                         </div>
@@ -197,8 +197,8 @@ get_header('without-nav');
                         <div class="contact-tel">
                             <span class="text-bold">Vous avez besoin de précisions ?</span>
                             <p>
-                                Conctatez nos conseillers du lundi au jeudi, de 9h à 18h, 
-                                et le vendredi de 9h à 17h, au
+                                Contactez nos conseillers du lundi au jeudi, de 9h à 18h, 
+                                et le vendredi de 9h à 17h, au 
                                 <span class="text-bold">0825 07 64 64</span> (0,15 €/min + prix de l’appel)
                             </p>
                         </div>

@@ -1481,12 +1481,12 @@ aside {
   position: relative;
   width: 32%;
 }
-/*.sidebar-widget-article {
+.sidebar-widget-article {
   margin-bottom: 25px;
   padding-top: 10px;
   background-color: #fff;
   box-sizing: border-box;
-}*/
+}
 .single section,
 .page section,
 .category section {
@@ -2174,148 +2174,71 @@ a.common-button {
 
 #plugin-cp {
     position: fixed;
-    right: 0;
-    bottom: 0;
-    padding-left: 10px;
-    width: 400px;
-    border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    background-color: #fff;
+    right: 10px;
+    bottom: 50px;
+    padding: 0 10px;
+    background-color: #EE7F01;
     z-index : 25;
-    box-sizing: border-box;
-    transform-origin: 0 0;
-    -webkit-transform: translate(220px,200px);
-    -moz-transform: translate(220px,200px);
-    -ms-transform: translate(220px,200px);
-    -o-transform: translate(220px,200px);
-    transform: translate(220px,200px);
 }
 #popup-onload #plugin-cp {
     position: relative;
     right: auto;
     bottom: auto;
-    padding: 0 10px;
-    width: 100%;
-    border: none;
+    text-align: center;
     color: #5c6c7d;
-    transform-origin: 0 0;
-    -webkit-transform: translate(0,0);
-    -moz-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    -o-transform: translate(0,0);
-    transform: translate(0,0);
+    background-color: #f6f9fa;
 }
-#cookie-notice {
-    z-index: 20;
+#cp-form {
+    width:200px;
 }
+#cp-form label {
+    color: #fff;
+}
+#popup-onload #cp-form label {
+    color: #5c6c7d;
+}
+
 #plugin-cp .wrapper {
-    padding: 15px 0 15px 10px;
+    display: inline-block;
+    padding: 15px 10px;
     vertical-align: middle;
     line-height: 1.2;
 }
-#popup-onload #plugin-cp .wrapper {
-    padding: 15px 10px;
-}
-#plugin-cp img {
-    margin-bottom: 15px;
-    max-width: 100%;
-}
-#plugin-cp .sticky {
-    background-color: #F1F3F5;
-    margin-left: -20px;
-    margin-top: -15px;
-    padding: 0 10px;
-    height: 50px;
-    line-height: 50px;
-    font-weight: bold;
-    border-bottom : 1px solid #aaaaaa;
-    cursor: pointer;
-}
-#plugin-cp .title {
-    font-weight: bold;
-    font-size: 1.125em;
-}
-#plugin-cp .notice {
-    font-size: 0.75em;
-}
-#plugin-cp p {
-    padding: 10px 0;
-}
 #plugin-cp label {
     display: block;
-    padding: 10px 0;
-    font-weight: bold;
-}
-#popup-onload #plugin-cp label {
-    display: inline-block;
-}
-#plugin-cp label span {
-    font-size : 0.75em;
+    margin: 5px 0;
 }
 #plugin-cp .input-style {
-    display: inline-block;
     padding: 5px;
-    width: 40%;
+    width: 80%;
 }
-#popup-onload  #plugin-cp .input-style {
-    width: 20%;
-}
-#plugin-cp input[type="submit"] {
-    display: inline-block;
+#plugin-cp input[type="submit"],
+#plugin-cp button {
+    margin: 10px 0;
     padding: 5px 10px;
     border: 0;
     outline: 0;
     color: #fff;
-    background-color: #EE7F01;
+    background-color: #448cc0;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-#plugin-cp input[type="submit"]:hover {
-    background-color: rgba(238, 127, 1, 0.87);
-}
-#plugin-cp button[type="button"] {
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 35px 0;
-    background-color: transparent;
-    color: #368bbe;
-    font-weight: bold;
-    font-size: 0.875em;
-    text-align: left;
-    cursor: pointer;
-}
-#plugin-cp .msg-error-valid {
-    padding: 5px 0;
-}
-#plugin-cp.display-cp-form {
-   transform-origin: 0 0;
-   -webkit-transform: translate(0,0);
-   -moz-transform: translate(0,0);
-   -ms-transform: translate(0,0);
-   -o-transform: translate(0,0);
-   transform: translate(0,0);
+#plugin-cp input[type="submit"]:hover,
+#plugin-cp button:hover {
+    background-color: #4468c0;
 }
 /*****************
 * Widgets
 */
-.widget {
-  margin-bottom: 25px;
-  background-color: #fff;
-  box-sizing: border-box;
-}
-.widget > div {
+.sidebar-widget-article > div {
   padding: 0 10px;
   box-sizing: border-box;
 }
-.widget img {
+.sidebar-widget-article img {
   max-width: 100%;
 }
-.widget .textwidget {
-    margin-bottom: -25px;
-}
-.widget .tagcloud {
+.sidebar-widget-article .tagcloud {
   padding: 0px 10px 15px 10px;
 }
 .tagcloud a {
@@ -2375,8 +2298,7 @@ a.common-button {
   height: 5px;
   border-bottom: 2px solid #00A8BA;
 }
-.widget-sal .widget-title-separator,
-.widget-partenaire .widget-title-separator {
+.widget-sal .widget-title-separator {
   border-bottom: 2px solid #438BBE;
 }
 .bloc-offre-link {
@@ -2414,15 +2336,15 @@ a.common-button {
 .widget-search-emp .title-separator {
   border-color: #EE7F01;
 }
-.bloc-recherche-sidebar {
+.sidebar-widget-article .bloc-recherche-sidebar {
   padding: 20px 10px;
   color: #fff;
   background: #fff url("images/pictos/fleche-bas.png") no-repeat center top;
 }
-.bloc-recherche-sidebar-emp {
+.sidebar-widget-article .bloc-recherche-sidebar-emp {
   background-color: #EE7F01;
 }
-.bloc-recherche-sidebar-sal {
+.sidebar-widget-article .bloc-recherche-sidebar-sal {
   background-color: #438BBE;
 }
 .widget-infos-cesu ul {
@@ -3047,20 +2969,10 @@ input[type="checkbox"]:checked + label:before {
   color: #FA9B87;
 }
 .bloc-recherche {
-  background-image: url("images/plugin-recherche/petite-enfance.jpg");
-  background-repeat: no-repeat;
+  background: url("images/hp-moteur-img.jpg") no-repeat;
   background-size: cover;
   width: 100%;
   height: 600px;
-}
-.bloc-recherche.img1 {
-    background-image: url("images/plugin-recherche/petite-enfance.jpg");
-}
-.bloc-recherche.img2 {
-    background-image: url("images/plugin-recherche/entretien-du-cadre-de-vie.jpg");
-}
-.bloc-recherche.img3 {
-    background-image: url("images/plugin-recherche/assistance-aupres-des-personnes-agees.jpg");
 }
 .bloc-recherche-wrap {
   position: absolute;
@@ -3308,7 +3220,7 @@ input[type="checkbox"]:checked + label:before {
   transform: translateX(-50%) translateY(-50%);
 }
 #popup-onload.modal {
-    width: 40%;
+    width: 25%;
 }
 .popup-content {
   position: relative;
@@ -3519,7 +3431,7 @@ input[type="checkbox"]:checked + label:before {
     opacity: 1;
     background: url("@{path_pictos}/btn-close.png") no-repeat right top;
 }*/
-/**** @subsection fonctionnalités spécifiques de la mise en relation pe */
+/**** @subsection fonctionnalitÃ©s spÃ©cifiques de la mise en relation pe */
 /** emp rgb : rgb(238,127,1);*/
 /** sal rgb : rgb(67,139,190);*/
 /***** header ****/
@@ -3887,7 +3799,7 @@ input[type="checkbox"]:checked + label:before {
 .inscription aside a {
   color: #368bbe;
 }
-.inscription .widget {
+.inscription .sidebar-widget-article {
   padding-bottom: 25px;
 }
 .ins-emp .field-required {
@@ -4336,7 +4248,7 @@ input[type="checkbox"]:checked + label:before {
   color: #368bbe;
 }
 .messagerie .bloc-content {
-  padding: 15px 15px 25px 0;
+  padding-left: 0;
 }
 .bloc-nav,
 .bloc-messagerie {
@@ -4451,6 +4363,7 @@ input[type="checkbox"]:checked + label:before {
 }
 .toolbar {
   position: relative;
+  height: 40px;
 }
 .toolbar .buttons input[type=submit] {
   display: inline-block;
@@ -4463,9 +4376,6 @@ input[type="checkbox"]:checked + label:before {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-}
-.toolbar .info-message {
-    padding: 15px 0;
 }
 .toolbar .pagination {
   position: absolute;
@@ -4584,33 +4494,6 @@ input[type="checkbox"]:checked + label:before {
 .messagerie-emp #link-msg-suppr.nav-active {
   background: rgba(238, 127, 1, 0.05) url("images/pictos/icon-messagerie-supprime-emp.png") no-repeat 10px 10px;
 }
-#link-msg-spam {
-  background: url("images/pictos/icon-messagerie-spam.png") no-repeat 10px 15px;
-}
-.messagerie-sal #link-msg-spam.nav-active {
-  background: url("images/pictos/icon-messagerie-spam-sal.png") no-repeat 10px 15px;
-}
-.messagerie-emp #link-msg-spam.nav-active {
-  background: url("images/pictos/icon-messagerie-spam-emp.png") no-repeat 10px 15px;
-}
-#link-msg-fonc {
-  background: url("images/pictos/icon-messagerie-note.png") no-repeat 12px 17px;
-}
-.messagerie-sal #link-msg-fonc.nav-active {
-  background: url("images/pictos/icon-messagerie-note-sal.png") no-repeat 12px 17px;
-}
-.messagerie-emp #link-msg-fonc.nav-active {
-  background: url("images/pictos/icon-messagerie-note-emp.png") no-repeat 12px 17px;
-}
-#link-user-blocked {
-  background: url("images/pictos/icon-messagerie-forbidden.png") no-repeat 12px 17px;
-}
-.messagerie-sal #link-user-blocked.nav-active {
-  background: url("images/pictos/icon-messagerie-forbidden-sal.png") no-repeat 12px 17px;
-}
-.messagerie-emp #link-user-blocked.nav-active {
-  background: url("images/pictos/icon-messagerie-forbidden-emp.png") no-repeat 12px 17px;
-}
 .messagerie-sal .nav-active {
   border-left: 2px solid #438BBE;
 }
@@ -4629,17 +4512,6 @@ input[type="checkbox"]:checked + label:before {
 .sub-nav-active {
   display: block;
 }
-.page-link {
-  position: absolute;
-  bottom: -25px;
-  color: #368bbe;
-}
-.page-link-prev {
-    left: 10px;
-}
-.page-link-next {
-    right: 10px;
-}
 /** --- = @section RESPONSIVE --- */
 @media only screen and (max-width: 1280px) {
   .container {
@@ -4647,24 +4519,6 @@ input[type="checkbox"]:checked + label:before {
   }
 }
 @media only screen and (max-width: 980px) {
-  /* popup */
-  #popup-onload.modal {
-      width: 80%;
-  }
-  #popup-onload .popup-content {
-      padding: 5px 0;
-  }
-  #popup-onload #plugin-cp .wrapper {
-      padding-right: 0;
-      padding-left: 0;
-  }
-  #popup-onload  #plugin-cp .input-style {
-      width: 50%;
-  }
-  #plugin-cp button[type="button"] {
-      margin: 15px 0;
-  }
-
   .content-central-column {
     width: 100%;
     box-sizing: border-box;
@@ -5323,20 +5177,6 @@ input[type="checkbox"]:checked + label:before {
     right: auto;
   }
 }
-@media only screen and (max-width: 400px) {
-    #plugin-cp {
-        width: 350px;
-        -webkit-transform: translate(170px,230px);
-        -moz-transform: translate(170px,230px);
-        -ms-transform: translate(170px,230px);
-        -o-transform: translate(170px,230px);
-        transform: translate(170px,230px);
-    }
-    #plugin-cp .sticky {
-        background-color: #564444;
-        color: #fff;
-    }
-}
 @media only screen and (max-width: 380px) {
   .header-button {
     width: 90%;
@@ -5362,16 +5202,6 @@ input[type="checkbox"]:checked + label:before {
   .home-post {
     width: 64%;
   }
-}
-@media only screen and (max-width: 320px) {
-    #plugin-cp {
-        width: 250px;
-        -webkit-transform: translate(70px,250px);
-        -moz-transform: translate(70px,250px);
-        -ms-transform: translate(70px,250px);
-        -o-transform: translate(70px,250px);
-        transform: translate(70px,250px);
-    }
 }
 @media only screen and (max-height: 800px) {
   .popup-title {

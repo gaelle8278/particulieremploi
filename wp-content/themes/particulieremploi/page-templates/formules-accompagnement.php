@@ -81,12 +81,12 @@ get_header('without-nav');
                             --><div class="formule-encart">
                                 <div class="wrapper">
                                     <a href="<?php echo get_permalink( ID_PAGE_OFFRE_REMUNERATION ); ?>">
-                                        <img
+                                        <img 
                                             src="<?php echo get_template_directory_uri(); ?>/images/les-essentiels/img-remuneration.png"
                                             alt="" />
                                         <div class='formule-encart-desc'>
                                             <p>
-                                            <img
+                                            <img 
                                             src="<?php echo get_template_directory_uri(); ?>/images/les-essentiels/icon-juridique.png"
                                             alt="">
                                             </p>
@@ -101,12 +101,12 @@ get_header('without-nav');
                             --><div class="formule-encart">
                                 <div class="wrapper">
                                     <a href="<?php echo get_permalink( ID_PAGE_OFFRE_RELATION ); ?>">
-                                        <img
+                                        <img 
                                             src="<?php echo get_template_directory_uri(); ?>/images/les-essentiels/img-relation.png"
                                             alt="" />
                                         <div class='formule-encart-desc'>
                                             <p>
-                                            <img
+                                            <img 
                                             src="<?php echo get_template_directory_uri(); ?>/images/les-essentiels/icon-juridique.png"
                                             alt="">
                                             </p>
@@ -121,12 +121,12 @@ get_header('without-nav');
                             --><div class="formule-encart">
                                 <div class="wrapper">
                                     <a href="<?php echo get_permalink( ID_PAGE_OFFRE_SEPARATION ); ?>">
-                                    <img
+                                    <img 
                                         src="<?php echo get_template_directory_uri(); ?>/images/les-essentiels/img-se-separer.png"
                                         alt="" />
                                     <div class='formule-encart-desc'>
                                         <p>
-                                        <img
+                                        <img 
                                         src="<?php echo get_template_directory_uri(); ?>/images/les-essentiels/icon-juridique.png"
                                         alt="">
                                         </p>

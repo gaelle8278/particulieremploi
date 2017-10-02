@@ -161,7 +161,7 @@ if(isset($_POST['emploi'])) {
             }
         }
 
-        ////si on est dans l'espace perso => ajout de l'annonce
+        ////si on est dans l'espace perso => ajout/update de l'annonce
         ///////////////////////////////////////////////////////////////////
         if(isset($_SESSION['utilisateur_id'])) {
             $params['annonce_etat'] = "ACTIF";
@@ -246,62 +246,29 @@ if(isset($_POST['emploi'])) {
                 '%s'
             );
 
-            //3. mise à jour ou insertion
-                //Récupération des différents id métier deja present dans les annonces de l'utilisateur
-            /*$reqMetierUpdate = "SELECT DISTINCT annonce_idmetier
-                        FROM ".TBL_ANNONCES."
-                        WHERE (annonce_etat = 'ACTIF' OR annonce_etat = 'INS') AND annonce_idauteur='".$_SESSION['utilisateur_id']."'";
-            $resMetierUpdate = $wpdb->get_results($reqMetierUpdate, ARRAY_A);
-            $annoncemetierutilisateur = array();
-            foreach($resMetierUpdate as $data){
-                $annoncemetierutilisateur[] = $data['annonce_idmetier'];
-            }
-            //TODO => notion de passport abandonnée
-
-            // si l'utilisateur a deja une annonce dans ce métier
-            // on update l'annonce correspondante
-            if(in_array( $params['metierid'],$annoncemetierutilisateur)){
-                $update=$wpdb->update(
+            //3. insertion
+            $insert=$wpdb->insert(
                     TBL_ANNONCES,
                     $fieldToInsert,
-                    array(
-                        'annonce_idauteur' => $_SESSION['utilisateur_id'],
-                        'annonce_idmetier' => $params['metierid']
-                    ),
-                    $formatFieldToInsert,
-                    array(
-                        '%d',
-                        '%d',
-                    )
-                );
+                    $formatFieldToInsert
+            );
 
-                //02/2016 nouvelle classif : mise à jour des emplois-reperes associés à l'annonce
-                //1 récupération de l'id de l'annonce
-                $qidAnnonce= "select annonce_id from
-                         ".TBL_ANNONCES."
-                         where annonce_idmetier = ".$params['metierid']."
-                         AND annonce_idauteur=".$_SESSION['utilisateur_id'];
-
-                $rowidAnnonce=$wpdb->get_row($qidAnnonce);
-                $idAnnonceUpdated=$rowidAnnonce->annonce_id;
-                //2 suppression des entrées existantes
-                $wpdb->delete(
-                        TBL_ASSOC_ER_ANNONCE,
-                        array(
-                            'annonce_id' => $idAnnonceUpdated
-                        )
-                    );
-                //3 ajout des nouvelles entrées s'il y en a
+            //si annonce insérée => ajout des ER associés
+            if($insert > 0) {
+                //02/2016 nouvelle classif : les annonces peuvent être liées à des emplois-repères
+                //1 récupération de l'id de l'annonce nouvelle créee
+                $idAnnonceUpdated  = $wpdb->insert_id;
+                //2 ajout des associations annonce/ER si besoin
                 if(!empty($_SESSION['emploi']['erSelect'])) {
-                    $idERSelected=explode(',',$_SESSION['emploi']['erSelect']);
-                    foreach ($idERSelected as $idER) {
+                    $idERSelected=explode(',',$params['emploirepere']);
+                    foreach($idERSelected as $idER) {
                         $wpdb->insert(
                             TBL_ASSOC_ER_ANNONCE,
                             array(
-                                'annonce_id' => $idAnnonceUpdated,
-                                'emploi_repere_id' => $idER
+                                'annonce_id'=>$idAnnonceUpdated,
+                                'emploi_repere_id'=>$idER
                             ),
-                            array(
+                        	array(
                                 '%d',
                                 '%d',
                             )
@@ -309,42 +276,9 @@ if(isset($_POST['emploi'])) {
                     }
                 }
             }
-            //sinon ajout de l'annonce
-            else { */
-                //insertion de l'annonce
-                $insert=$wpdb->insert(
-                    TBL_ANNONCES,
-                    $fieldToInsert,
-                    $formatFieldToInsert
-                );
-
-                //si annonce insérée => ajout des ER associés
-                if($insert > 0) {
-                    //02/2016 nouvelle classif : les annonces peuvent être liées à des emplois-repères
-                    //1 récupération de l'id de l'annonce nouvelle créee
-                    $idAnnonceUpdated  = $wpdb->insert_id;
-                    //2 ajout des associations annonce/ER si besoin
-                    if(!empty($_SESSION['emploi']['erSelect'])) {
-                        //$idERSelected=explode(',',$params['emploirepere']);
-                        foreach($_SESSION['emploi']['erSelect'] as $idER) {
-                            $wpdb->insert(
-                                TBL_ASSOC_ER_ANNONCE,
-                                array(
-                                    'annonce_id'=>$idAnnonceUpdated,
-                                    'emploi_repere_id'=>$idER
-                                ),
-                                array(
-                                    '%d',
-                                    '%d',
-                                )
-                            );
-                        }
-                    }
-                }
-            //}
+            
             //4. si pas d'erreur => redirection
-            //if ($update !== false || $insert !== false) {
-            if ($insert !== false) {
+            if ($update !== false || $insert !== false) {
                 header("Location: /pe/espace-pe/annonces.php");
                 exit();
             } else {

@@ -13,7 +13,7 @@ get_header('without-nav');
     <!-- aplat gris d'entete -->
     <div class="wrap-image">
     </div>
-
+    
     <div class="content-central-column section-content">
         <div class="bloc-page-offre">
             <div class="bloc-page-wrap">
@@ -24,7 +24,7 @@ get_header('without-nav');
                 </p>
                 <div class="logo"><img src="<?php echo get_template_directory_uri(); ?>/images/les-essentiels/logo-servive-FEPEM.png" alt="logo service FEPEM"/></div>
             </div>
-            <div class="aplat-intro"><span class="text-bold">Les Essentiels</span>
+            <div class="aplat-intro"><span class="text-bold">Les Essentiels</span> 
                 du Particulier Employeur
             </div>
             <div class="sous-aplat-intro">Droit d’entrée de 12€, acquitté une fois, valable pour une durée illimitée</div>
@@ -64,7 +64,7 @@ get_header('without-nav');
                             et social du particulier employeur</span>
                         </li>
                     </ul>
-
+                    
                 </div>
                 <div class="bloc-adhesion">
                     <a href="http://services.fepem.fr/web/guest/la-fepem-et-vous/adherer-a-la-fepem/formulaire"
@@ -73,12 +73,12 @@ get_header('without-nav');
                     </a>
                     <p class="text-bold">* Droit d'entrée de 12€, acquitté une fois, valable pour une durée illimitée</p>
                 </div>
-                <p class="text-center">
+                <p class="text-center"> 
                     Je préfère souscrire par voie postale. Je télécharge
                     <a class="content-link" href="http://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
                        title="bulletin d'adhesion FEPEM" target="_blank">le bulletin d'adhésion</a>
-                     et le renvoie complété, accompagné <br> d'un règlement par chèque d'un montant de
-                     12€, à FEPEM, 79 rue de Monceau, 75008 Paris
+                     et le renvoie complété, accompagné <br> d'un règlement par chèque d'un montant de 
+                     12€, à FEPEM, 79 rue de Monceau, 75008 Paris 
                 </p>
             </div>
         </div>
@@ -101,7 +101,7 @@ get_header('without-nav');
                         <div  class="bloc-list">
                             <ul>
                                 <li>
-                                    Un accompagnement personnalisé par un juriste référent et
+                                    Un accompagnement personnalisé par un juriste référent et 
                                     en fonction de votre région
                                 </li>
                             </ul>
@@ -111,7 +111,7 @@ get_header('without-nav');
                         <div class="bloc-list">
                             <ul>
                                 <li>
-                                    Une réponse rapide et opérationnelle par téléphone
+                                    Une réponse rapide et opérationnelle par téléphone 
                                     et par courriel
 
                                 </li>
@@ -191,7 +191,7 @@ get_header('without-nav');
                         <div class="contact-postal">
                             <span class="text-bold">Je préfère souscrire par voie postale</span>
                             <p>
-                                Je télécharge <a class="content-link"
+                                Je télécharge <a class="content-link" 
                                 href="http://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
                                                  target="_blank">le bulletin d'adhésion</a>
                                 et le renvoie complété, accompagné d'un règlement par chèque d'un montant
@@ -204,7 +204,7 @@ get_header('without-nav');
                             <span class="text-bold">Vous avez besoin de précisions ?</span>
                             <p>
                                 Contactez nos conseillers du lundi au jeudi, de 9h à 18h, 
-                                et le vendredi de 9h à 17h, au
+                                et le vendredi de 9h à 17h, au 
                                 <span class="text-bold">0825 07 64 64</span> (0,15 €/min + prix de l’appel)
                             </p>
                         </div>

@@ -8,11 +8,7 @@
  * @since ParticulierEmploi 1.0
  */
 
-//enregistrement et récupération du cp de l'internaute
-set_user_depcode();
-$depCode=get_user_depcode();
 get_header();
-include(locate_template('plugin-form-cp.php'));
 ?>
 
 <div class="content-central-column">
@@ -116,7 +112,7 @@ include(locate_template('plugin-form-cp.php'));
     </section><!-- @white-space
     --><aside>
         <?php
-        get_sidebar();
+        get_template_part("sidebar-volet-cesu");
         ?>
     </aside>
 </div>

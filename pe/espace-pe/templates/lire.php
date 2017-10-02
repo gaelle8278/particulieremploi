@@ -22,9 +22,7 @@
                     <?php
                     if($nbMsg > 10) {
                         ?>
-                        <p class="alert-msg"> 
-                            Vous avez envoyé <?php echo $nbMsg; ?> messages aujourd'hui. Le quota maximum de 10 messages a été dépassé.
-                        </p>
+                        <p class="alert-msg"> Vous avez envoyé <?php echo $nbMsg; ?> messages aujourd'hui. Le quota maximum de 10 messages a été dépassé. </p>
                         <?php
                     } else {
                         ?>
@@ -51,31 +49,10 @@
                 </div>
                 
                 <div class="bloc-msg-button">
-                    <a href="/pe/espace-pe/messagerie/accueil.php?type_message=<?php echo $params['type_message']; ?>&sous_type_msg=<?php echo $params['sous_type_msg'];?>" title="retour">Retour</a>
+                     <a href="/pe/espace-pe/messagerie/accueil.php?type_message=<?php echo $params['type_message']; ?>&sous_type_msg=<?php echo $params['sous_type_msg'];?>" title="retour">Retour</a>
                     <?php
-                    //si c'est un message recu ou un message en spam => possibilité de bloquer l'ecpéditeur
-                    if($params['type_message'] == STATE_BDD_RECU || empty($params['type_message'])
-                        || $params['type_message'] == STATE_BDD_SPAM) {
-                        ?>
-                        <a href="/pe/espace-pe/messagerie/traitement_statut.php?type_message=<?php echo $params['type_message']; ?>&sous_type_msg=<?php echo $params['sous_type_msg'];?>&id_mess=<?php echo $msg['id']; ?>&bloquer=bloquer" >Bloquer l'expéditeur</a>
-                        <?php
-                    }
-                    //si c'est un message recu => possibilité de mettre en spam
-                    if($params['type_message'] == STATE_BDD_RECU || empty($params['type_message'])) {
-                        ?>
-                        <a href="/pe/espace-pe/messagerie/traitement_statut.php?type_message=<?php echo $params['type_message']; ?>&sous_type_msg=<?php echo $params['sous_type_msg'];?>&id_mess=<?php echo $msg['id']; ?>&in-spam=indesirable" >Indésirable</a>
-                        <?php
-                    }
-                    //si c'est un spam => possibilité de le remettre dans la boite de réception
-                    if($params['type_message'] == STATE_BDD_SPAM){
-                        ?>
-                        <a href="/pe/espace-pe/messagerie/traitement_statut.php?type_message=<?php echo $params['type_message']; ?>&sous_type_msg=<?php echo $params['sous_type_msg'];?>&id_mess=<?php echo $msg['id']; ?>&reset-spam=nospam">N'est pas un indésirable</a>
-                        <?php
-                    }
-                    //si ce n'est pas un message envoyé (= message recu, supprimé, archivé)
-                    //et que le quota n'est pas dépassé => possibilité de répondre
-                    if(($params['type_message'] == STATE_BDD_RECU || $params['type_message'] == STATE_BDD_ARCH
-                        || $params['type_message'] == STATE_BDD_SUPPR || empty($params['type_message'])) && $nbMsg <= 10 ) {
+                    //si ce n'est pas un message envoyé possibilité de répondre et que le quota n'est pas dépassé
+                    if($params['type_message'] != STATE_BDD_ENV && $nbMsg <= 10 ) {
                         ?>
                         <input type="button" value="repondre" id="resp-button" />
                         <?php
@@ -84,9 +61,8 @@
                 </div>
                 
                 <?php
-                //si ce n'est pas un message envoyé  et que le quota n'est pas dépassé formulaire de réponse
-                if(($params['type_message'] == STATE_BDD_RECU || $params['type_message'] == STATE_BDD_ARCH
-                        || $params['type_message'] == STATE_BDD_SUPPR || empty($params['type_message'])) && $nbMsg <= 10) {
+                //si ce n'est pas un message envoyé formulaire de réponse et que le quota n'est pas dépassé
+                if($params['type_message'] != STATE_BDD_ENV && $nbMsg <= 10) {
                     ?>
                     <form id="envoyermsg" class="hidden-form" action="/pe/espace-pe/messagerie/envoyer.php" method="post" >
                         <input type="hidden" value="<?php echo $msg['id_exp']; ?>" name="id_dest_msg"  id="id_dest_msg" />

@@ -17,12 +17,12 @@ include_once(dirname(__FILE__).'/templates/header-connespacepe.php');
 
 if (!empty($_GET)) {
     $options = array(
-        'erreurForm' => FILTER_SANITIZE_STRING,
-        'erreurEmail' => FILTER_SANITIZE_STRING,
+        'erreurForm' => FILTER_SANITIZE_STRING, 
+        'erreurEmail' => FILTER_SANITIZE_STRING, 
         'erreurPassword' => FILTER_SANITIZE_STRING
     );
     $validateGetParam = filter_input_array(INPUT_GET, $options);
-
+    
     $optionsIns = array(
         'idAnnonce' => FILTER_SANITIZE_STRING,
     );
@@ -39,7 +39,7 @@ if (!empty($_GET)) {
             <?php
             include_once(dirname(__FILE__).'/templates/form-connexion.php');
             ?>
-
+            
         </div><!-- @whitespace
         --><div class="page-column-demi">
             <p class="section-title">Créer un compte</p>
@@ -55,7 +55,7 @@ if (!empty($_GET)) {
         </div>
     </div>
 </section>
-
+        
 <?php
 get_template_part("logos-partenaires");
 include_once(dirname(dirname(__FILE__)).'/common-templates/footer.php');

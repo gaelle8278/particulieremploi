@@ -40,6 +40,8 @@
 </article><!-- @white-space
 --><aside>
     <?php
-    get_sidebar();
+    if(is_active_sidebar( 'article-standard-sidebar' )) {
+        dynamic_sidebar('article-standard-sidebar');
+    }
     ?>
 </aside>

@@ -7,15 +7,13 @@
  * @subpackage particulieremploi
  * @since ParticulierEmploi 1.0
  */
+get_header();
 
-//enregistrement et récupération du cp de l'internaute
-set_user_depcode();
-$depCode=get_user_depcode();
-//on retrouve la région à partir du cp utilisateur
+//geoloc : dépend du plugin GeoIP Detection
+$depCode=geolocalisation();
+//$tabRegion is defined in usefull_constants.php
 if(!empty($depCode)) {
     $region=get_region_from_geocode($depCode);
-} else {
-    $region="";
 }
 $slugReg='cat-'.$region;
 $catReg=get_category_by_slug($slugReg);
@@ -59,9 +57,6 @@ $args = array(
     'paged' => $paged,
 );
 $my_query = new WP_Query($args);
-
-get_header();
-include(locate_template('plugin-form-cp.php'));
 ?>
 
 <div class="content-central-column">
@@ -76,6 +71,14 @@ include(locate_template('plugin-form-cp.php'));
         $page_limit=$my_query->post_count-1;
         if($my_query->have_posts()) : 
             while ($my_query->have_posts() ) : $my_query->the_post();
+        
+                /* ajout filtrage des articles régionaux*/
+                /*$regionalCat=get_child_regional_categories($post->ID);
+                if(!empty($regionalCat) && !in_array($slugReg, $regionalCat)) {
+                    //echo "toto";
+                    continue;
+                }*/
+                ///
                 if($nb_articles==0) {
                     ?>
                     <div class="bloc-ensemble-article bloc-ensemble-gauche">
@@ -110,8 +113,7 @@ include(locate_template('plugin-form-cp.php'));
                             the_post_thumbnail('article-list-mag');
                         } else {
                             ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/list-article-img-mock.jpg"
-                                 alt="image de l'article"/>
+                            <img src="<?php echo get_template_directory_uri() ?>/images/list-article-img-mock.jpg" alt="image de l'article"/>
                             <?php
                         }
                         ?>
@@ -123,7 +125,7 @@ include(locate_template('plugin-form-cp.php'));
                             $postCategories = get_the_category();
                             if (!empty($postCategories)) {
                                 foreach ($postCategories as $category) {
-                                    $postCatName[] = $category->name;
+                                            $postCatName[] = $category->name;
                                 }
                                 ?>
                                 <div class="list-post-cat"><?php echo implode(', ', $postCatName) ?></div>
@@ -146,6 +148,8 @@ include(locate_template('plugin-form-cp.php'));
             endwhile;
 
             // Pagination.
+            /*next_posts_link( 'Older Entries »', $my_query->max_num_pages);
+            previous_posts_link( 'Newer Entries' );*/
             base_pagination($my_query);
         endif;
 
@@ -155,8 +159,7 @@ include(locate_template('plugin-form-cp.php'));
     </section><!-- @white-space
     --><aside>
             <?php
-                get_sidebar();
-                //get_template_part('sidebar-magazine');
+                get_template_part('sidebar-magazine');
             ?>
     </aside>
 </div>

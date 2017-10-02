@@ -1,8 +1,7 @@
 <?php
+
 /**
- * Template pour l'affichage d'un article "juridique".
- *
- * Les articles juridiques sont les articles des sections "Jes suis particulier employeur" et "Je suis salarié"
+ * Template pour l'affichage d'un article
  * 
  * @package WordPress
  * @subpackage particulieremploi
@@ -49,8 +48,7 @@
 --><aside>
    
     <?php
-        get_sidebar();
-        //get_template_part("sidebar-juridique");
+        get_template_part("sidebar-juridique");
     
     ?>
 </aside>

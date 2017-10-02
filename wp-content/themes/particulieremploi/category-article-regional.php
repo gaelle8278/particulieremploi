@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  *
@@ -6,19 +7,16 @@
  * @subpackage particulieremploi
  * @since ParticulierEmploi 1.0
  */
-
-//enregistrement et récupération du cp de l'internaute
-set_user_depcode();
-$depCode=get_user_depcode();
-
-//on retrouve la région à partir du cp utilisateur
+//geoloc : dépend du plugin GeoIP Detection
+$depCode=geolocalisation();
+//$tabRegion is defined in usefull_constants.php
 if(!empty($depCode)) {
     $region=get_region_from_geocode($depCode);
-} else {
-    $region="";
 }
 $slug='cat-'.$region;
 $catReg=get_category_by_slug($slug);
+
+get_header();
 
 // pour que la pagination des articles fonctionne sur une page statique
 global $paged;
@@ -56,9 +54,8 @@ if($nbPosts == 0) {
     $regionalPost = new WP_Query($argsReg);
 }
 
-get_header();
-include(locate_template('plugin-form-cp.php'));
 ?>
+
 <div class="content-central-column">
     <?php
     wp_nav_menu(array('theme_location' => 'nav_categories', 'container' => 'nav', 'container_class'=>'category_menu'));
@@ -153,7 +150,7 @@ include(locate_template('plugin-form-cp.php'));
     </section><!-- @white-space
     --><aside>
         <?php
-            get_sidebar();
+            get_template_part('sidebar-magazine');
         ?>
     </aside>
 </div>

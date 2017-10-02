@@ -27,12 +27,11 @@ if (isset($_GET) && !empty($_GET)) {
         'envoye' => FILTER_SANITIZE_NUMBER_INT,
         'type_message' => FILTER_SANITIZE_STRING,
         'sous_type_msg' => FILTER_SANITIZE_STRING,
-        'page' =>  FILTER_SANITIZE_NUMBER_INT,
-        'msginfo' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
+        'page' =>  FILTER_SANITIZE_NUMBER_INT
     );
     $params = filter_input_array(INPUT_GET, $options);
-}
-//echo "<pre>";print_r($params);echo "</pre>";
+} 
+    
 //vérification que l'utilisateur est toujours connecté
 if(!isset($_SESSION['utilisateur_groupe']) || empty($_SESSION['utilisateur_groupe']) ) {
     header('Location: /index.php');
@@ -103,19 +102,15 @@ if($params['type_message']==STATE_BDD_ENV ) {
     $nbrMsgTotal=$wpdb->get_var("SELECT found_rows()");
     $nombreDePages = ceil($nbrMsgTotal / $limite);
     
-} elseif ($params['type_message']==STATE_BDD_ARCH ||
-          $params['type_message']==STATE_BDD_SUPPR ||
-          $params['type_message']==STATE_BDD_SPAM) {
-
+} elseif ($params['type_message']==STATE_BDD_ARCH || $params['type_message']==STATE_BDD_SUPPR) {
     if($params['type_message']==STATE_BDD_ARCH) {
         $subPageActive="archive";
-    } elseif ($params['type_message']==STATE_BDD_SUPPR) {
+    } else {
         $subPageActive="supprime";
-    } elseif ($params['type_message']==STATE_BDD_SPAM) {
-        $subPageActive="spam";
     }
     
-    //message que l'utilisateur a recu et qu'il a archivé ou supprimé ou mis en indésirables
+    //message que l'utilisateur a recu et qu'il a archivé ou supprimé
+    //(=dont il es destinataire à l'état supprime ou archive)
     $queryRecupMsg="select SQL_CALC_FOUND_ROWS message_id as id,"
             . "message_objet as objet, "
             . "message_contenu as contenu,"
@@ -137,23 +132,6 @@ if($params['type_message']==STATE_BDD_ENV ) {
     $nbrMsgTotal=$wpdb->get_var("SELECT found_rows()");
     $nombreDePages = ceil($nbrMsgTotal / $limite);
     
-} elseif ( $params['type_message'] == STATE_USER_BLOQUE) {
-    $subPageActive="user-blocked";
-    $queryRecupUserBlocked="Select SQL_CALC_FOUND_ROWS "
-        . "utilisateur_id_bloque, "
-        . "utilisateur_prenom, "
-        . "utilisateur_nom, "
-        . "utilisateur_bloque_date "
-        . "from ".TBL_UTILISATEURS_BLOQUES.", "
-        . TBL_UTILISATEURS." "
-        . "where utilisateur_id_bloquant=".$idUtilisateur." "
-        . "and utilisateur_id_bloque=utilisateur_id "
-        . "order by utilisateur_bloque_date desc limit ".$limite." offset ".$debut;
-    $tabUserBlocked   = $wpdb->get_results($queryRecupUserBlocked, ARRAY_A);
-    //pour la pagination
-    $nbrMsgTotal=$wpdb->get_var("SELECT found_rows()");
-    $nombreDePages = ceil($nbrMsgTotal / $limite);
-
 } else {
     $subPageActive="reception";
     

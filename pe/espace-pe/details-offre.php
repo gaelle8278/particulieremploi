@@ -25,7 +25,7 @@ if(isset($_GET) && !empty($_GET)) {
 
 global $wpdb;
 
-//si l'utilisateur est connecté => interface message dans l'espace perso
+//si l'utilisateur n'est pas connecté on lui propose de s'inscrire
 if(isset($_SESSION['utilisateur_id']) && !empty($_SESSION['utilisateur_id']) &&  $_SESSION['utilisateur_groupe']=="SAL") {
     
     //on met l'annonce en favori et on redirige vers l'affichage de l'annonce

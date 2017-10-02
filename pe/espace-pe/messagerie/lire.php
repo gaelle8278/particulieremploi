@@ -44,7 +44,6 @@ global $wpdb;
 // si message envoyé
 if($params['type_message'] == STATE_BDD_ENV) {
     $queryRecupMsg= "select "
-                . "message_id as id, "
                 . "message_objet as objet, "
                 . "message_contenu as contenu, "
                 . "message_datecrea as date_envoi, "
@@ -80,7 +79,6 @@ else {
                 );
     //récupération des infos du messages
     $queryRecupMsg= "select "
-                . "message_id as id, "
                 . "message_objet as objet, "
                 . "message_contenu as contenu,"
                 . "message_datecrea as date_envoi,"

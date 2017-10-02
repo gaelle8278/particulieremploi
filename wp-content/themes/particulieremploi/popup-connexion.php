@@ -32,7 +32,7 @@
                     <input type="submit" value="Se connecter">
                 </div>
             </form>
-
+            
         </div><!-- @whitespace
         --><div class="page-column-demi">
             <p class="section-title">Créer un compte</p>

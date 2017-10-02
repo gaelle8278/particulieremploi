@@ -164,32 +164,23 @@ function pe_add_sidebar()
 {
     register_sidebar(array(
         'id' => 'article-juridique-sidebar',
-        'name' => 'Marge pour les articles juridiques pour les PE',
-        'description' => "Apparaît à droite sur la page d'affichage d'un article juridique de catégorie PE",
-        'before_widget' => '<div class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<div>',
-        'after_title' => '</div>'
-    ));
-    register_sidebar(array(
-        'id' => 'article-juridique-spe-sidebar',
-        'name' => 'Marge pour les articles juridiques pour les SPE',
-        'description' => "Apparaît à droite sur la page d'affichage d'un article juridique de catégorie SPE",
-        'before_widget' => '<div class="widget %2$s">',
-        'after_widget' => '</div>',
+        'name' => 'Zone de widgets pour les articles juridiques',
+        'description' => "Apparaît à droite sur la page d'affichage d'un article juridique",
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<div>',
         'after_title' => '</div>'
     ));
     register_sidebar(array(
         'id' => 'article-magazine-sidebar',
-        'name' => 'Marge pour les articles magazines',
+        'name' => 'Zone de widgets 1 pour les articles magazine',
         'description' => "Apparaît à droite sur la page d'affichage d'un article magazine",
-        'before_widget' => '<div class="widget %2$s">',
-        'after_widget' => '</div>',
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<div>',
         'after_title' => '</div>'
     ));
-    /*register_sidebar(array(
+     register_sidebar(array(
         'id' => 'article-magazine-sidebar2',
         'name' => 'Zone de widgets 2 pour les articles magazine',
         'description' => "Apparaît à droite sur la page d'affichage d'un article magazine",
@@ -206,13 +197,13 @@ function pe_add_sidebar()
         'after_widget' => '',
         'before_title' => '<div>',
         'after_title' => '</div>'
-    ));*/
+    ));
     register_sidebar(array(
         'id' => 'article-standard-sidebar',
-        'name' => 'Marge pour les articles standards',
+        'name' => 'Zone de widgets pour les articles standard',
         'description' => "Apparaît à droite sur la page d'affichage d'un article standard",
-        'before_widget' => '<div class="widget %2$s">',
-        'after_widget' => '</div>',
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<div>',
         'after_title' => '</div>'
     ));
@@ -243,21 +234,6 @@ function pe_add_sidebar()
         'before_title' => '<div class="footer-title">',
         'after_title' => '</div><div class="footer-title-separator"></div>'
     ));
-
-    $options= pe_get_theme_options();
-    if(isset($options['custom_sidebar']) && sizeof($options['custom_sidebar']) > 0) {
-        foreach($options['custom_sidebar'] as $sidebar)
-        {
-            register_sidebar( array(
-                'name' => $sidebar,
-                'id' => generateSlug($sidebar, 45),
-                'before_widget' => '<div class="widget %2$s">',
-                'after_widget' => '</div>',
-                'before_title' => '',
-                'after_title' => '',
-            ) );
-        }
-    }
 }
 add_action('widgets_init','pe_add_sidebar');
 
@@ -290,18 +266,20 @@ function update_edit_form() {
 } // end update_edit_form
 add_action('post_edit_form_tag', 'update_edit_form');
 
-//======== metabox "modèle de page" pour les articles === (should be placed into a plugin file) ============
+//======== metabox pour les articles === (should be placed into a plugin file) ============
 function pe_metabox_post_add() {
     add_meta_box( 'metabox-post-options', 'Configuration', 'pe_metabox_post_render', 'post', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes', 'pe_metabox_post_add' );
 
 function pe_metabox_post_render() {
+    //echo 'What you put here, show\'s up in the meta box';
+    
     // $post is already set, and contains an object: the WordPress post
     global $post;
     $customValues = get_post_custom( $post->ID );
     $selected = isset( $customValues['metabox_field_post_template'] ) ? esc_attr( $customValues['metabox_field_post_template'][0] ) : '';
-    //$setWording = isset( $customValues['metabox_field_post_wording'] ) ? esc_attr( $customValues['metabox_field_post_wording'][0] ) : '';
+    $setWording = isset( $customValues['metabox_field_post_wording'] ) ? esc_attr( $customValues['metabox_field_post_wording'][0] ) : '';
     // We'll use this nonce field later on when saving.
     wp_nonce_field( 'field_metabox_post_nonce', 'meta_box_nonce' );
     ?>
@@ -313,12 +291,12 @@ function pe_metabox_post_render() {
             <option value="article-juridique" <?php selected( $selected, 'article-juridique' ); ?>>Article juridique</option>
         </select>
     </p>
-<!--    <p>
+    <p>
         <label for="metabox_field_post_wording">
             <?php _e( "widget sentence", 'particulieremploi' ); ?>
         </label>
         <input type="text" name="metabox_field_post_wording" id="metabox_field_post_wording" value="<?php echo $setWording; ?>" size="100" />
-    </p>-->
+    </p>
     <?php
 }
 function pe_metabox_post_save($post_id) {
@@ -335,92 +313,11 @@ function pe_metabox_post_save($post_id) {
     if( isset( $_POST['metabox_field_post_template'] ) ) {
         update_post_meta( $post_id, 'metabox_field_post_template', esc_attr( $_POST['metabox_field_post_template'] ) );
     }
-    /*if( isset( $_POST['metabox_field_post_wording'] ) ) {
+    if( isset( $_POST['metabox_field_post_wording'] ) ) {
         update_post_meta( $post_id, 'metabox_field_post_wording', esc_attr( $_POST['metabox_field_post_wording'] ) );
-    }*/
+    }
 }
 add_action( 'save_post', 'pe_metabox_post_save' );
-
-//=========== metabox pour chosir la sidebar ================
-//ajout de la métabox aux articles et aux pages
-function add_sidebar_metabox() {
-    add_meta_box(
-        'custom_sidebar',
-        'Marge de droite',
-        'custom_sidebar_render',
-        'post',
-        'side'
-    );
-    add_meta_box(
-        'custom_sidebar',
-        'Marge de droite',
-        'custom_sidebar_render',
-        'page',
-        'side'
-    );
-}
-add_action( 'add_meta_boxes', 'add_sidebar_metabox' );
-
-// rendu d'affichage de la metabox
-function custom_sidebar_render( $post ) {
-    global $wp_registered_sidebars;
-
-    $custom = get_post_custom($post->ID);
-
-    if(isset($custom['custom_sidebar']))
-        $val = $custom['custom_sidebar'][0];
-    else
-        $val = "default";
-
-    // Use nonce for verification
-    wp_nonce_field( plugin_basename( __FILE__ ), 'custom_sidebar_nonce' );
-
-    // The actual fields for data entry
-    $output = '<p><label for="custom_sidebar">Sélectionner un marge de droite</label></p>';
-    $output .= "<select name='custom_sidebar' id='custom_sidebar'>";
-
-    // Add a default option
-    $output .= "<option";
-    if($val == "default")
-        $output .= " selected='selected'";
-    $output .= " value='default'>Marge de droite par défaut</option>";
-
-    // Fill the select element with all registered sidebars
-    foreach($wp_registered_sidebars as $sidebar_id => $sidebar)
-    {
-        $output .= "<option";
-        if($sidebar_id == $val)
-            $output .= " selected='selected'";
-        $output .= " value='".$sidebar_id."'>".$sidebar['name']."</option>";
-    }
-
-    $output .= "</select>";
-
-    echo $output;
-}
-
-//sauvegarde du choix
-function save_sidebar_postdata( $post_id )
-{
-    // verify if this is an auto save routine.
-    // If it is our form has not been submitted, so we dont want to do anything
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-      return;
-
-    // verify this came from our screen and with proper authorization,
-    // because save_post can be triggered at other times
-
-    if ( !wp_verify_nonce( $_POST['custom_sidebar_nonce'], plugin_basename( __FILE__ ) ) )
-      return;
-
-    if ( !current_user_can( 'edit_page', $post_id ) )
-        return;
-
-    $data = $_POST['custom_sidebar'];
-
-    update_post_meta($post_id, "custom_sidebar", $data);
-}
-add_action( 'save_post', 'save_sidebar_postdata' );
 
 //============ custom post type point relais ==============
 //enregistrement des custom post relais et contact
@@ -701,15 +598,6 @@ function pe_metabox_postcontact_save($post_id) {
 }
 add_action( 'save_post', 'pe_metabox_postcontact_save' );
 
-//========= ajout css admin ==============
-function pe_admin_css() {
-    $admin_handle = 'admin_css';
-    $admin_stylesheet = get_template_directory_uri() . '/css/admin.css';
-
-    wp_enqueue_style( $admin_handle, $admin_stylesheet );
-}
-add_action('admin_print_styles', 'pe_admin_css', 11 );
-
 //===== image responsive ====
 function pe_images( $html ) { 
     $html = preg_replace( '/(width|height)="\d*"\s/', "", $html ); 
@@ -769,7 +657,7 @@ function pe_add_sticky_post_support()
 	<?php 
         endif; 
 }
-//============== modification boucle principale pour les entrées du glossaire================
+//============== modification boucle principale ================
 function pe_pregetposts( $query ) {
     global $glossaryEntries;
     if ( ! is_admin() && $query->is_main_query() && is_category($glossaryEntries)) {
@@ -791,6 +679,3 @@ add_action('init', 'pe_add_rewrite_carte');
 
 //Fonctions diverses
 require get_template_directory() . '/inc/usefull-functions.php';
-
-//Admin settings
-require get_template_directory() . '/inc/theme-options.php';

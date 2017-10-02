@@ -38,8 +38,7 @@ $resMetier=$wpdb->get_results($queryMetier);
             </div>
             <div class="field-cp">
                 <label for="codepEmp">Localisation</label>
-                <input type="text" class="input-style" id="codepEmp" name="codep" class=""  placeholder="Code Postal"
-                       value="<?php  echo !empty($depCode)? $depCode : ""; ?>">
+                <input type="text" class="input-style" id="codepEmp" name="codep" class=""  placeholder="Code Postal">
             </div>
             <div class="field-distance">
                 <label for="distanceEmp">Etendre ma recherche</label>
@@ -55,7 +54,7 @@ $resMetier=$wpdb->get_results($queryMetier);
                     </select>
                 </div>
             </div>
-            <input type="submit" name="searchEmp" value="Rechercher"  class="emp-rech"/>
+            <input type="submit" name="searchEmp" value="Rechercher" class="emp-rech"/>
         </form>
     </div>
     <div id="search-sal">
@@ -77,8 +76,7 @@ $resMetier=$wpdb->get_results($queryMetier);
             </div>
             <div class="field-cp">
                 <label for="codepSal">Localisation</label>
-                <input type="text" class="input-style" id="codepSal" name="codep" placeholder="Code Postal"
-                       value="<?php  echo !empty($depCode)? $depCode : ""; ?>" >
+                <input type="text" class="input-style" id="codepSal" name="codep" placeholder="Code Postal">
             </div>
             <div class="field-distance">
                 <label for="distanceSal">Etendre ma recherche</label>

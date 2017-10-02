@@ -7,33 +7,24 @@
  * @since ParticulierEmploi 1.0
  */
 
-
-//enregistrement et récupération du cp de l'internaute
-set_user_depcode();
-$depCode=get_user_depcode();
-//on retrouve la région à partir du cp utilisateur
-if(!empty($depCode)) {
-    $region=get_region_from_geocode($depCode);
-} else {
-    $region="";
-}
-//récupération de la catégorie correspond à la région géolocalisée
-$slug='cat-'.$region;
-$catReg=get_category_by_slug($slug);
-
-//on vérifie si l'internaute a visité le site
-$visited=get_visit();
-//header
-include(locate_template('header.php'));
-//plugin pour saisir cp
-include(locate_template('plugin-form-cp.php'));
+get_header();
+    //geoloc : dépend du plugin GeoIP Detection
+    $depCode=geolocalisation();
+    if(!empty($depCode)) {
+        $region=get_region_from_geocode($depCode);
+    }
+    //echo  "test pour la géolocalisation. région du visiteur :".$region;
+    
+    //récupération de la catégorie correspond à la région géolocalisée
+    $slug='cat-'.$region;
+    $catReg=get_category_by_slug($slug);
     ?>
     <!-- recherche -->
     <div class="bloc-recherche">
         <div class="content-central-column">
             <div class="bloc-recherche-wrap">
                 <?php
-                include(locate_template('homepage-plugin-search.php')); 
+                get_template_part('homepage-plugin-search'); 
                 ?>
             </div>
         </div>
@@ -284,21 +275,14 @@ include(locate_template('plugin-form-cp.php'));
                         <div class="relais-content">
                             <div class="relais-content-column ">
                                 <div class="wrap-relais-content">
-                                    <h2>Se rendre à votre Relais
-                                        <?php
-                                        //echo  $catReg->name;
-                                        $post_template = get_post_custom();
-                                        echo $post_template['relais-post-ville'][0];
-                                        ?>
-                                    </h2>
+                                    <h2>Se rendre à votre Relais <?php echo  $catReg->name ?></h2>
                                     <div class="section-title-separator"></div>
                                     <p class="relais-accueil">
                                         <?php echo get_post_meta( $post->ID, 'relais-post-accueil', true ); ?>
                                         <?php echo get_post_meta( $post->ID, 'relais-post-address', true ); ?>
                                     </p>
                                     <p class="relais-pcard">
-                                        <a href="<?php echo get_permalink( IDPAGERESEAU ) ; ?>">
-                                            Accéder à la carte des Relais Particulier Emploi </a>
+                                        <a href="<?php echo get_permalink( IDPAGERESEAU ) ; ?>">Accéder à la carte des Relais Particulier Emploi </a>
                                     </p>
                                 </div>
                             </div><!-- @whitespace
@@ -313,8 +297,7 @@ include(locate_template('plugin-form-cp.php'));
                                         ?>
                                     </p>
                                     <p class="relais-email">
-                                        <a href="mailto:<?php echo get_post_meta( $post->ID, 'relais-post-email', true );?>" >
-                                            <?php echo get_post_meta( $post->ID, 'relais-post-email', true );?></a>
+                                        <a href="mailto:<?php echo get_post_meta( $post->ID, 'relais-post-email', true );?>" ><?php echo get_post_meta( $post->ID, 'relais-post-email', true );?></a>
                                     </p>
                                 </div>
                             </div>

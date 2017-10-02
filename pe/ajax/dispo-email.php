@@ -24,7 +24,6 @@ if (isset($_POST) && !empty($_POST)) {
     $params = filter_input_array(INPUT_POST, $options);
 }
 //$params['email']="webmaster@kiwiscan.net";
-// ERREUR dans la requete => plusieurs comptes à l'état VAL avec le même email peuvent existé !
 if(isset($params['email']) && !empty($params['email'])) {
     $queryCheckEmail= " SELECT count(*) as nb "
             . " FROM ".TBL_UTILISATEURS." "

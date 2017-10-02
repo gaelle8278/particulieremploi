@@ -7,12 +7,7 @@
  * @since ParticulierEmploi 1.0
  */
 
-//enregistrement et récupération du cp de l'internaute
-set_user_depcode();
-$depCode=get_user_depcode();
-
 get_header();
-include(locate_template('plugin-form-cp.php'));
 ?>
 
 <div class="content-central-column">
@@ -27,12 +22,15 @@ include(locate_template('plugin-form-cp.php'));
             <div class="wrap-clear"></div>
 
             <h1>Le CESU en 10 points</h1>
+            
+           
+            
             <div class='cesu-table'>
                 <div class='cesu-row'>
                      <div class="cesu-cell first-cesu-block">
                         <p class="text-bold text-upper">
                             L'emploi par chèque emploi service universel 
-                            <span class="text-underlined">bancaire</span></p>
+                            <span class="text-underlined">déclaratif</span></p>
                         <p>
                             Les bénéficiaires de la Paje ne peuvent pas utiliser le
                             Cesu déclaratif.
@@ -415,7 +413,7 @@ include(locate_template('plugin-form-cp.php'));
     </section><!-- @white-space
     --><aside>
         <?php
-        get_sidebar();
+        get_template_part("sidebar-simu-cesu");
         ?>
     </aside>
 </div>

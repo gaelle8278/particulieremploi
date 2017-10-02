@@ -104,7 +104,6 @@
                             ?>
                             <a href="<?php echo $link_detail; ?>"  class="button_details"  >Voir le détail</a>
                             <input type="button" class="res_button_details" value="Voir le détail" />
-
                             <div class="custom-popup">
                                 <?php
                                 $label_taux="";

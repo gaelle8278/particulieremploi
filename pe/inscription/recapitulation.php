@@ -271,7 +271,7 @@ if (isset($_POST['recap'])) {
         $inscription=TRUE;
 
     } else {
-       $tabErrorsValid['error']="Erreur lors de l'enregistrement. Veuillez réessayer ultérieurement.";
+       $tabErrorsValid['error']="Erreur lors de l'enregistrement. Veuillez réessayer ultérieurement";
     }
   
 }

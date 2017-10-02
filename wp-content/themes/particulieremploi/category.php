@@ -7,13 +7,10 @@
  * @subpackage particulieremploi
  * @since ParticulierEmploi 1.0
  */
-//enregistrement et récupération du cp de l'internaute
-set_user_depcode();
-$depCode=get_user_depcode();
+
 get_header();
-//plugin pour saisir cp
-include(locate_template('plugin-form-cp.php'));
 ?>
+
 <div class="content-central-column">
     <?php
     
@@ -102,7 +99,7 @@ include(locate_template('plugin-form-cp.php'));
         </section><!-- @white-space
         --><aside>
             <?php
-            get_sidebar();
+                get_template_part('sidebar-magazine');
             ?>
         </aside>
         <?php

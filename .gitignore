@@ -90,5 +90,7 @@ wp-content/themes/*
 !wp-content/themes/particulieremploi/
 wp-content/themes/particulieremploi/inc/usefull-constants.php
 wp-content/themes/particulieremploi/geoloc/GeoLite2-City.mmdb
+wp-content/themes/particulieremploi/snippets
+wp-content/themes/particulieremploi/less
 
 
