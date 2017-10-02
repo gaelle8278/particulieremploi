@@ -88,5 +88,7 @@ wp-content/themes/*
 !wp-content/plugins/pe-relais/
 !wp-content/plugins/pe-voletcesu/
 !wp-content/themes/particulieremploi/
+wp-content/themes/particulieremploi/inc/usefull-constants.php
+wp-content/themes/particulieremploi/geoloc/GeoLite2-City.mmdb
 
 

@@ -42,8 +42,8 @@ define ( 'IDTAXORELAIS', 'relais');
  */
 define ( 'IDTAXOPOINTRELAIS', 'point-relais');
 
-/** 
- * Nombre d'article par page pour les pages 
+/**
+ * Nombre d'article par page pour les pages
  * liste d'article personalisées
  */
 define ( 'POSTPERPAGE', 9);
@@ -74,19 +74,24 @@ define ( 'ID_PAGE_OFFRE_SEPARATION' , 338);
  */
 define ( 'ID_MEDIA_CARTEFR', 329);
 
-/** catégories du glossaire */
+/**
+ * catégories du glossaire
+ */
 $glossaryEntries= array(
   'glossaire','a','b','c','d','e','f','g','h','i','j','k','l',
     'm','n','o','p','q','r','s','t','u','v','w','x','y','z'
 );
 
-/** 
+/**
  * Réseaux sociaux
  */
 define ( 'LINK_FACEBOOK' , 'https://www.facebook.com/particulieremploi.fr/');
 define ( 'LINK_TWITTER' , 'https://twitter.com/PE_LeMag');
 define ( 'LINK_YOUTUBE' , 'https://www.youtube.com/channel/UCbBFZmEPVrfEOPRaSLpMrbQ');
 
+/**
+ * géolocalisation
+ */
 //correspondance code département <=> région pour la géolocalisation
 $tabRegion['rhone-alpes'] = array('01','07','26','74','38','42','69','73');
 $tabRegion['alsace-lorraine'] = array('67','68','54','55','57','88');
@@ -114,6 +119,7 @@ $tabRegion['mayotte'] = array('976');
 $tabRegion['guyane'] = array('973');
 $tabRegion['guadeloupe'] = array('971');
 
+//correspondance code département <=> nouvelle région pour la géolocalisation
 $tabNewRegion['centre-val-de-loire'] = array('18','28','36','37','41','45');
 $tabNewRegion['corse'] = array('2A','2B','20');
 $tabNewRegion['bourgogne-franche-comte'] = array('25','70','39','90','21','58','71','89');
@@ -133,6 +139,9 @@ $tabNewRegion['mayotte'] = array('976');
 $tabNewRegion['guyane'] = array('973');
 $tabNewRegion['guadeloupe'] = array('971');
 
+/**
+ * cartes
+ */
 $coordRegion['auvergne-rhone-alpes']=array(
     'lat'=> 45.6042384285212,
     'long'=> 4.0450286865234375,
@@ -247,157 +256,7 @@ $coordRegion['guadeloupe']=array(
     'zoom'=> 9,
     'title' => "Où nous trouver en Guadeloupe ?"
 );
-//coordonnées des régions => utiles pour centrer les maps des régions
-/*$coordRegion['rhone-alpes']=array(
-    'lat'=> 45.6042384285212,
-    'long'=> 4.0450286865234375,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Rhône-Alpes"
-);
-$coordRegion['alsace-lorraine']=array(
-    'lat'=> 48.5700648196563,
-    'long'=> 7.4837493896484375,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Alsace-Lorraine"
-);
-$coordRegion['aquitaine']=array(
-    'lat'=> 44.7002222,
-    'long'=> -0.2995785000000524,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Aquitaine"
-);
-$coordRegion['auvergne']=array(
-    'lat'=> 45.7032695,
-    'long'=> 3.344853599999965,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Auvergne"
-);
-$coordRegion['normandie']=array(
-    'lat'=> 48.87987039999999,
-    'long'=> 0.17125290000001314,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Normandie"
-);
-$coordRegion['bourgogne']=array(
-    'lat'=> 47.0525047,
-    'long'=> 4.383721499999979,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Bourgogne"
-);
-$coordRegion['bretagne']=array(
-    'lat'=> 48.2020471,
-    'long'=> -2.93264350000004,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Bretagne"
-);
-$coordRegion['centre']=array(
-    'lat'=> 47.75156859999999,
-    'long'=> 1.6750630999999885,
-    'zoom'=> 9,
-    'title' => "Où nous trouver dans le Centre"
-);
-$coordRegion['champagne-ardenne']=array(
-    'lat'=> 48.7934092,
-    'long'=> 4.472524900000053,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Champagne-Ardenne"
-);
-$coordRegion['corse']=array(
-    'lat'=> 42.03960420000001,
-    'long'=> 9.012892599999986,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Corse"
-);
-$coordRegion['franche-comte']=array(
-    'lat'=> 47.1343207,
-    'long'=> 6.022301599999992,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Franche-Comté"
-);
-$coordRegion['ile-de-france']=array(
-    'lat'=> 48.84991979999999,
-    'long'=> 2.637041100000033,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Île-de-France"
-);
-$coordRegion['languedoc-roussillon']=array(
-    'lat'=> 43.5912356,
-    'long'=> 3.258362600000055,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Languedoc-Roussillon"
-);
-$coordRegion['limousin']=array(
-    'lat'=> 45.89322310000001,
-    'long'=> 1.5696017999999867,
-    'zoom'=> 9,
-    'title' => "Où nous trouver dans le Limousin"
-);
-$coordRegion['midi-pyrenees']=array(
-    'lat'=> 44.0859426,
-    'long'=> 1.5208623999999418,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Midi-Pyrénées"
-);
-$coordRegion['nord-pas-de-calais']=array(
-    'lat'=> 50.48011529999999,
-    'long'=> 2.793726500000048,
-    'zoom'=> 9,
-    'title' => "Où nous trouver dans le Nord-Pas-de-Calais"
-);
-$coordRegion['pays-de-la-loire']=array(
-    'lat'=> 47.7632836,
-    'long'=> -0.3299686999999949,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Pays-de-la-Loire"
-);
-$coordRegion['picardie']=array(
-    'lat'=> 49.66361269999999,
-    'long'=> 2.5280731999999944,
-    'zoom'=> 10,
-    'title' => "Où nous trouver en Picardie"
-);
-$coordRegion['poitou-charentes']=array(
-    'lat'=> 45.903552,
-    'long'=> -0.30918369999994866,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Poitou-Charentes"
-);
-$coordRegion['paca']=array(
-    'lat'=> 43.9351691,
-    'long'=> 6.067919399999937,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Provence-Alpes-Côte d'Azur"
-);
-$coordRegion['ile-de-la-reunion']=array(
-    'lat'=> -21.098594269392088,
-    'long'=> 55.479583740234375,
-    'zoom'=> 11,
-    'title' => "Où nous trouver sur l'île de la Réunion"
-);
-$coordRegion['martinique']=array(
-    'lat'=> 14.641528,
-    'long'=> -61.024174000000016,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Martinique"
-);
-$coordRegion['mayotte']=array(
-    'lat'=> -12.8275,
-    'long'=> 45.166244000000006,
-    'zoom'=> 9,
-    'title' => "Où nous trouver à Mayotte"
-);
-$coordRegion['guyane']=array(
-    'lat'=> 3.933888999999999,
-    'long'=> -53.125782000000015,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Guyane"
-);
-$coordRegion['guadeloupe']=array(
-    'lat'=> 16.265,
-    'long'=> -61.55099999999999,
-    'zoom'=> 9,
-    'title' => "Où nous trouver en Guadeloupe"
-);*/
+
 
 
 
