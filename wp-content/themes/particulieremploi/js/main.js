@@ -104,10 +104,6 @@ jQuery(document).ready( function($) {
     $(".search-menu").click(function() {
         $("#custom-form").toggle();
     });
-    //****** images du plugin de recherche : choix aléatoire
-    var num=Math.floor(Math.random() * (3 - 1 +1)) + 1;
-    var randomclass= "img"+num;
-    $(".bloc-recherche").addClass(randomclass);
     //**** tabs du formulaire de recherche de la hp
     $( "#search-tabs" ).tabs();
     //**** soumission formulaire de recherche de la hp
@@ -219,27 +215,6 @@ jQuery(document).ready( function($) {
                 });
 
             });
-
-            //popup au chargement de la page
-            $("#popup-onload").addClass('show');
-            overlay.unbind("click");
-            overlay.bind("click", function() {
-                $("#popup-onload").removeClass('show');
-            });
-
-            $("#popup-onload .close").click (function(event) {
-                event.stopPropagation();
-                $("#popup-onload").removeClass('show');
-
-            });
-            $("#cp-button-close").click (function(event) {
-                event.stopPropagation();
-                $("#popup-onload").removeClass('show');
-
-            });
-
-
-
         }
 
         init();
@@ -622,10 +597,11 @@ jQuery(document).ready( function($) {
                 $(this).next(".msg-error-valid").hide().text("");
             }
         });
-        if($('#id_dest_msg_select').length > 0 ) {
-            $('#envoyermsg #id_dest_msg_select').parents('.field-req').children(".msg-error-valid").fadeIn().text("Veuillez \n\
-                    saisir un destinataire");
+        if(($('#id_dest_msg_select').length > 0 && !$('#id_dest_msg_select option:selected').length)) {
+            $('#envoyermsg #id_dest_msg_select').parents('.field-req').children(".msg-error-valid").fadeIn().text("Veuillez saisir un destinataire");
             valid=false;
+        } else {
+            $('#envoyermsg #id_dest_msg_select').parents('.field-req').children(".msg-error-valid").hide().text("");
         }
 
 
@@ -639,33 +615,6 @@ jQuery(document).ready( function($) {
         $('.bloc-msg-button').hide();
     });
 
-    /********* plugin code postal ********/
-    $('#plugin-cp #sticky').click(function() {
-        $(this).closest('#plugin-cp').toggleClass("display-cp-form");
-        $(this).closest('#plugin-cp').find("#code-postal").nextAll(".msg-error-valid").hide().text("");
-    });
-    $(".plugin-cp-submit").click(function() {
-        valid=true;
-        if ($(this).closest('#plugin-cp').find("#code-postal").length > 0 &&
-                !$(this).closest('#plugin-cp').find("#code-postal").val().match(/^[0-9]{5}$/i)) {
-             $(this).closest('#plugin-cp').find("#code-postal").nextAll(".msg-error-valid").show().text("Merci de saisir un code postal à 5 chiffres");
-             valid=false;
-        } else {
-            $(this).closest('#plugin-cp').find("#code-postal").nextAll(".msg-error-valid").hide().text("");
-        }
-        return valid;
-    });
-
-    /*$('#cp-form').hide();
-    $('#cp-button').css('left', '0');
-    $('#cp-button').click(function() {
-        $('#cp-form').toggle();
-        $('#cp-button').css('left', '-100px');
-    });
-    $('#cp-button-close').click(function () {
-        $('#cp-form').hide();
-        $('#cp-button').css('left', '0');
-    });*/
     /************ Les essentiels ******/
     /** gestion du marquage des options choisies */
     $( ".aplat-option-choosen" ).click(function() {

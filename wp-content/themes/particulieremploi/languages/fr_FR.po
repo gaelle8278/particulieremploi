@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-05-12 00:37+0200\n"
-"PO-Revision-Date: 2016-05-12 00:42+0200\n"
+"POT-Creation-Date: 2016-05-27 19:50+0200\n"
+"PO-Revision-Date: 2016-05-27 19:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,17 +15,62 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:206
+#: functions.php:224
+msgid "widget sentence"
+msgstr "Wording dynamique pour le widget latéral"
+
+#: functions.php:352
 msgid "relais address"
 msgstr "Adresse du relais"
 
-#: single.php:36
-msgid "Next"
-msgstr "Suivant"
+#: functions.php:358
+msgid "relais accueil"
+msgstr "Accueil du relais"
 
-#: single.php:38
-msgid "Previous"
-msgstr "Précédent"
+#: functions.php:364
+msgid "relais email"
+msgstr "Email"
+
+#: functions.php:370
+msgid "relais telephone"
+msgstr "Téléphone"
+
+#: functions.php:376
+msgid "relais accueil telephone"
+msgstr "Accueil par téléphone"
+
+#: functions.php:382
+msgid "relais city"
+msgstr "Ville du relais"
+
+#: functions.php:388
+msgid "relais latitude"
+msgstr "Latitude du relais"
+
+#: functions.php:394
+msgid "relais longitude"
+msgstr "Longitude du relais"
+
+#: functions.php:489
+msgid "contact name"
+msgstr "Nom du contact"
+
+#: functions.php:495
+msgid "contact city"
+msgstr "Ville du contact"
+
+#: functions.php:608
+msgid "Stick this relais to the page"
+msgstr "Mettre en avant le relais"
+
+#~ msgid "relais schedules"
+#~ msgstr "Horaires du relais"
+
+#~ msgid "Next"
+#~ msgstr "Suivant"
+
+#~ msgid "Previous"
+#~ msgstr "Précédent"
 
 #~ msgid "&larr; Previous"
 #~ msgstr "&larr; Précédent"
