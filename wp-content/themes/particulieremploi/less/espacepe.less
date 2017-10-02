@@ -1,0 +1,1087 @@
+/**** @subsection fonctionnalités spécifiques de la mise en relation pe */
+
+@espacepe-color-emp: #EE7F01;
+/** emp rgb : rgb(238,127,1);*/
+@espacepe-color-sal: #438BBE;
+/** sal rgb : rgb(67,139,190);*/
+
+/***** header ****/
+.header-section-espacepe {
+    width: 60%;
+    text-align: right;
+}
+.header-section-espacepe > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.header-espacepe-login {
+    width:30%;
+    text-align: center;
+    font-weight: bold;
+}
+.header-espacepe-logout {
+    padding: 5px 0 5px 10px;
+    width: 5%;
+    border-left: 1px solid @color-content-separator;
+}
+
+/***** content ***/
+.espacepe-main {
+    padding-top : 25px;
+    padding-bottom: 25px;
+}
+.error-update {
+    color: red;
+    font-size: 1.125em; //18px
+}
+.msg-update {
+    color: @msg-color;
+    font-weight: bold;
+    font-size: 1.125em; //18px
+}
+
+//bloc d'entete
+.bloc-header-espacepe {
+    
+}
+.bloc-header-title, .bloc-header-teaser {
+    padding: 0 10px;
+    height: 75px;
+    line-height: 75px;
+    font-size: 1.125em; //18px;
+    font-weight: bold;
+    background-color: #fff;
+}
+.bloc-header-title {
+    float: left;
+    margin-bottom: 25px;
+}
+.bloc-header-teaser {
+    overflow: hidden;
+    text-align: right;
+}
+.compte-emp .bloc-header-title {
+    color: @espacepe-color-emp;
+}
+.compte-sal .bloc-header-title {
+    color: @espacepe-color-sal;
+}
+
+//blocs de contenu
+.bloc-content {
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.bloc-content-effect {
+    margin-bottom: 25px;
+    height: 15px;
+    background: url("images/pictos/fleche-bas.png") no-repeat 30px bottom;
+}
+.bloc-row-espacepe {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 25px;
+    width: 100%;
+}
+.bloc-cell-espacepe {
+    position: relative;
+    vertical-align: top;
+    padding: 10px 2%;
+    width: 45%;
+    overflow: hidden;
+    min-height: 220px;
+    background-color: #fff;
+}
+.first-bloc-cell{
+    float: left;
+    margin-right: 2%;
+}
+.bloc-title, .bloc-content-title {
+    padding: 10px 0;
+    width: 100%;
+    font-size: 1.125em; //18px
+    font-weight: bold;
+    border-bottom: 1px solid @color-content-separator;
+}
+.compte-emp .bloc-title {
+    color: @espacepe-color-emp;
+}
+.compte-sal .bloc-title {
+    color: @espacepe-color-sal;
+}
+.section-title {
+    font-weight: bold;
+    font-size: 1.25em; /* 20px*/
+}
+.section-separator {
+    margin: 15px 0;
+    width: 10%;
+    height: 5px;
+}
+.ins-emp .section-separator, 
+.ins-emp .title-separator {
+    border-bottom: 2px solid @espacepe-color-emp;
+}
+.ins-sal .section-separator, 
+.ins-sal .title-separator {
+    border-bottom: 2px solid @espacepe-color-sal;
+}
+.form-separator {
+    margin: 15px 0;
+    width: 100%;
+    height: 5px;
+    opacity: 0.5;
+    border-bottom: 2px solid  #e5eaed;
+}
+//buttons
+.bloc-cell-buttons {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+.bloc-cell-buttons a {
+    display: inline-block;
+    padding: 5px 15px;
+    height: 30px;
+    line-height: 30px;
+    //width: 30%;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    .rounded(4px)
+}
+.compte-emp .bloc-cell-buttons a {
+    background-color: @espacepe-color-emp;
+}
+.compte-sal .bloc-cell-buttons a {
+    background-color: @espacepe-color-sal;
+}
+.bloc-content-buttons {
+    margin: 10px 0;
+    text-align: right;
+}
+
+
+//affichage des annonces
+.alert-annonce {
+    color: red;
+    font-size: 0.875em; //14px;
+}
+.bloc-annonce p {
+    padding: 0 0 5px 0;
+}
+.bloc-annonce .suppr-button {
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    background: url("@{path_pictos}/suppr-button.png") no-repeat;
+}
+.bloc-annonce .bloc-annonce-title {
+    margin-bottom: 10px;
+    padding: 25px 0;
+    font-size: 1.125em; //18px;
+    font-weight: bold;
+    border-bottom: 1px solid @color-content-separator;
+}
+    //note
+.display-note {
+    padding: 10px 0;
+    border-top: 1px solid @color-content-separator;
+    border-bottom: 1px solid @color-content-separator;
+}
+.header-note > span {
+    padding: 5px 0;
+    float: left;
+}
+.header-note > p {
+    overflow: hidden;
+    text-align: right;
+}
+.header-note .edit-note-button {
+    cursor: pointer;;
+    color: @link-color;
+}
+.edit-note textarea {
+    width: 100%;
+}
+.edit-note .bloc-buttons {
+    width: 100%;
+    text-align: right;
+}
+.edit-note input[type="submit"], .edit-note .edit-cancel {
+    display: inline-block;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 0.875em; //14px;
+    font-weight: bold;
+    color: @link-color;
+    background-color: transparent;
+    cursor: pointer
+}
+// affichage des buttons
+.bloc-buttons-espacepe {
+    margin: 10px 0;
+    text-align: right;
+}
+.bloc-buttons-espacepe a, 
+.bloc-buttons-espacepe .res_button_details {
+    display: inline-block;
+    padding: 5px 30px;
+    text-align: center;
+    color: @main-text-color;
+    font-weight: bold;
+    background-color: #F1F3F5;
+    .rounded();
+    border: none;
+    outline: none;
+}
+.bloc-buttons-espacepe .res_button_details {
+    display: none;
+}
+.bloc-buttons-espacepe input[type="submit"] {
+    border: none;
+    padding: 5px 30px;
+    color: #fff;
+    font-weight: bold;
+    .rounded();
+    background-color: #445f7c;   
+}
+.compte-emp .bloc-buttons-espacepe input[type="submit"] {
+    background-color: @espacepe-color-emp;
+}
+.compte-sal .bloc-buttons-espacepe input[type="submit"] {
+    background-color: @espacepe-color-sal;
+}
+.bloc-content .bloc-buttons-espacepe {
+    padding-top: 25px;
+    border-top: 1px solid @color-content-separator;;
+    
+}
+/******* search ***/
+//bloc de recherche  page d'accueil
+.bloc-cell-search {
+    color: #fff;
+    background-color: #36A6BE;
+}
+.bloc-cell-search .bloc-title {
+    color: #fff;
+}
+.compte-hp .bloc-field-inline {
+    vertical-align: bottom;
+    width: 42%;
+}
+.compte-hp .bloc-submit-inline {
+    width: 10%;
+}
+.compte-hp input[type="submit"] {
+    padding:5px 15px; 
+    border:0 none;
+    width: 40px;
+    height: 40px;
+    background:transparent url("@{path_pictos}/search-button.png") no-repeat; 
+    cursor:pointer;
+    color: transparent;  
+}
+.compte-hp .input-style {
+    width: 80%;
+}
+
+/***** menu ***/
+@menuepe-height: 50px;
+.menu-espacepe {
+    position: relative;
+    //height: @menuepe-height;
+    //line-height: @menuepe-height;
+    width: 100%;
+}
+.menu-espacepe ul {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.menu-espacepe li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 15px 5px 13px 5px;
+    font-size: 1em;
+    text-align: center;
+    zoom: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.menu-espacepe .menu-item:hover, .active-item {
+    border-bottom: 6px solid #fff;
+}
+.menu-espacepe a {
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.875em;
+    line-height: 1.125;
+    width: 100%;
+}
+.large-item {
+    width: 15.5%;
+}
+.x-large-item {
+    width: 22%;
+}
+.small-item {
+    width: 11%;
+}
+.menu-emp {
+    background-color: @espacepe-color-emp;
+}
+.menu-sal {
+    background-color: @espacepe-color-sal;
+}
+//menu responsive
+.menu-espacepe .menu-res-icon, 
+.menu-espacepe .menu-res-title {
+    display: none;
+}
+.menu-espacepe .menu-res-icon span {
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    width: 35px;
+    height: 20px;
+    background: url("@{path_pictos}/responsive-menu.png") no-repeat right center;
+    cursor: pointer;
+}
+
+//***** inscription ****/
+//***********************/
+//gabarit
+.inscription section {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 50px;
+    width: 66%;
+    margin-right: 2%;
+}
+.inscription aside {
+    position: relative;
+    display: inline-block;
+    width: 32%;
+    vertical-align: top;
+}
+.inscription aside a {
+    color: @link-color;
+}
+.inscription .sidebar-widget-article {
+    padding-bottom: 25px;
+}
+// formulaire
+.ins-emp .field-required {
+    color: @espacepe-color-emp;
+}
+.ins-sal .field-required {
+    color: @espacepe-color-sal;
+}
+.inscription input[type="radio"]+label:before {
+    border: none;
+    background-color:#ECECEC;
+}
+.inscription input[type="radio"]:checked+label:before {
+    background-color: #5c6c7d;
+    width:12px;
+    height: 12px;
+    border: 5px solid #ececec;
+}
+.inscription .bloc-submit-form {
+    text-align: center;
+}
+.inscription input[type="submit"] {
+    width: 48%;
+    white-space: normal;
+    word-wrap: break-word;
+    min-height: 70px;
+}
+    //bouton submit dans les pages internes du parcours d'inscription
+.inscription .bloc-submit-inscription {
+    margin: 0;
+    padding: 20px 5px;
+    width: 100%;
+    text-align: right;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.bloc-submit-inscription a {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #5c6c7d;
+    text-transform: uppercase;
+    border: 1px solid #5c6c7d;
+    .rounded();
+}
+.bloc-submit-inscription input[type="submit"] {
+    width: auto;
+    height: auto;
+    min-height: auto;
+}
+//accordéon
+@color-cat-garde: #CF0E5C;
+@color-cat-vie: #76B72A;
+@color-cat-fragile: #00B2BA;
+    //customisation du widget
+#accordion .ui-accordion-header {
+    font-weight: bold;
+    padding-right: 50px;
+}
+#accordion .ui-accordion-header-icon {
+    position: absolute;
+    left: auto;
+    right: 1em;
+    background:  url("@{path_pictos}/white-cross.png") no-repeat right center;
+}
+#accordion .ui-accordion-icons {
+    padding-left: 5px;
+}
+#accordion h3 img {
+    vertical-align: middle;
+}
+/* images des icones
+.ui-state-active .ui-icon {
+    background-image: url(images/fleche_bas_bleue.png);
+    background-position: 0 0;
+}
+.ui-state-default .ui-icon {
+    background-image: url(images/fleche_droite_bleue.png);
+    background-position: 0 0;
+}*/
+#accordion .ui-widget-content {
+    border: none;
+    padding: 1em;
+}
+#accordion #cat_1.ui-state-active, #accordion #cat_1.ui-state-default {
+    background-color: @color-cat-garde;
+    border: 2px solid @color-cat-garde;
+    color: #ffffff;
+    outline: none;
+}
+#accordion #cat_2.ui-state-active, #accordion #cat_2.ui-state-default {
+    background-color: @color-cat-vie;
+    border: 2px solid @color-cat-vie;
+    color: #ffffff;
+    outline: none;
+}
+#accordion #cat_3.ui-state-active, #accordion #cat_3.ui-state-default {
+    background-color: @color-cat-fragile;
+    border: 2px solid @color-cat-fragile;
+    color: #ffffff;
+    outline: none;
+}
+#accordion .ui-state-default {
+    background: #ccc;
+    color: #ffffff;
+    border: 2px solid #ccc;
+}
+    //mise en forme du contenu
+.blocMetier {
+    padding: 10px 0;
+    border-top: 1px solid @color-content-separator;
+} 
+.blocER {
+    padding: 10px 0;
+    border-top: 1px solid @color-content-separator;
+}
+.optionMetier {
+    line-height: @vertical-rythm;
+}
+.optionMetier label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.875em;
+}
+.optionER {
+    line-height: @vertical-rythm;
+    padding-left: 30px;
+    font-size: 0.875em;
+}
+.optionER label {
+   // display: inline-block;
+    padding: 5px 5px;
+}
+.optionER .descER {
+    padding: 5px 0;
+}
+#cat_1 + .ui-accordion-content .optionMetier label,
+#cat_1 + .ui-accordion-content .optionER label {
+    color: @color-cat-garde;
+}
+#cat_2 + .ui-accordion-content .optionMetier label,
+#cat_2 + .ui-accordion-content .optionER label {
+    color: @color-cat-vie;
+}
+#cat_3 + .ui-accordion-content .optionMetier label,
+#cat_3 + .ui-accordion-content .optionER label {
+    color: @color-cat-fragile;
+}
+//mise en page de la page de qualification de l'emploi
+.color_cat_1 {
+    color: @color-cat-garde;
+}
+.color_cat_2 {
+    color: @color-cat-vie;
+}
+.color_cat_3 {
+    color: @color-cat-fragile;
+}
+.qualif-separator {
+    height: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+}
+.qualif-intro img, .qualif-intro > div {
+    display:inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.qualif-intro > div {
+    padding-left: 15px;
+}
+#qualification .bloc-field-form {
+    width: 95%;
+}
+#qualification .field-label-inline {
+    width: 40%;
+}
+#postalCodeBlock {
+    padding: 10px;
+    border: 1px solid #ccc;
+    .rounded();
+}
+ // navigation parcours inscription 
+.nav-parcours {
+    position: relative;
+    padding-top: 25px;
+    margin-bottom: 25px;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+.step-ins-line {
+    display: inline-block;
+    width: 15%;
+    height: 8px;
+    background-color: #C5CAD1;
+}
+.step-ins-numb {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 45px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.375em; /* 22px */
+    font-weight: bold;
+    background-color: #C5CAD1;
+}
+.step-ins-line-last {
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.step-ins-line-first {
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.nav-emp .step-active {
+    background-color: @espacepe-color-emp;
+}
+.nav-sal .step-active {
+    background-color: @espacepe-color-sal;
+}
+.step-numb-active {
+    border:  4px solid rgba(255,255,255,0.5);
+}
+.nav-emp .step-numb-active {
+    background-color: @espacepe-color-emp;
+}
+.nav-sal .step-numb-active {
+    background-color: @espacepe-color-sal;
+}
+.label-step {
+    position: absolute;
+    top: 85px;
+    letter-spacing: 0.3px;
+    font-size: 0.875em;
+    font-weight: bold;
+    text-transform: uppercase;   
+}
+.res-label-numb {
+    display: none;
+}
+.label-step-1 {
+    left: 11.8%;
+}
+.label-step-2 {
+    left: 34%;
+}
+.label-step-3 {
+    left: 51%;
+}
+.label-step-4 {
+    left: 76.2%;
+}
+.nav-emp .step-label-active {
+    color: @espacepe-color-emp;
+}
+.nav-sal .step-label-active {
+    color: @espacepe-color-sal;
+}
+//******* recherche annonces page résutat *****/
+//*********************************************/
+//charte selon domaine classif
+@color-domaine-enfant: #CF0E5C;
+@color-domaine-technique: #76B72A;
+@color-domaine-externe: #76B72A;
+@color-domaine-adulte: #00B2BA;
+@color-domaine-vie: #76B72A;
+.color-domaine-1 {
+    color: @color-domaine-enfant;
+}
+.color-domaine-2 {
+    color: @color-domaine-adulte;
+}
+.color-domaine-3 {
+    color: @color-domaine-technique;
+}
+.color-domaine-4 {
+    color: @color-domaine-vie;
+}
+.color-domaine-5 {
+    color: @color-domaine-externe;
+}
+.bg-domaine-1 {
+    background-color:  @color-domaine-enfant;
+}
+.bg-domaine-2 {
+    background-color:  @color-domaine-adulte;
+}
+.bg-domaine_3 {
+    background-color: @color-domaine-technique;
+}
+.bg-domaine-4 {
+    background-color:  @color-domaine-vie;
+}
+.bg-domaine-5 {
+    background-color:  @color-domaine-externe;
+}
+
+//table de résultats
+.results-intro {
+    font-size: 1.125em; //18px
+    padding : 15px 0;
+    margin: 15px 0;
+    border-bottom: 1px solid #000;
+}
+#resultsTable {
+    border-collapse: collapse;
+}
+#resultsTable tr {
+    border-bottom: 1px solid #ccc;
+}
+#resultsTable td {
+    padding: 15px 0;
+    vertical-align: top;
+}
+#resultsTable thead th {
+    color: #ccc;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+}
+#resultsTable img {
+    float: left;
+    padding: 10px;
+}
+#resultsTable .cell-contact {
+    vertical-align: middle; 
+    text-align: right;
+}
+#results-data table .cell-contact a,  
+#results-data table .cell-contact .res_button_details{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.875em; //14px
+    font-weight: bold;
+    color:  #5c6c7d;
+    text-transform: uppercase;
+    background-color: #ccc;
+    border: none;
+    outline: none;
+    .rounded();
+}
+#results-data table .cell-contact .res_button_details {
+    display: none;
+}
+#results-data table .cell-contact-sal a:hover {
+    background-color: @espacepe-color-emp;
+    color: #fff;
+}
+#results-data table .cell-contact-emp a:hover {
+    background-color: @espacepe-color-sal;
+    color: #fff;
+}
+
+//bloc dépot annonnce
+.bloc_no_result {
+    padding: 15px 10px;
+}
+.bloc-no-annonce-sal {
+    background-color: #FEF4E9;
+}
+.bloc-no-annonce-emp {
+    background-color: #a2c5df;
+}
+.bloc_no_annonce {
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+}
+.bloc_no_annonce .text-intro {
+    font-size: 1.125em; //18px
+}
+.bloc-contact {
+    text-align: right;
+}
+.bloc-contact a {
+    display: inline-block;
+    padding: 15px 25px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    .rounded();
+}
+.bloc-contact-sal a {
+    background-color: @espacepe-color-emp;
+}
+.bloc-contact-emp a {
+    background-color: @espacepe-color-sal;
+}
+
+//encart classif
+.encart-classif-intro {
+    font-size : 1.25em; //20px
+}
+.encart-classif-intro img {
+    float: left;
+    padding: 10px;
+}
+.encart-classif-sep {
+    margin: 10px 0;
+    height: 2px;
+    width: 10%;
+}
+.encart-domaine-classif-links > div  {
+    display: inline-block;
+    vertical-align: middle;
+    width: 48%;
+    padding: 20px 1%;   
+}
+.encart-domaine-classif-links .link-button {
+    text-align: right;
+}
+.encart-domaine-classif-links .link-button a {
+    display:inline-block;
+    padding: 15px;
+    color: #fff;
+    font-size: 0.875em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #5c6c7d;
+    .rounded()
+}
+.encart-domaine-classif-links .link a {
+    display:inline-block;
+    font-weight: bold;
+    color: @link-color;
+}
+//******* messagerie *****/
+//************************/
+//layout
+.messagerie .bloc-content {
+    padding-left: 0;
+}
+.bloc-nav, .bloc-messagerie {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 0;
+}
+.bloc-nav {
+    width: 30%;
+}
+.bloc-messagerie {
+    width: 70%;
+}
+//title
+.messagerie-title {
+    padding: 5px 10px 5px 10px;
+    height: 50px;
+    font-weight: bold;  
+    font-size: 1.25em; //20px
+    border-bottom: 1px solid #ccc;
+}
+.bloc-nav .messagerie-title {
+    margin-right: 10px;
+}
+.bloc-messagerie .messagerie-title {
+    margin-left: 10px;
+    padding-right: 0;
+}
+.bloc-messagerie .messagerie-title p {
+    display:inline-block;
+}
+.bloc-messagerie .message {
+    color : #64D0B1;
+}
+.bloc-messagerie .messagerie-title a {
+    position: absolute;
+    display: inline-block;
+    right: 15px;
+    top: 25px;
+    padding: 5px 35px 5px 55px;
+    font-size: 0.8em; //16px
+    color: #fff;
+    text-transform: uppercase;
+    background: url("@{path_pictos}/icon-nouveau-message.png") no-repeat 15px center;
+    .rounded();
+}
+.messagerie-sal .bloc-messagerie .messagerie-title a {
+    background-color: @espacepe-color-sal;
+}
+.messagerie-emp .bloc-messagerie .messagerie-title a {
+    background-color: @espacepe-color-emp;
+}
+.title-redac {
+    padding: 5px 35px 5px 55px;
+}
+.messagerie-sal .title-redac {
+    color: @espacepe-color-sal;
+    background: url("@{path_pictos}/icon-title-nouveau-message-sal.png") no-repeat 15px center;
+}
+.messagerie-emp .title-redac {
+    color: @espacepe-color-emp;
+    background: url("@{path_pictos}/icon-title-nouveau-message-emp.png") no-repeat 15px center;
+}
+//contenu
+.messagerie-content {
+    position: relative;
+    padding: 0 10px;
+}
+.bloc-messagerie .btn-search {
+    padding: 5px;
+    color: #fff;
+    .rounded();
+}
+.messagerie-sal .btn-search {
+    background-color: @espacepe-color-sal;
+}
+.messagerie-emp .btn-search {
+    background-color: @espacepe-color-emp;
+}
+.bloc-msg-button {
+    width: 100%;
+    text-align: right;
+}
+
+.bloc-msg-button input[type="button"],
+.bloc-msg-button a {
+   border: none;
+   outline: none;
+   padding: 5px 20px;
+   text-transform: uppercase;
+   .rounded();
+}
+.bloc-msg-button a {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #ccc;
+}
+.messagerie-sal .bloc-msg-button input[type="button"] {
+    color: #fff;
+    background-color: @espacepe-color-sal;
+}
+.messagerie-emp .bloc-msg-button input[type="button"] {
+    color: #fff;
+    background-color: @espacepe-color-emp;
+}
+    //toolbar
+.toolbar {
+    position: relative;
+    height: 40px;
+}
+.toolbar .buttons input[type=submit] {
+    display: inline-block;
+    border: none;
+    outline: none;
+    margin: 5px 5px 5px 0;
+    padding: 5px 10px;
+    font-size: 0.875em;
+    background-color: #D5DCDF;
+    .rounded();
+}
+.toolbar .pagination {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    padding:0;
+    text-align: right;
+}
+.toolbar .pagination a {
+    color: @link-color;
+    font-weight: bold;
+    font-size: 0.875em; //14px
+}
+    //page d'envoi
+#envoyermsg .bloc-field-form {
+    width: 100%;
+    box-sizing: border-box;
+}
+#envoyermsg .field-label-inline {
+    width: 15%;
+    padding-right: 10px;
+    text-align: right;
+}
+#envoyermsg .field-value-inline {
+    width:  80%;
+}
+#envoyermsg .input-style, #envoyermsg .select-style, 
+#envoyermsg textarea {
+    width: 100%;
+}
+#envoyermsg .bloc-submit-form {
+    text-align: right;
+}
+#envoyermsg .bloc-submit-form input[type='submit'],
+#envoyermsg .bloc-submit-form a {
+    padding: 5px 20px; 
+}
+#envoyermsg .bloc-submit-form a {
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+    background-color: #ccc;
+    .rounded();
+}
+    //page accueil
+.bloc-msg {
+    position: relative;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #F6F9FA;
+}
+.bloc-msg p {
+    padding: 0;
+}
+.bloc-msg .msg-date {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.875em;
+    font-style: italic;
+}
+.bloc-msg .msg-name {
+    font-size: 1.125em; //18px
+}
+.bloc-msg .msg-corps {
+    color: #368bbe;
+}
+//navigation
+.nav-messagerie {
+    padding:0;
+    margin: 0 10px 0 0;
+}
+.nav-messagerie li {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 5px 15px 40px;
+    list-style-type: none;
+    vertical-align: top;
+}
+.nav-messagerie li a {
+    font-weight: bold;
+}
+#link-msg-accueil {
+    background:  url("@{path_pictos}/icon-messagerie-reception.png") no-repeat 10px 10px;
+}
+.messagerie-sal #link-msg-accueil.nav-active {
+    background: rgba(67,139,190,0.05) url("@{path_pictos}/icon-messagerie-reception-sal.png") no-repeat 10px 10px;   
+}
+.messagerie-emp #link-msg-accueil.nav-active {
+    background:  rgba(238,127,1,0.05) url("@{path_pictos}/icon-messagerie-reception-emp.png") no-repeat 10px 10px;
+}
+#link-msg-env {
+    background:  url("@{path_pictos}/icon-messagerie-envoye.png") no-repeat 10px 10px;
+}
+.messagerie-sal #link-msg-env.nav-active {
+    background:  rgba(67,139,190,0.05) url("@{path_pictos}/icon-messagerie-envoye-sal.png") no-repeat 10px 10px;   
+}
+.messagerie-emp #link-msg-env.nav-active {
+    background:  rgba(238,127,1,0.05) url("@{path_pictos}/icon-messagerie-envoye-emp.png") no-repeat 10px 10px;
+}
+#link-msg-arch {
+    background:  url("@{path_pictos}/icon-messagerie-archive.png") no-repeat 10px 15px;
+}
+.messagerie-sal #link-msg-arch.nav-active {
+    background:  rgba(67,139,190,0.05) url("@{path_pictos}/icon-messagerie-archive-sal.png") no-repeat 10px 10px;   
+}
+.messagerie-emp #link-msg-arch.nav-active {
+    background:  rgba(238,127,1,0.05) url("@{path_pictos}/icon-messagerie-archive-emp.png") no-repeat 10px 10px;
+}
+#link-msg-suppr {
+    background:  url("@{path_pictos}/icon-messagerie-supprime.png") no-repeat 10px 15px;
+}
+.messagerie-sal #link-msg-suppr.nav-active {
+    background:  rgba(67,139,190,0.05) url("@{path_pictos}/icon-messagerie-supprime-sal.png") no-repeat 10px 10px;   
+}
+.messagerie-emp #link-msg-suppr.nav-active {
+    background: rgba(238,127,1,0.05)  url("@{path_pictos}/icon-messagerie-supprime-emp.png") no-repeat 10px 10px;
+}
+.messagerie-sal .nav-active {
+    border-left: 2px solid @espacepe-color-sal;
+}
+.messagerie-emp .nav-active {
+    border-left: 2px solid @espacepe-color-emp;
+}
+.messagerie-sal .nav-active a {
+    color: @espacepe-color-sal;
+}
+.messagerie-emp .nav-active a {
+    color: @espacepe-color-emp;
+}
+//sous-navigation
+.sub-nav-inactive {
+    display: none;
+}
+.sub-nav-active {
+    display: block;
+}

@@ -1,0 +1,773 @@
+/** --- = @section ELEMENT --- */
+/************* @subsection Header ***********/
+.header-section {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    /*white-space: nowrap;
+    overflow: hidden;*/
+}
+.logo-section {
+    width: 40%;
+    //margin-right: 10%;
+}
+.logo-section a {
+    display: block;
+    width: 100%;
+}
+.logo-section a img {
+    max-width: 100%;
+}
+.links-section {
+    width: 60%;
+    text-align: right;
+}
+.buttons-section {
+    width: 60%;
+}
+.header-button {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 50%;
+    height: 80px;
+    line-height: 80px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-align: right;
+}
+.header-button a {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 10px 10px 55px;
+    width: 90%;
+    line-height: 1.5;
+    font-size: 0.875em; //14px
+    font-weight: bold;
+    text-align: left;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.espace-relation a {
+    background: #F1F3F5 url("@{path_pictos}/btn-mise-en-relation.png") no-repeat 5px center ;  
+}
+.espace-pe a {
+    color: #fff;
+    background:  #EE7F01 url("@{path_pictos}/btn-compte.png") no-repeat 5px center ;
+}
+//utilisateur connecté
+.user-menu-section {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 50%;
+    height: 80px;
+    line-height: 80px;
+    box-sizing: border-box;
+}
+/************ @subsection Main *********/
+.js .alert-no-js {
+    display: none;
+}
+.info-date {
+    position: absolute;
+    bottom: 10px;
+    padding-left: 25px;
+    color: @date-color;
+    background: url("@{path_pictos}/picto-date.png") no-repeat left center;
+}
+.breadcrumb {
+    padding: 15px 0;
+}
+a.common-button {
+    display: inline-block;
+    margin: 10px 0;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #495765;
+    .rounded();
+}
+.full-img {
+    width: 100%;
+    max-width: 100%;
+}
+.page-column-demi {
+    display: inline-block;
+    vertical-align: top;
+    width: 46%;
+    padding: 10px 2%;
+}
+.page-column-highlight {
+     background-color: #f6f9fa;
+}
+.section-title {
+    font-weight: bold;
+    font-size: 1.25em; /* 20px*/
+}
+
+.compte-buttons {
+    margin-top: 25px;
+    text-align: center;
+}
+.compte-buttons a {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.2;
+    width:35%;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.875em; //14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    .rounded();
+}
+.compte-buttons .button-ins-sal {
+    background-color: @sal-color;
+}
+.compte-buttons .button-ins-emp {
+    background-color: @emp-color;
+}
+
+
+/**********************
+* Home page
+*/
+
+///Section magazine de la homepage 
+.highlighted-post {
+   position: relative;
+   height: 350px; 
+   background-color: #fff;
+   box-sizing: border-box;
+}
+.highlighted-post-img, .highlighted-post-content {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 100%;
+}
+.highlighted-post-content .wrap {
+    padding: 1% 5% 10% 5%;
+}
+.highlighted-post-img img {
+    max-width: 100%;
+    width: 100%;
+}
+//effet au survol de l'extrait de l'article
+.highlighted-post .highlighted-post-content:hover {
+    color: white;
+    background-color: #EE7F01;
+    border-color: #EE7F01; 
+}
+.highlighted-post .highlighted-post-content:hover div {
+    color: #fff;
+}
+/* articles autres catégories */
+.list-home-post {
+    margin-top: 10px;
+}
+.home-post {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 47.5%;
+    height: 178px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.right-gutter {
+    margin-right: 5%;
+}
+.home-post-img, .home-post-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 100%;
+}
+.home-post-content .wrap {
+    padding: 1% 5%;
+}
+//effet au survol de l'extrait de l'article
+.home-post .home-post-content:hover {
+    color: white;
+    background-color: #EE7F01;
+    border-color: #EE7F01; 
+}
+.home-post .home-post-content:hover div {
+    color: #fff;
+}
+/* texte de l'image au-dessus de l'image */
+.highlighted-post .tag-image {
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+    padding: 5px 10px;
+    background-color: rgba(255,255,255, 0.5);
+    color: #000;
+    z-index: 1;
+}
+.home-posts {
+    clear: both;
+}
+///////////
+////Point relais de la home page
+.relais-infos {
+    height: 267px;
+    margin-top: 10px;
+}
+.relais-infos h2 {
+    padding: 0;
+   // min-height: 60px;
+    font-size: 1.1875em; //19px
+    font-weight: bold;
+}
+.relais-card {
+    float: left;
+}
+.relais-content {
+    overflow: hidden;   
+}
+.relais-content
+.relais-content-column {
+    vertical-align: top;
+    display: inline-block;
+    width: 50%;
+}
+.relais-content-column .wrap-relais-content {
+    padding: 0 10px;
+}
+.relais-content-column p {
+    padding-left: 35px;
+}
+.relais-pcard {
+    display: inline-block;
+    background: url("@{path_pictos}/picto-carte.png") no-repeat left 5px;
+}
+.relais-accueil {
+    background: url("@{path_pictos}/picto-accueil-physique-relais.png") no-repeat left 5px;
+}
+.relais-tel {
+    background: url("@{path_pictos}/picto-telephone.png") no-repeat left 5px;
+}
+.relais-email {
+    background: url("@{path_pictos}/picto-adresse.png") no-repeat left 5px;  
+}
+.relais-email  a {
+    color: #0089c1;
+}
+//////////
+////Bloc relations de la home page
+.bloc-relations h2 {
+    font-size: 2.25em; //36px;
+    color: #5c6c7d;
+    text-align: center;
+}
+
+/************************
+* Page article
+*/
+//barre d'outils
+.article-toolbar {
+    height: 50px;
+    line-height: 50px;
+}
+.article-features, .article-social-links, .article-date {
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+.article-date {
+    width : 45%;
+    background: url("@{path_pictos}/picto-date.png") no-repeat 5px center ;  
+    padding-left: 5%;
+}
+.article-social-links {
+    text-align: right;
+}
+.article-social-links div {
+    display: inline-block;
+    height: 100%;
+    padding:0 5px;
+}
+.article-social-links div img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.article-features img {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 5px;
+    cursor: pointer;
+}
+//featured image de l'article
+.main-img-article{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+//author infos
+.bloc-author {
+    margin-top: 15px;
+    padding-top: 24px;
+    border-top: solid 1px rgba(151,151,151,0.28);
+}
+.bloc-author img {
+    float:left;
+    vertical-align: middle;
+}
+.bloc-author div  {
+    overflow: hidden;
+    padding:  0 20px;
+}
+.bloc-author p {
+    padding:0;
+}
+
+/************************
+* Page liste d'articles
+*/
+//bloc d'un article : 2 types (normal et large)
+.bloc-article {
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.archive .large-article {
+    height: 305px;
+}
+.large-article,
+.category .large-article {
+    clear: both;
+    height: 205px;
+}
+.normal-article {
+    float: left;
+    overflow: hidden;
+    width: 47.5%;
+}
+.normal-article.first-inside-article {
+    margin-right: 5%;
+}
+//contenu d'un bloc article
+.bloc-article-content {
+    display: block;
+}
+.bloc-article-img img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+.archive .normal-article .bloc-article-content,
+.archive .normal-article .bloc-article-img {
+    height: 305px;
+    width: 100%;
+}
+.normal-article .bloc-article-content,
+.normal-article .bloc-article-img,
+.category .normal-article .bloc-article-content, 
+.category .normal-article .bloc-article-img {
+    height:205px;
+    width: 100%;
+}
+.large-article .bloc-article-content, .large-article .bloc-article-img{
+    width: 50%;
+    height:100%;
+    overflow: hidden;
+}
+//placement de l'image d'un bloc article large
+.bloc-ensemble-gauche .large-article .bloc-article-img {
+    float:left;
+}
+.bloc-ensemble-droit .large-article .bloc-article-img {
+    float:right;
+}
+//formatage contenu d'un bloc article
+.bloc-article-content-wrap {
+    padding: 10px;
+}
+//effet au survol
+.bloc-article-content:hover {
+    color: white;
+    background-color: #EE7F01;
+    border-color: #EE7F01;
+}
+.bloc-article-content:hover div {
+    color: #fff;
+}
+//pagination
+.pagination {
+    clear:both;
+    padding: 50px 0;
+    text-align: center;
+}
+.pagination a, .pagination span {
+    margin: 0 10px;
+    color: #8693a3;
+}
+.pagination .current {
+    color: #495765;
+    font-weight: bold;
+}
+
+/*******************
+* Page Le réseau (où nous trouver)
+* et page des relais
+*/
+.card-legend {
+    margin: 10px 0;
+    text-align: center;
+}
+.card-legend div {
+    display: inline-block;
+    margin: 0 10px;
+}
+#card-map {
+    height:1250px;
+    width:auto;
+}
+.no-js #card-map {
+    display: none;
+}
+//2 zones
+.zone-relais, .zone-pointrelais {
+    display: inline-block;
+    padding: 10px 0 10px 0;
+    width: 48%;
+    vertical-align: top;
+}
+.zone-relais {
+    padding-right: 4%;
+}
+//fiche d'un relais et d'un point relais
+.bloc-detail-relais {
+    margin-bottom: 24px;
+}
+.bloc-detail-pointrelais {
+    margin: 10px 0;
+}
+.relais-section-title {
+    font-size: 1.25em; //20px
+    color: @main-title-color;
+    font-weight: bold;
+}
+//infos de contact
+.contact-relais {
+    margin: 10px 0;
+    height: 70px;
+}
+.contact-relais div {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+//infos coordonnées
+.infos-relais div {
+    padding: 5px 0 5px 35px;
+}
+//image card
+.bloc-detail-relais .card-relais {
+    text-align: center;
+}
+.bloc-detail-relais .card-relais img {
+    padding: 10px 0;
+    max-width: 100%;
+}
+//point relais
+.bloc-detail-pointrelais .title {
+    font-weight: bold;
+    color: @main-title-color;
+}
+.pointrelais-email a {
+    color: #0089c1;
+}
+/**********
+* Page volet social et CESU 10 points
+*/
+.bloc-cesu-oneblock {
+    padding: 10px 15px 25px 20px;
+}
+.volet-cesu-separator {
+    margin:10px 0;
+    height: 1px;
+    width: 100%;
+    background-color: @color-content-separator;
+}
+.volet-cesu-title {
+    margin: 10px 0 20px 0;
+    padding-left: 20px;
+    font-size: 1.25em; //20px
+}
+.volet-cesu-sal .volet-cesu-title {
+    border-left: 2px solid @sal-color;
+}
+.volet-cesu-emp .volet-cesu-title {
+    border-left: 2px solid @emp-color;
+}
+.volet-cesu-step {
+    padding: 10px 0 10px 25px; 
+}
+.volet-cesu-step p {
+    padding: 0;
+}
+.step-number {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2px 10px 0 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.volet-cesu-sal .step-number {
+    background-color: @sal-color;
+}
+.volet-cesu-emp .step-number {
+    background-color: @emp-color;
+}
+.step-desc {
+    display: inline-block;
+    width: 85%;
+    vertical-align: top;
+}
+.step-desc p:first-child {
+    font-size: 0.875em; //14px
+    text-transform: uppercase;
+    font-style: italic;
+}
+.cesu-table {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.cesu-row {
+     display: table-row;
+}
+.cesu-cell {
+     display:table-cell;
+     width: 45%;
+     padding: 15px 2%;
+}
+.cesu-sep-cell {
+    width: 2%;
+}
+.first-cesu-block {
+    margin-right: 2%;
+    background-color: #ECF9FA;
+    color: #368088;
+}
+.second-cesu-block {
+    background-color: #FAF5EA;
+    color: #94876C;
+}
+/*******
+* Page résultat recherche wp
+*/
+.search_results .bloc-res-search {
+    margin-top: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+.search-results .search-count {
+    font-size: 1.25em; //20px
+}
+.search_results .bloc_display_post {
+    border-bottom: solid 1px @color-content-separator;
+    padding: 15px 0;
+}
+.search_results .post-content {
+    color: #5898C6;
+}
+/****
+* Page des offre Les Essentiels, Page du glossaire
+*/
+.wrap-image {
+    width: 100%;
+    height: 320px;
+    background-image: linear-gradient(to bottom, #f1f6f7, #dfeaed);
+}
+.header-img {
+    height: 320px;
+    background:  transparent url("@{path_images}/visuel-header-offre-fepem.png") no-repeat center top;
+}
+.section-content {
+    margin-top: -50px;
+}
+.essentiels-tpl2 .section-content {
+    margin-top: -230px;
+}
+.bloc-page-offre, .bloc-page-glossaire {
+    margin-bottom: 25px;
+    background-color: #fff;
+}
+.bloc-page-wrap {
+    padding: 10px;
+}
+.glossary-entry {
+    margin: 10px 0;
+}
+.glossary-entry h2 {
+    font-weight: bold;
+    font-size: 1.125em;
+}
+/*****************
+* Widgets
+*/
+.sidebar-widget-article > div {
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.sidebar-widget-article img {
+    //width: 100%;
+    max-width: 100%;
+}
+//nuage de mots-clefs
+.sidebar-widget-article .tagcloud {
+    padding: 0px 10px 15px 10px;
+}
+
+.tagcloud a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 5px;
+    border: 1px solid #d7dee3;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #419bf9;
+}
+//popular posts
+.wpp-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wpp-list li {
+    padding: 5px;
+    border-bottom: 1px solid #d7dee3;
+}
+.wpp-cat a {
+    font-size: 0.875em; //14px
+    text-transform: uppercase;
+    color: @cat-color;
+    font-weight: bold;
+}
+.wpp-title a {
+    color: @link-color;
+}
+.wpp-date {
+    padding-top: 10px;
+    font-size: 0.875em;
+    color: @iconography-color;
+}
+//manual related post
+.related-post-title {
+    font-size: 1.25em;
+}
+.bawmrp {
+    //width: 64%;
+    background-color: #fff; 
+    padding: 10px;
+}
+.bawmrp h3 {
+    display: none;
+}
+.bawmrp ul {
+    margin: 0 15px;
+    padding: 0;
+}
+.bawmrp ul li, .bawmrp ul li a {
+    color: @link-color;
+}
+//widget offre (en dur))
+.widget-title-separator {
+    margin: 15px 0;
+    width: 20%;
+    height: 5px;
+    border-bottom: 2px solid @second-color;
+}
+.widget-sal .widget-title-separator {
+    border-bottom: 2px solid @sal-color;
+}
+.bloc-offre-link {
+    display: block;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+     background: @main-color url("@{path_pictos}/fleche-bas.png") no-repeat center top ;  
+    
+}
+.bloc-part-link {
+    display: block;
+    padding: 30px 10px;
+    text-align: center;
+    color: #fff;
+    background: @sal-color url("@{path_pictos}/fleche-bas.png") no-repeat center top ;  
+}
+//widget recherche (en dur)
+.sidebar-title-search {
+    margin-right: 10px;
+}
+.widget-search-sal .sidebar-title-search {
+    background: url("@{path_pictos}/picto-widget-recherche-sal.png") no-repeat right top ;  
+}
+.widget-search-emp .sidebar-title-search {
+    background: url("@{path_pictos}/picto-widget-recherche-emp.png") no-repeat right top ;  
+}
+.sidebar-title-search p {
+    padding: 0;
+    width: 60%;
+}
+.widget-search-sal .title-separator {
+    border-color: @sal-color;
+}
+.widget-search-emp .title-separator {
+    border-color: @emp-color;
+}
+.sidebar-widget-article .bloc-recherche-sidebar {
+    padding: 20px 10px;
+    color: #fff;
+    background:  #fff url("@{path_pictos}/fleche-bas.png") no-repeat center top ;  
+}
+.sidebar-widget-article .bloc-recherche-sidebar-emp {
+    background-color: @emp-color;
+}
+.sidebar-widget-article .bloc-recherche-sidebar-sal {
+    background-color: @sal-color;
+}
+
+//widget infos cesu (en dur)
+.widget-infos-cesu ul {
+    padding-left: 25px;
+}
+//widget volet cesu (en dur)
+.link-volet-cesu {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 0.875em;// 14px
+    text-align: right;
+    font-weight: bold;
+    box-sizing: border-box;
+    
+}
+
+

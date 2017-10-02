@@ -1,0 +1,422 @@
+/*************** @subsection Forms ****************/
+
+/////////////// formulaire ///////////
+/********** blocs mise en forme formulaire ***/
+.bloc-field-form {
+    width: 90%;
+    margin: 10px;
+}
+.bloc-field-inline {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+}
+.bloc-field-form .field-label {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+.bloc-field-form .field-label-inline {
+    display: inline-block;
+    vertical-align: middle;
+    /*margin: 10px 0 5px 0;*/
+    font-weight: bold;
+    
+}
+.bloc-field-form .field-value {
+   // position: relative;
+}
+.bloc-field-form .field-value-inline {
+    display: inline-block;
+    vertical-align: top;
+    //margin-left: 20px;
+    width: 40%;
+}
+.bloc-field-form .field-value-readonly {
+    padding: 5px 10px;
+    width: 50%;
+    color: @main-text-color;
+    font-weight: bold;
+    background-color: rgba(208, 213, 218, 0.5);
+    opacity: 0.5;
+}
+/********** champs de formulaire ******/
+/**** select **/
+.select-style {
+    width: 90%;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background: #fafafa url("@{path_pictos}/triangle-down-select.png") no-repeat 95% 50%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.select-style select {
+    padding: 8px;
+    width: 120%;
+    border: none;
+    font-size: 1em;
+    color: @main-text-color;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+.select-style select option {
+    width: 50%;
+}
+.select-style select:focus {
+    outline: none;
+    border: none;
+}
+/***** input text **/
+.input-style {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    color: @main-text-color;
+    font-size: 1em;
+    .rounded(3px);
+    box-sizing: border-box;
+}
+.bloc-field-form .input-style {
+    width: 60%;
+}
+.bloc-field-form .bloc-field-inline .input-style {
+    width: 80%;
+}
+.bloc-field-form .input-style.input-mini {
+    width: 50%;
+}
+.input-style:focus {
+    background-color: #F3FAFB;
+    border: 0.5px solid #BDD1DD;
+    outline: none;
+}
+
+.bloc-field-form
+/**** textarea **/
+textarea {
+    border: 1px solid @color-content-separator;
+    .rounded(3px);
+}
+textarea:focus {
+    background-color: #F3FAFB;
+    border: 0.5px solid #BDD1DD;
+    outline: none;
+}
+/**** input radio ****/
+input[type="radio"]:not(:checked),
+input[type="radio"]:checked {
+    display:none;
+}
+input[type="radio"]+label {
+    display: inline-block;
+    margin:2px;
+}
+/* décoché */
+input[type="radio"]+label:before {
+    content:"";
+    display:inline-block;
+    margin-right: 5px;
+    width:20px;
+    height:20px;
+    vertical-align: middle;
+    background-color: #fff;
+    border:1px solid #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius:20px;   
+}
+/* coché */
+input[type="radio"]:checked+label:before {
+    background-color: #5c6c7d;
+    width:12px;
+    height: 12px;
+    border: 5px solid #fff;
+}
+/***** checkbox **/
+/* checkbox classique masquée */
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+/* affichage + label */
+input[type="checkbox"]:not(:checked)+label,
+input[type="checkbox"]:checked+label{
+    display: inline-block;  
+}
+/* aspect général de la checkbox*/
+/* :before sert à créer la case à cocher */
+input[type="checkbox"]:not(:checked)+label:before,
+input[type="checkbox"]:checked+label:before{
+    content:"";// pour que le bouton soit visible
+    display:inline-block;
+    margin-right: 10px;
+    width:16px;
+    height:16px;
+    vertical-align: middle;
+    background-color:#ECECEC;
+}
+/* aspect ajouté lorsque cochée */
+input[type="checkbox"]:checked+label:before {
+    background-color:#5c6c7d;;
+    //border: 5px solid #ECECEC;
+}
+/**** bouton submit **/
+.bloc-submit-form {
+    margin-top: 25px;
+    padding: 20px 5px 10px 5px;
+}
+.bloc-submit-form input[type="submit"] {
+    vertical-align: top;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    .rounded();
+    background-color: #495765;   
+}
+/************** message d'erreur ****/
+.field-required {
+    color: #EE7F01;
+}
+.msg-error-valid {
+    display: none;
+    font-size: 0.875em; //14px;
+    color: #FA9B87;  
+}
+.error-input {
+    font-size: 0.875em;
+    color: #FA9B87;  
+}
+///////////////// formulaire recherche annonces hp //////////
+.bloc-recherche {
+   // background-image: linear-gradient(181deg, #4aa5cd, #438bbe);
+   background: url("@{path_images}/hp-moteur-img.jpg") no-repeat;
+   background-size: cover;
+   width: 100%;
+   height: 600px;
+}
+.bloc-recherche-wrap {
+    position: absolute;
+    bottom: 0;
+    width: @content-width;
+    box-sizing: border-box;
+}
+.bloc-recherche h1 {
+    color: #fff;
+    width: 80%;
+    margin: 25px auto;
+    background-color: rgba(0,0,0,0.2);
+}
+//jquery personnalisation
+.ui-widget {
+    font-size: 1em;
+}
+.bloc-recherche .ui-widget-header {
+    border : none;
+    background: none;
+}
+.bloc-recherche .ui-state-default a, 
+.bloc-recherche .ui-state-default a:link, 
+.bloc-recherche .ui-state-default a:visited {
+    color: #fff;
+    font-size: 1.125em; //18px
+     font-weight: bold;
+     border: none;
+     outline: none;
+}
+.bloc-recherche .ui-widget-header .ui-state-default {
+    opacity: 0.8;
+    background-color: @second-color;
+    background-image: none;
+    border-color: @second-color;
+}
+.bloc-recherche .ui-widget-header .ui-state-active {
+    opacity: 1;
+    border-color: @second-color;
+    background-color: @second-color;
+    background-image: none;
+}
+.bloc-recherche .ui-widget-content {
+    background-image: none;
+    background-color: @second-color;
+    border-color : @second-color;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+}
+.bloc-recherche .ui-tabs {
+    padding:0;
+    background: none;
+    border: none;
+}
+.bloc-recherche .ui-tabs .ui-tabs-nav {
+    padding: 0;
+}
+.bloc-recherche .ui-tabs .ui-tabs-panel {
+    padding: 2em 1.5em;
+}
+.bloc-recherche form > div {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.bloc-recherche .field-metier {
+    width: 40%;
+}
+.bloc-recherche .field-cp {
+    width: 25%;
+}
+.bloc-recherche .field-distance {
+    width: 25%;
+}
+.bloc-recherche form > div label {
+    color: #fff;
+    display: block;
+    font-size: 0.875em; //14px
+    text-transform: uppercase;
+}
+.bloc-recherche .select-style {
+    width: 100%;
+    box-sizing: border-box;
+}
+.bloc-recherche .ui-widget select {
+    font-family: 'PT Sans', Verdana, sans-serif;
+}
+.bloc-recherche input[type="submit"] {
+    padding:5px 15px; 
+    border:0 none;
+    width: 40px;
+    height: 40px;
+    background:transparent url("@{path_pictos}/search-button.png") no-repeat; 
+    cursor:pointer;
+    color: transparent;  
+}
+//////////////// form Cesu ////////////////
+.cesu-form {
+    background-color: @second-color;
+    padding: 10px;
+    color: #fff;
+}
+.cesu-form .bloc-field-form {
+    width: 80%;
+}
+.cesu-form .field-label {
+     text-transform: uppercase;
+}
+.cesu-form .field-label span {
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+}
+.cesu-form .field-value {
+    margin-left: 40px;
+}
+.cesu-form .bloc-submit-form {
+    text-align: right;
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+.cesu-form input[type="submit"] {
+    background-color: #fff;
+    color: @second-color;
+}
+///////////// formulaire recherche menu main //////////
+#custom-form {
+    width: 100%;
+    text-align: right;
+}
+#custom-form div {
+    display: inline-block;
+    margin: 25px;
+     border: 1px solid #ccc;
+    .rounded(5px);
+}
+#custom-form .input-style {
+    margin: 0;
+    padding: 10px 20px;
+    border: none;
+}
+#custom-form input[type="submit"] {
+    vertical-align: top;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #495765;   
+}
+///////////// formulaire recherche espace pe//////////
+.bloc-recherche-espacepe {
+    padding: 15px 0;
+    background-color: #fff;
+}
+.bloc-search {
+    margin: 15px 0;
+}
+.bloc-search label {
+    display: block;
+    font-weight: bold;
+}
+.bloc-search > div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+}
+.bloc-recherche-espacepe .field-metier {
+    width: 40%;
+}
+.bloc-recherche-espacepe .field-duree {
+    width: 35%;
+}
+.bloc-recherche-espacepe .field-duree input {
+    width: 30%;
+}
+//boutons
+.bloc-recherche-espacepe .advanced-search-toggle {
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.875em; //14px
+    cursor: pointer;
+}
+.bloc-recherche-espacepe .advanced-search-toggle input[type='submit'] {
+    border: none;
+    outline: none;
+    padding: 10px 10px 10px 35px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #5c6c7d url("@{path_pictos}/btn-recherche-white.png") no-repeat 10px center;
+    .rounded();
+}
+///////////// formulaire recherche widget//////////
+.bloc-recherche-sidebar .field-cp .input-style {
+    width: 90%;
+}
+.bloc-recherche-sidebar .bloc-field-inline {
+    vertical-align: baseline;
+}
+.bloc-recherche-sidebar input[type="submit"] {
+    padding: 8px 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+    .rounded();
+    outline: none;
+}
+.bloc-recherche-sidebar-emp input[type="submit"] {
+    background-color: @emp-color;
+}
+.bloc-recherche-sidebar-sal input[type="submit"] {
+    background-color: @sal-color;
+}

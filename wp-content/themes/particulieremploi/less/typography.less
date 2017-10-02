@@ -1,0 +1,666 @@
+/** --- = @section TYPOGRAPHY --- */
+html {
+    height: 100%;
+    font-family: 'PT Sans', Verdana, sans-serif;
+    font-size:1em; /* 16px for most browsers */
+}
+body {
+    height: 100%;
+    font-size: 1em; //16 px
+    line-height: @vertical-rythm;
+    color: @main-text-color;
+    
+}
+p {
+    margin: 0;
+    padding: 5px 0;
+}
+a {
+    font-family: 'PT Sans', Verdana, sans-serif;
+    text-decoration: none;
+    color: @main-text-color;
+}
+.content-link {
+    color: @link-color;
+}
+h1,h2,h3 {
+    margin:0;
+    padding: 10px 0;
+    font-weight: normal;
+    color: @main-title-color;
+    
+}
+h1 {
+    font-size: 2.25em; //36px
+}
+h2 {
+    font-size: 1.875em; //30px
+}
+h3 {
+    font-size: 1.5em; //24px
+}
+img {
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-bold, strong {
+    font-weight: bold;
+}
+.text-italic {
+    font-style: italic;
+}
+.text-upper {
+    text-transform: uppercase;
+}
+.text-underlined {
+    text-decoration: underline;
+}
+.text-smaller {
+    font-size: 0.875em;
+}
+.text-taller {
+    font-size: 1.125em;
+}
+.text-main-color {
+    color: @main-color;
+}
+.wrap-clear {
+    clear: both;
+}
+.content-list li {
+    margin: 20px 0;
+}
+
+/******* @subsection Main *****/
+/** liste d'articles **/
+.list-post-cat {
+    text-transform: uppercase;
+    color: @main-color;
+    font-size: 0.8125em; //13px
+    font-weight: bold;
+    padding: 5px 0;
+}
+.list-post-title {
+    font-size: 1.25em; //20px;
+    color: @main-title-color;
+    padding: 5px 0;
+}
+.list-post-separator {
+    display: inline-block;
+    height: 2px;
+    width: 20%;
+    border-bottom: 2px solid rgba(229,231,233,1);
+}
+.list-post-text {
+    padding: 5px 0;
+}
+/*** article **/
+article h1 {
+    font-size: 1.875em; //30.px
+}
+article a {
+    color: @link-color;
+}
+.article-excerpt {
+    font-size: 1.25em; //20px;
+    color: @main-title-color;
+}
+.aplat-exemple {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #FEF4E9;
+}
+/*** cesu **/
+//page formulaire
+.bloc-page-cesu {
+    margin-bottom: 25px;
+    background-color: #fff;
+}
+.bloc-page-cesu h1  {
+    font-size: 1.875em; //30px
+}
+.bloc-cesu-info  {
+    padding: 10px 10px 20px 10px;
+}
+.cesu-question {
+    margin-top: 25px;
+    padding: 20px 0 10px 0;
+    font-size: 1.25em; //20px
+    font-weight: bold;
+    color: @main-title-color;
+    border-top: 1px solid #ccc;
+}
+.cesu-form .msg-error-valid {
+    color: #fff;
+    background-color: #FA9B87;
+}
+//page résultat
+.infos-calcul-simu {
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    color: #fff;
+    background-color: @second-color;
+}
+.infos-calcul-simu h1 {
+    color: #fff;
+    font-size: 1.875em; //30px
+}
+.recap-simu {
+    padding: 10px 20px;
+}
+.title-recap-simu {
+    color: @second-color;
+    font-size: 1.75em; //28px
+}
+    //résumé principal
+.main-simu-data {
+    border-left: 2px solid @second-color;
+    padding: 10px 0 10px 10px;
+    background-color: #F0F7F7;   
+}
+.main-simu-data p {
+    padding: 0;
+}
+.simu-value {
+    color: @second-color;
+    font-weight: bold;
+}
+    //glossaire
+.simu-infos {
+    margin: 25px 0;
+}
+.simu-infos > p {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.simu-infos ul {
+    margin: 0;
+    padding:0 0 0 25px;
+}
+.simu-infos ul li {
+    padding-left: 10px;
+}
+    //résumé détaillé
+.detail-simu-data {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.simu-table-highlighted {
+    color: @second-color;
+    font-weight: bold;
+}
+.detail-simu-data div {
+    display: table-row;
+}
+.row-pair {
+    background-color: #F0F7F7;
+}
+.label-column, .value-column {
+    display:table-cell;
+}
+.label-column {
+    padding-left: 10px;
+    width: 60%;
+}
+.value-column {
+    padding-right: 10px;
+    width: 20%;
+    text-align: right;
+}
+//page cesu 10 points
+.cesu-points {
+    padding-top: 25px;
+}
+    // toggle effect
+.show-cesu-section {
+   color: @main-text-color;
+   background: url("@{path_pictos}/btn-subnav-plus.png") no-repeat right center;
+}
+.hide-cesu-section {
+    color: @main-color;
+    background: url("@{path_pictos}/btn-subnav-moins.png") no-repeat right center;
+}
+.content-section-cesu {
+    display: none;
+}
+.no-js .content-section-cesu {
+     display: block;
+}
+.no-js .show-cesu-section {
+    background: url("@{path_pictos}/minus-sign.png") no-repeat right center;
+}
+    // typo
+.title-section-cesu {
+    padding: 25px 0;
+    width: 100%;
+    border-top: solid 1px @color-content-separator;
+}
+.title-section-cesu p, .title-section-cesu span {
+    display: inline-block;
+    vertical-align: top;
+}
+.title-section-cesu p {
+    padding: 0 10px;
+    width: 80%;
+    font-weight: bold;
+}
+.cesu-section-number {
+    color: @main-color;
+}
+.content-section-cesu {
+    padding: 15px 25px 25px 0;
+}
+.highlighted-text {
+    padding-left: 15px;
+    margin: 15px 5px 15px 0;
+    border-left: 2px solid @main-color;
+}
+.content-section-cesu ul {
+    margin:0;
+    padding: 10px 5px 10px 50px;
+}
+.content-section-cesu a {
+    color: @link-color;
+}
+/***  offre essentiels **/
+.section-content-title {
+    font-size: 3em;
+    text-align: center;
+    color: @main-color;
+}
+.section-content-separator {
+    width: 10%;
+    margin: 10px auto;
+    height: 2px;
+    background-color: @main-color;;
+}
+.text-teaser {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.25em;
+}
+.aplat-intro {
+    position: relative;
+    height: 88px;
+    line-height: 88px;
+    //padding: 25px 10px;
+    font-size: 1.75em;
+    text-align: center;
+    color:#fff;
+}
+.aplat-intro.aplat-essentiel {
+    background: @main-color url("@{path_pictos}/tarif-12.png") no-repeat right top;
+}
+.aplat-intro.aplat-consultation {
+    background: @main-color url("@{path_pictos}/tarif-68.png") no-repeat right top;
+}
+.aplat-highlight {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    width: 80px;
+    color: #fff;
+    background-color: #EC7600;
+    transform: rotate(45deg);
+}
+.bloc-list {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    margin-right: 2%;
+}
+.bloc-list > ul {
+    list-style-type: none;
+}
+.bloc-list > ul > li {
+    font-size: 1.125em;
+    padding: 20px 10px 20px 50px;
+    background: url("@{path_pictos}/offre-list-style.png") no-repeat left 10px;
+    
+}
+.bloc-list > ul > li > ul {
+    padding: 15px 0;
+    font-size: 0.875em;
+    list-style-type: disc;
+}
+.bloc-adhesion {
+    margin: 20px 0;
+    text-align: center;
+    color: @main-color;
+}
+.bloc-adhesion a {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px;
+    border: 2px solid @main-color;
+    font-size: 1.375em;
+    font-weight: bold;
+     color: @main-color;
+    .rounded(50px);
+}
+.bloc-adhesion a:hover {
+    color: #fff;
+    background-color: @main-color;
+}
+.bloc-presentation {
+    margin-bottom: 10px
+}
+.bloc-presentation ul {
+    list-style-type: none;
+    padding: 0;
+}
+.bloc-presentation > div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0;
+}
+.bloc-presentation-aplat {
+    background-color: #FEF7F0;
+}
+.bloc-presentation .bloc-summary {
+    padding: 0 2% 0 0;
+    width: 20%;
+    color: @main-color;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.bloc-presentation-aplat .bloc-summary {
+    text-transform: uppercase;
+    font-size: 0.875em;
+}
+.bloc-summary img {
+    width: 100%;
+    max-width: 100%;
+}
+.bloc-presentation .bloc-text {
+     padding: 0 0 0 2%;
+     width: 75%;
+     border-left: 1px solid @main-color;
+}
+.bloc-text .offre-encart {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 28%;
+    padding: 0 2%;
+    height: 350px;
+}
+.offre-encart .offre-encart-text {
+    position: absolute;
+    display: inline-block;
+    top: 25%;
+    left: 25%;
+    padding-top : 75px;
+    font-size: 1.125em;
+    text-align: center;
+    font-weight: bold;
+}
+.offre-encart .btn-souscrire {
+    position: absolute;
+    display: inline-block;
+    padding: 10px 25px;
+    bottom: 25px;
+    left: 25%;
+    .rounded(50px);
+    background-color:transparent;
+}
+.offre-encart.offre-garde {
+    background-color: #FBEAF2;
+    background-image:  url("@{path_pictos}/corner-enfant.png");
+    background-repeat: no-repeat;
+}
+.offre-encart.offre-garde .offre-encart-text {
+    color: #CF0E5C;
+    background:  url("@{path_pictos}/icon-juridique-enfant.png") no-repeat center top;
+}
+.offre-encart.offre-garde .btn-souscrire {
+    border: 1px solid #CF0E5C;
+    color: #CF0E5C;
+}
+.offre-encart.offre-garde .btn-souscrire:hover {
+    color: #fff;
+    background-color: #CF0E5C;
+}
+.offre-encart.offre-employe {
+    margin: 0 1%;
+    background-color: #F0F7E7;
+    background-image:  url("@{path_pictos}/corner-employe-familial.png");
+    background-repeat: no-repeat;
+}
+.offre-encart.offre-employe .offre-encart-text {
+    color: #76B72A;
+    background:  url("@{path_pictos}/icon-juridique-employe-familial.png") no-repeat center top;
+}
+.offre-encart.offre-employe .btn-souscrire {
+    border: 1px solid #76B72A;
+    color: #76B72A;
+}
+.offre-encart.offre-employe .btn-souscrire:hover {
+    color: #fff;
+    background-color: #76B72A;
+}
+.offre-encart.offre-assistant {
+    background-color: #E6F8F9;
+    background-image:  url("@{path_pictos}/corner-assistant-vie.png");
+    background-repeat: no-repeat;
+}
+.offre-encart.offre-assistant .offre-encart-text {
+    color: #00B2BA;
+    background:  url("@{path_pictos}/icon-juridique-assisatnt-vie.png") no-repeat center top;
+}
+.offre-encart.offre-assistant .btn-souscrire {
+    border: 1px solid #00B2BA;
+    color: #00B2BA;
+}
+.offre-encart.offre-assistant .btn-souscrire:hover {
+    color: #fff;
+    background-color: #00B2BA;
+}
+.bloc-contact-offre > div {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px 10px 55px;
+    width: 41.5%;
+}
+.bloc-contact-offre > div > span {
+    font-size: 1.125em;
+}
+.bloc-contact-offre .contact-postal {
+    background: url("@{path_pictos}/offre-contact-postal.png") no-repeat left top;
+}
+.bloc-contact-offre .contact-tel {
+    background: url("@{path_pictos}/offre-contact-tel.png") no-repeat left top;
+
+}
+
+/****** @subsection aside ****/
+.sidebar-title {
+    font-size: 1.25em; //20px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.title-separator, .section-title-separator {
+    display: inline-block;
+    height: 5px;
+    width: 20%;
+    border-bottom: 2px solid @main-color;
+}
+.section-title-separator {
+    width: 10%;
+    margin-bottom: 5px;
+}
+/*.widget-separator {
+    height: 20px;
+    width: 100%;
+    //background-color: rgb(246,249,250);
+    margin: 15px 0;
+}*/
+//title above tweet widget
+.sidebar-title .twitter-title, .sidebar-title .embedded-iframe {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+.sidebar-title .embedded-iframe {
+    text-align: right;
+}
+
+/***** @subsection logos partenaires *****/
+@nb-logo-part: 6;
+@padding-logo: 0%;
+@width-logo: (100% - (@nb-logo-part * @padding-logo*2)) / @nb-logo-part;
+.bloc-partenaires {
+    padding: 25px 0;
+    background-color: #fff;
+}
+.bloc-logos-partenaires { 
+    padding: 20px 0;
+    width:100%;
+    text-align:center; 
+    box-sizing: border-box;
+}
+a.bloc-logo { 
+    display:inline-block;
+    margin:0 @padding-logo;
+    width: @width-logo;
+    height: 80px;
+    vertical-align:middle;
+}
+/* correctif inline-block */
+.ie7 a.bloc-logo { 
+    display:inline;  
+}
+a.bloc-logo img {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    vertical-align:middle;
+}
+.bloc-logo-fepem {
+    background: url("@{path_images}/logos/logo-fepem-n&b.png") no-repeat center top;
+}
+.bloc-logo-fepem:hover {
+    background: url("@{path_images}/logos/logo-fepem-couleur.png") no-repeat center top;
+}
+.bloc-logo-ircem {
+    background: url("@{path_images}/logos/logo-ircem-n&b.png") no-repeat center top;
+}
+.bloc-logo-ircem:hover {
+    background: url("@{path_images}/logos/logo-ircem-couleur.png") no-repeat center top;
+}
+.bloc-logo-iperia {
+    background: url("@{path_images}/logos/logo-iperia-n&b.png") no-repeat center top;
+}
+.bloc-logo-iperia:hover {
+    background: url("@{path_images}/logos/logo-iperia-couleur.png") no-repeat center top;
+}
+.bloc-logo-fedmand {
+    background: url("@{path_images}/logos/logo-federation-mandataires-n&b.png") no-repeat center top;
+}
+.bloc-logo-fedmand:hover {
+    background: url("@{path_images}/logos/logo-federation-mandataires-couleur.png") no-repeat center top;
+}
+.bloc-logo-poleemp {
+    background: url("@{path_images}/logos/logo-pole-emploi-n&b.png") no-repeat center top;
+}
+.bloc-logo-poleemp:hover {
+    background: url("@{path_images}/logos/logo-pole-emploi-couleur.png") no-repeat center top;
+}
+.bloc-logo-netpar {
+    background: url("@{path_images}/logos/logo-net-particulier-n&b.png") no-repeat center top;
+}
+.bloc-logo-netpar:hover {
+    background: url("@{path_images}/logos/logo-net-particulier-couleur.png") no-repeat center top;
+}
+
+/******* @subsection footer *****/
+.sub-footer {
+    //font-size: 1.25em; //20px;
+    font-size: 0.875em;
+    text-align: center;
+    padding: 25px 0;
+}
+.sub-footer a, .sub-footer span {
+    display: inline-block;
+    color: #8693a3;
+}
+.sub-footer a.inside::before, .sub-footer span.inside::before {
+    content: '\2022';
+    padding: 0 5px;
+   
+}
+//widget du footer
+.top-footer {
+    padding-bottom : 50px;
+}
+.top-footer > p {
+    padding-left: 2%;
+    font-size: 0.875em; //14 px
+    color: rgba(255,255,255,0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.widget-footer-container {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+.widget-footer-container-first {
+    padding-left: 2%;
+}
+.widget-footer-container-middle {
+    padding: 0 2%;
+}
+.widget-footer-container-last {
+    padding-right: 2%;
+}
+.bottom-footer .widget-footer-container-first {
+    width: 38%;
+    padding-left: 2%;
+}
+.bottom-footer .widget-footer-container-middle {
+    width: 30%;
+    padding: 0 4%;
+}
+.bottom-footer .widget-footer-container-last {
+    width: 18%;
+    padding-right: 2%;
+}
+.widget-footer-container .menu {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    font-size: 0.875em; //14px;
+}
+.widget-footer-container .menu a {
+    color:  @footer-text-color;
+    font-size: 1em; //14px;
+}
+.footer-title {
+    margin-top: 25px;
+    font-size: 0.875em; //.12px
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.footer-title-separator {
+    margin: 15px 0;
+    width: 10%;
+    height: 5px;
+    border-bottom: solid 2px @footer-separator-color;
+}
+.bottom-footer {
+    padding-top: 25px;
+    border-top: solid 1px @footer-separator-color;
+}
+.social-links img {
+    margin-right: 10px;
+}

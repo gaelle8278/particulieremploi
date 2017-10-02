@@ -1,0 +1,709 @@
+/** --- = @section RESPONSIVE --- */
+
+@media only screen and (max-width: 1280px) {
+    .container {
+        width: 100%;
+        
+    }
+}
+@media only screen and (max-width: 980px) {
+    
+    //layout
+    .content-central-column {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .bloc-recherche-wrap {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    //menu
+    nav.main-menu .main-dropdown {
+        position: relative;
+    }
+    nav.main-menu .main-dropdown > li > .sub-menu {
+        position: static;
+    }
+    /* When the screen is less than 980 pixels wide, 
+    hide all list items and show the list item that contains
+    the link to open and close the main menu  (li.menu-res-icon) */
+    nav.main-menu .main-dropdown > li {
+        position: relative;
+        display: none;
+    }
+    nav.main-menu .menu-res-title {
+        display: inline-block;
+    }
+    nav.main-menu .main-dropdown li.menu-res-icon {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0; 
+        padding: 0 10px;
+        width: 40px;
+    }
+    /* The "responsive" class is added to the main menu with jQuery 
+    when the user clicks on the icon. This class makes the main menu 
+    look good on small screens */
+    nav.main-menu .responsive > li {
+        display: inline-block;
+        float: none;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        line-height:normal;
+        text-align: left;
+    }
+    nav.main-menu .responsive > li li {
+        height: auto;
+        line-height:normal;
+    }
+    nav.main-menu .responsive a {
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+    //affichage des sous-menus
+    nav.main-menu .main-dropdown > .sub >  a.current {
+        color: #fff;
+        background-color: @main-color;
+    } 
+    nav.main-menu .main-dropdown > .sub > .sub-menu.current {
+        display:block;
+    }
+    
+}
+@media only screen and (max-width: 960px) {
+    * {
+        box-sizing: border-box;
+    }
+    //popup connexion 
+    .page-column-demi {
+        display: block;
+        width: 100%;
+    }
+    //menu utilisateur connecté 
+    // hover ne fonctionne pas sur iphone : 
+    // suppression de ce sous-menu pour tous les apparails en-dessous de 960px
+    .user-menu-section ul li:hover ul {
+        display: none;
+    }
+    // form search hp 
+    .bloc-recherche {
+        height: 750px;
+    }
+    .bloc-recherche h1 {
+        width: 85%;
+    }
+    .bloc-recherche .field-metier,
+    .bloc-recherche .field-cp,
+    .bloc-recherche .field-distance {
+        display: block;
+        margin-top: 25px;
+    }
+    .bloc-recherche .field-metier,
+    .bloc-recherche .field-cp,
+    .bloc-recherche .field-distance {
+         width: 60%;
+    }
+    .bloc-recherche input[type="submit"] {
+        margin-top: 25px;
+    }
+    //hp list articles
+        //highlighted post
+    .highlighted-post {
+        margin: 0 auto;
+        width: 60%;
+        height: auto;
+    }
+    .highlighted-post-img, .highlighted-post-content {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+        //other post
+    .home-post.right-gutter {
+        margin-right: auto;
+    }
+    .home-post {
+        width: 50%;
+        height: auto;
+        background-color: transparent;
+    }
+    .home-post-img, .home-post-content {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        height: auto;
+    }
+    .home-post-img img {
+        padding-right: 0;
+        max-width: 100%;
+    }
+    .home-post-content {
+        height: 200px;
+        background-color: #fff;
+    }
+    //page article
+    .category_menu {
+        height: auto;
+    }
+    .article-date {
+        width: 50%;
+    }
+    .large-article .bloc-article-content, 
+    .large-article .bloc-article-img {
+        width: auto;
+        height: auto;
+    }
+    .bloc-article-img img {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        padding-right: 0;
+    }
+    .bloc-article:hover {
+        color: white;
+        background-color: #EE7F01;
+        border-color: #EE7F01;
+    }
+    .bloc-article:hover div {
+        color: #fff;
+    }
+    //espace pe
+    .compte-hp .bloc-cell-espacepe {
+        padding-bottom : 150px;
+    }
+    .bloc-cell-buttons a {
+        display: block;
+        margin: 10px auto;
+        height: auto;
+        line-height: auto;
+    }
+        //menu
+    .menu-espacepe ul {
+        height: 50px;
+    }
+    .menu-espacepe ul > .menu-item {
+        display: none;
+    }
+    .menu-espacepe .menu-res-title {
+        display: inline-block;
+        width: 100%;
+    }
+    .menu-espacepe .menu-res-icon {
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 15px; 
+        padding: 0 10px;
+        width: auto;
+    }
+    .menu-espacepe .responsive {
+        height: auto;
+    }
+    .menu-espacepe .responsive > .menu-item {
+        display: inline-block;
+        float: none;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        line-height:normal;
+        text-align: left;
+    }  
+    .menu-espacepe .responsive a {
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+    .menu-espacepe .responsive .menu-item:hover, 
+    .menu-espacepe .responsive .active-item {
+        border-bottom: none;
+    }
+    
+    
+}
+
+@media only screen and (max-width: 880px) {
+    //inscritpion
+        //navigation
+    .nav-parcours {
+        padding-top: 15px;
+        height: auto;
+    }
+    .step-ins-line, .step-ins-numb {
+        display: none;
+    }
+    .label-step {
+        position: relative;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        padding: 0 10px;
+    }
+    .res-label-numb {
+        display: inline-block;
+    }
+        //formulaire
+    .inscription aside, .inscription section {
+        width: 100%;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 850px) {
+    //header
+    .logo-section {
+        width: 30%;
+    }
+    .buttons-section {
+        width: 70%;
+    }
+    //hp list articles
+    .home-post-img, .home-post-content {
+        width: 55%;
+    }
+    //page article
+    article, aside, .single section, 
+    .page section, .category section {
+        display: block;
+    }
+    article, .single section, 
+    .page section, .category section {
+        width: 100%;
+    }
+    article {
+        margin: 0 0 10px 0;
+    }
+    aside {
+        width: 60%;
+        margin: 10px auto;
+    }
+    //page list article 
+    .bloc-article {
+        display: block;
+        width: 100%;
+        margin: 15px auto;
+    }
+    .bloc-article.normal-article  {
+        float: none;
+    }
+    .normal-article.first-inside-article {
+        margin-right: auto;
+    }
+    .normal-article .bloc-article-img {
+        float: left;
+    }
+    .bloc-article.normal-article .bloc-article-content {
+        overflow: hidden;
+    }
+   
+    .large-article .bloc-article-content, 
+    .large-article .bloc-article-img,
+    .normal-article .bloc-article-content,
+    .normal-article .bloc-article-img,
+    .category .normal-article .bloc-article-content,
+    .category .normal-article .bloc-article-img,
+    .archive .normal-article .bloc-article-content,
+    .archive .normal-article .bloc-article-img
+    {
+        width: auto;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 800px) {
+    //popup
+    .custom-popup {
+        width: 80%;
+    }
+    // menus relation hp
+    .menu_relation > ul > li {
+        position: relative;
+        display: block;
+        width:100%;
+    }
+    .menu_relation .sub-menu {
+        width: 90%;
+        left: 5%;
+    }
+    .menu_relation .item:hover .sub-menu::before {
+        background-position: center top;
+    }
+    //relais hp {
+    .relais-infos {
+        height: auto;
+    }
+    .relais-card {
+        float: none;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    //page résultats recherche (voir aussi stacktable.css))
+    #results-data table .cell-contact a {
+        margin: 5px 0;
+    }
+    .bloc_no_annonce {
+        display: block;
+        width: 100%;
+    }
+        //détail annonce
+    #results-data table .cell-contact a.button_details {
+        display: none;
+    }
+    #results-data table .cell-contact .res_button_details {
+        display: block;
+    }
+    #results-data table .cell-contact .res-custom-popup {
+        margin-left: -100%;
+    }
+    //espace pe : messagerie 
+    .bloc-nav, .bloc-messagerie {
+        display: block;
+        width: 100%;
+    }
+
+}
+@media only screen and (max-width: 775px) {
+    //hp list article
+    .home-post-img, .home-post-content {
+        width: 60%;
+    }
+    
+}
+@media only screen and (max-width: 740px) {
+    // list article page
+    .bloc-article {
+        width: 40%;
+    }
+    .bloc-ensemble-article .bloc-article  .bloc-article-img {
+        float: none;
+    }
+    .large-article, .category .large-article {
+        height: auto;
+    }
+    .bloc-article-content-wrap {
+        padding: 1% 5% 30% 5%;
+    }
+    .large-article .bloc-article-content, 
+    .large-article .bloc-article-img, 
+    .normal-article .bloc-article-content, 
+    .normal-article .bloc-article-img {
+        display: block;
+    }
+    
+    
+}
+@media only screen and (max-width: 700px) {
+    //header
+    .header-section, .logo-section, .buttons-section {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .header-button {
+       text-align: center; 
+    }
+    //menu
+    .main-dropdown {
+        width:90%;
+    }
+    // form search hp 
+    .bloc-recherche {
+        height: 800px;
+    }
+    //footer 
+    .widget-footer-container-first,
+    .bottom-footer .widget-footer-container-first,
+    .widget-footer-container-middle,
+    .bottom-footer .widget-footer-container-middle {
+        width: 44%;
+    }
+    .widget-footer-container-last,
+    .bottom-footer .widget-footer-container-last {
+        padding: 0 2%;
+        width: 100%;
+    }
+    
+}
+/*@media only screen and (max-width: 670px) {
+    .home-post-img, .home-post-content {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 590px) {
+    .home-post-img, .home-post-content {
+        width: 80%;
+    }
+}*/
+@media only screen and (max-width: 680px) {
+    //hp list article
+    .home-post {
+        display: table;
+        margin: 10px auto;
+        width: 68%;
+        height: auto;
+    }
+    .home-post-img, .home-post-content {
+        display: table-cell;
+        vertical-align: top;
+        width: 50%;
+        height: 100%;
+    }
+    //logos part 
+    a.bloc-logo {
+        width: 30%;
+    }
+    //espace pe
+    .bloc-row-espacepe {
+        margin-bottom: 0;
+    }
+    .first-bloc-cell {
+        margin-right: auto;
+        float: none;
+    }
+    .bloc-cell-espacepe {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+        //bloc de recherche
+    .bloc-recherche-espacepe .bloc-search > div {
+        display: block;
+        margin: 15px;
+        width: 80%;
+    }
+        //détail annonce 
+    .bloc-buttons-espacepe .button_details {
+        display: none;
+    }
+    .bloc-buttons-espacepe .res_button_details {
+        display: inline-block;
+    }
+    //page détail relais
+    .zone-relais, .zone-pointrelais {
+        display: block;
+        width: 100%;
+        padding: 10px;
+            
+    }
+    
+}
+@media only screen and (max-width: 640px) {
+    //popup
+    .custom-popup {
+        width: 85%;
+    }
+    //page list article
+    .bloc-article {
+        width: 50%;
+    }
+    //forms 
+    .bloc-field-form .input-style {
+        width: 95%;
+    }
+    .bloc-field-inline,
+    .bloc-field-form .field-label-inline, 
+    .bloc-field-form .field-value-inline {
+        width: 100%;
+    }
+    .inscription-compte input[type="submit"] {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .bloc-field-form .field-value-readonly {
+        width: 90%;
+    }
+    // widget search 
+    .bloc-recherche-sidebar input[type="submit"] {
+        margin-top: 15px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    //hp list article
+    .home-post {
+        width: 80%;
+    }
+    //espace pe : messagerie
+    #envoyermsg .field-label-inline,
+    #envoyermsg .field-value-inline {
+         width: 100%;
+    }
+    #envoyermsg .field-label-inline {
+        text-align: left;
+        padding-left: 25px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    //hp list article
+    .highlighted-post {
+        width: 80%;
+    } 
+    //hp relais
+    .relais-content .relais-content-column {
+        display: block;
+        width: 95%;
+        margin-bottom: 15px;
+    }
+    //footer
+    .widget-footer-container-first, 
+    .bottom-footer .widget-footer-container-first, 
+    .widget-footer-container-middle, 
+    .bottom-footer .widget-footer-container-middle {
+        width: 100%;
+    }
+    .bottom-footer .widget-footer-container-middle {
+        padding: 0 2%;
+    }
+}
+@media only screen and (max-width: 520px) {
+    //header
+    .header-button {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+    }
+    //form hp
+    .bloc-recherche {
+        height: 750px;
+        background-size: auto;
+    }
+    .bloc-recherche h1 {
+        font-size: 1.75em;
+        width: 90%;
+    }
+    .bloc-recherche .field-metier,
+    .bloc-recherche .field-cp,
+    .bloc-recherche .field-distance {
+         width: 90%;
+    }
+    //page article 
+    aside {
+        width: 100%;
+    }
+    .article-toolbar {
+        height: auto;
+    }
+    .article-features, .article-social-links {
+        float: none;
+        clear: both;
+        width: 100%;
+        text-align: left;
+    }
+    //page list article
+    .bloc-article {
+        width: 62%;
+    }
+    //page cesu
+    .cesu-cell {
+        display: block;
+        width: 100%;
+    }
+    
+}
+@media only screen and (max-width: 480px) {
+    //hp list article 
+    .home-post {
+        display: block;
+        margin: 10px auto;
+        width: 49%;
+        height: auto;
+    }
+    .home-post-img, .home-post-content {
+        display: block;
+        width: 100%;
+    }
+    .home-post-content  {
+        min-height: 200px;
+    }
+    
+}
+@media only screen and (max-width: 430px) {
+    //menu
+    .main-dropdown {
+        width: 85%;
+    }
+    //menu search form
+    #custom-form div {
+        margin: 25px 5px;
+    }
+    //espace pe 
+    .bloc-header-title {
+        float: none;
+    }
+    .bloc-header-teaser {
+        height: auto;
+        line-height: auto;
+        text-align: left;
+    }
+        //messagerie
+    .bloc-content {
+        padding: 0;
+    }
+    .nav-messagerie {
+        padding-top : 70px;
+    }
+    .bloc-messagerie .messagerie-title a {
+        left: 10px;
+        top: 70px;
+        right: auto;
+    }
+    
+}
+@media only screen and (max-width: 380px) {
+    //header
+    .header-button {
+        width: 90%;
+    }
+    //menu search form
+    #custom-form .input-style {
+        padding: 10px 5px;
+    }
+    // logos part {
+    a.bloc-logo {
+        width: 50%;
+    }
+    //page list article
+    .bloc-article {
+        width: 80%;
+    }
+    //espace pe 
+        //bloc recherche
+    .bloc-recherche-espacepe .field-duree input {
+       display: block;
+       width: 80%;
+    }
+        //messgaerie
+    .bloc-msg .msg-date {
+        position: static;
+    }
+    
+}
+@media only screen and (max-width: 340px) {
+    .home-post {
+        width: 64%;
+    }
+}
+
+//according height
+@media only screen and (max-height: 800px) {
+    .popup-title {
+        margin-top: 10px;
+        font-size: 1.125em;
+    }
+}
+@media only screen and (max-height: 620px) {
+    //popup connexion 
+    .modal {
+        top: 40%;
+        width: 90%;
+    }
+    .content-list {
+        display: none;
+    }
+    .compte-buttons, .bloc-submit-form {
+        margin-top: 10px;
+    }
+    .bloc-submit-form {
+        padding-top: 10px;
+    }
+    .compte-buttons a {
+        width: auto;
+    }
+}

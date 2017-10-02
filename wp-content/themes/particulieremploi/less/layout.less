@@ -1,0 +1,132 @@
+/** --- = @section LAYOUT --- */
+// antialisaing http://ricostacruz.com/cheatsheets/css-antialias.html
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+}
+/***** conteneurs *****/
+.container {
+    position: relative;
+    width: @container-width;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+/* header */
+header {
+    //position: fixed;
+    position: relative;
+    //top: 0;
+    //left:0;
+    //right:0;
+    //margin: 0 auto;
+    //width: @container-width;
+    //height: 20em;
+    //z-index: 10; // pour que le header reste au-dessus de tout élement lors du scroll
+    background-color : #fff;
+   // -moz-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+   // -webkit-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+   // -o-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+   // box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+}
+// page avec un main de 100% coloré
+.colored-back-page .container, .colored-back-page header {
+    width: 100%;
+}
+.colored-back-page main {
+    background-color: rgb(246,249,250);
+}
+/******** contenus **********/
+// centrage du contenu
+.content-central-column {
+    margin: 0 auto;
+    width: @content-width;
+    box-sizing: border-box;
+}
+//blocs de contenu
+.site-branding, footer, main, 
+.bloc-magazine,  .bloc-recherche, .bloc-relations, .bloc-relais {
+    position: relative;
+    width: 100%;
+     box-sizing: border-box;
+}
+.site-branding {
+    padding-top: 10px;
+}
+.bloc-magazine, .bloc-relais {
+    background-color: rgb(246,249,250);
+    padding: 25px 0;
+}
+// main
+main {
+    //padding-top: 180px;
+}
+//footer
+.main-footer {
+    background-color: #438bbe;
+    padding: 50px 0;
+    color: @footer-text-color;
+}
+
+/*********** gabarits ********/
+//Page article, Page liste d'articles
+article, aside,  .page section, .category section {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+article {
+    width: 62%;
+    margin-right: 2%;
+    padding: 10px 2%;
+    background-color: #fff;
+    text-align: justify;
+}
+.article-more-content {
+    margin-top: 25px;
+}
+.page section, .category section {
+    width: 66%;
+    margin-right: 2%;
+}
+aside {
+    position: relative;
+    width: 32%;
+}
+.sidebar-widget-article {
+    margin-bottom : 25px;
+    padding-top: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.single section, .page section, .category section {
+    padding-bottom: 50px;
+}
+//pages full 100% (conteneur et section)
+.page-template-default .container,  
+.page-template-default header,
+.page-template-default section,
+.page-template-carte-relais .container,  
+.page-template-carte-relais header,
+.page-template-carte-relais section,
+.page-template-essentiels-offre .container,  
+.page-template-essentiels-offre header,
+.page-template-essentiels-offre section,
+.page-template-glossary.category  .container,  
+.page-template-glossary.category header,
+.page-template-glossary.category  section
+{
+    width:100%;
+    margin: 0 auto;
+}
+//colonne centrale de la page réseau
+.page-template-carte-relais section .content-central-column {
+    width:90%;
+    margin: 0 auto;
+}
+//page cesu n'ont pas de fil d'ariane => padding nécessaire
+.page-cesu main {
+    padding-top: 25px;
+}
+

@@ -1,0 +1,92 @@
+# ignore everything in the root except some directories.
+/*
+!contrats/
+!dashboard/
+!flux/
+!lib/
+!pe/
+!wp-content/
+
+# ignore all files starting with . or ~
+.*
+~*
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins" directory
+# "plugins" directory
+# "themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore all mu-plugins, plugins, and themes
+# unless explicitly whitelisted at the end of this file
+wp-content/mu-plugins/*
+wp-content/plugins/*
+wp-content/themes/*
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!README.md
+!CHANGELOG.md
+!composer.json
+
+# track favicon files, if they exist
+!android-chrome-*.png
+!apple-touch-icon*.png
+!browserconfig.xml
+!favicon*.png
+!favicon*.ico
+!manifest.json
+!mstile-*.png
+!safari-pinned-tab.svg
+
+# track these mu-plugins, plugins, and themes
+!wp-content/plugins/pe-breadcrumb/
+!wp-content/plugins/pe-cesu/
+!wp-content/plugins/pe-offres/
+!wp-content/plugins/pe-partenaire/
+!wp-content/plugins/pe-recherche/
+!wp-content/plugins/pe-relais/
+!wp-content/plugins/pe-voletcesu/
+!wp-content/themes/particulieremploi/
+
+

@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 30 janv. 2017, 13:36:50
+    Author     : gaelle
+*/
+.bo-widget-field input,
+.bo-widget-field textarea {
+    width: 90%;
+}
+.bo-widget-field select {
+    width: 70%;
+}
+.bo-widget-field label {
+    vertical-align: middle;
+}
