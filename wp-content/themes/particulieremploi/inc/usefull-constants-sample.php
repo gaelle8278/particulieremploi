@@ -12,7 +12,7 @@
 /**
  * Identifiant de la catégorie "article régional"
  */
-define ( 'IDCATREGIONAL', 12 );
+define ( 'IDCATREGIONAL', '##' );
 /**
  * Slug de la catégorie "article régional"
  */
@@ -20,7 +20,7 @@ define ('SLUGCATREG', 'article-regional');
 /**
  * Identifiant de la catégorie "article national"
  */
-define ( 'IDCATNATIONAL', 11 );
+define ( 'IDCATNATIONAL', '##' );
 /**
  * Slug de la catégorie "Jsuis particulier employeur"
  */
@@ -46,33 +46,33 @@ define ( 'IDTAXOPOINTRELAIS', 'point-relais');
  * Nombre d'article par page pour les pages
  * liste d'article personalisées
  */
-define ( 'POSTPERPAGE', 9);
+define ( 'POSTPERPAGE', '##');
 
 
 /**
  * Identifiant de page utilisées dans le thème
  */
-define ( 'ID_PAGEESSENTIEL', 175 );
-define ( 'ID_PAGEADHESIONFEPEM', 177 );
-define ( 'IDPAGERESEAU', 78 );
-define ( 'ID_PAGECESU' , 80);
-define ( 'ID_PAGE_VOLETCESU', 260);
-define ( 'ID_PAGE_CGU_PE', 287);
-define ( 'ID_PAGE_CGU_FEPEM', 293);
-define ( 'ID_PAGE_MENTIONS', 295);
-define ( 'ID_PAGE_OFFREGARDE' , 300);
-define ( 'ID_PAGE_OFFREEMPLOYE' , 301);
-define ( 'ID_PAGE_OFFREASSISTANT' , 302);
-define ( 'ID_PAGE_OFFRE_CONTRAT' , 332);
-define ( 'ID_PAGE_OFFRE_REMUNERATION' , 334);
-define ( 'ID_PAGE_OFFRE_RELATION' , 336);
-define ( 'ID_PAGE_OFFRE_SEPARATION' , 338);
+define ( 'ID_PAGEESSENTIEL', '##');
+define ( 'ID_PAGEADHESIONFEPEM', '##' );
+define ( 'IDPAGERESEAU', '##' );
+define ( 'ID_PAGECESU' , '##');
+define ( 'ID_PAGE_VOLETCESU', '##');
+define ( 'ID_PAGE_CGU_PE', '##');
+define ( 'ID_PAGE_CGU_FEPEM', '##');
+define ( 'ID_PAGE_MENTIONS', '##');
+define ( 'ID_PAGE_OFFREGARDE' , '##');
+define ( 'ID_PAGE_OFFREEMPLOYE' , '##');
+define ( 'ID_PAGE_OFFREASSISTANT' , '##');
+define ( 'ID_PAGE_OFFRE_CONTRAT' , '##');
+define ( 'ID_PAGE_OFFRE_REMUNERATION' , '##');
+define ( 'ID_PAGE_OFFRE_RELATION' , '##');
+define ( 'ID_PAGE_OFFRE_SEPARATION' , '##');
 //define ( 'ID_PAGE_MAINTENANCE' , 340);
 
 /**
  * Identifiant de média utilisés dans le thème
  */
-define ( 'ID_MEDIA_CARTEFR', 329);
+define ( 'ID_MEDIA_CARTEFR', '##');
 
 /**
  * catégories du glossaire
