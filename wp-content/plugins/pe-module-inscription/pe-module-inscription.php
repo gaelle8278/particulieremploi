@@ -1,24 +1,71 @@
 <?php
 /**
- * Plugin Name:       ParticulierEmploi  Member
- * Description:       Plugin pour gérer les roles nécessaires à la gestion de particulieremploi
+ * Plugin Name:       ParticulierEmploi  Module Inscription
+ * Description:       Plugin pour gérer les inscriptions simpliées à Particulier Emploi
  * Version:           1.0.0
  * Author:            Gaëlle Rauffet
  */
 
-class PE_Member_Plugin {
+class PE_Module_Inscription_Plugin {
+
+    /**
+    * The array of templates that this plugin tracks.
+    */
+    protected $templates;
+
     public function __construct() {
+        //gestion des pages templates
+        /////////////////////////////////////////
+        $this->templates = array();
+
+        // Add a filter to the attributes metabox to inject template into the cache.
+	if ( version_compare( floatval( get_bloginfo( 'version' ) ), '4.7', '<' ) ) {
+            // 4.6 and older
+            add_filter(
+		'page_attributes_dropdown_pages_args',
+		array( $this, 'register_project_templates' )
+            );
+
+	} else {
+            // Add a filter to the wp 4.7 version attributes metabox
+            add_filter(
+		'theme_page_templates', array( $this, 'add_new_template' )
+            );
+
+	}
+        // Add a filter to the save post to inject out template into the page cache
+	add_filter(
+		'wp_insert_post_data',
+		array( $this, 'register_project_templates' )
+	);
+
+	// Add a filter to the template include to determine if the page has our
+	// template assigned and return it's path
+	add_filter(
+		'template_include',
+		array( $this, 'view_project_template')
+	);
+
+	// Add your templates to this array.
+	$this->templates = array(
+		'module-inscription-etapes.php' => 'Module inscription - Etapes',
+                'module-inscription-accueil.php' => 'Module inscription - Accueil',
+                'module-inscription-non-accessible.php' => 'Module inscription - Page non accessible'
+	);
+        /////////////////////////////////////////////////////////////////////////////
 
         // cache l'admin bar si l'utilisateur est un chargé d'information
         add_action('init',array( $this, 'disable_admin_bar' ) );
-        //empeche l'accès au BO aux chargés d'information
+        // empeche l'accès au BO aux chargés d'information
         add_action('admin_init', array( $this, 'restrict_access_administration'));
 
         // shortcode pour afficher formulaire de connexion
         add_shortcode( 'pe-login-form', array( $this, 'render_login_form' ) );
 
         //redirection vers la page de login perso lorsque la page de login par défaut est appelée
-        add_action( 'login_form_login', array( $this, 'redirect_to_custom_login' ) );
+        //add_action( 'login_form_login', array( $this, 'redirect_to_custom_login' ) );
+        //redirections notamment si accès page connexion et connecté
+        add_action( 'template_redirect', array( $this,'pemi_template_redirect') );
         //interception du processus d'authentifcation pour rediriger vers la page de login perso si erreurs :
         // priorité haute (101) pour que la fonction soit appelée à la fin de la chaine de filtre et qu'elle récolte les erreurs éventuelles
         add_filter( 'authenticate', array( $this, 'maybe_redirect_at_authenticate' ), 101, 3 );
@@ -27,6 +74,13 @@ class PE_Member_Plugin {
         //redirection après connexion réussie
         add_filter( 'login_redirect', array( $this, 'redirect_after_login' ), 10, 3 );
 
+        // ajout du css du plugin
+        add_action( 'wp_enqueue_scripts', array( $this, 'pemi_enqueue_style' ) );
+        //récupératation paramètre get
+        add_filter( 'query_vars', array( $this, 'pemi_add_custom_query_var') );
+
+
+
     }
 
     /**
@@ -34,6 +88,7 @@ class PE_Member_Plugin {
     */
     public static function plugin_activated() {
         //ajout du role pour les chargés d'informations
+        ////////////////////////////////////////////////////
         add_role( 'pe-officer', "Chargé d'informations",
             array(
                 'read' => true,
@@ -42,14 +97,16 @@ class PE_Member_Plugin {
                 'edit_others_posts' => false,
                 'create_posts' => false,
                 'manage_categories' => false,
-                'publish_posts' => false
+                'publish_posts' => false,
+                'access_module' => true
             ));
 
         //création des pages nécessaires
+        ///////////////////////////////////
         $page_definitions = array(
             'connexion' => array(
                 'title' => "Connexion",
-                'content' => "<p class=\"section-title\">Se connecter à mon compte</p>"
+                'content' => "<p class=\"section-title\">Se connecter</p>"
                             ."<div class=\"title-separator\"></div>"
                             . "Pour vous connecter au module d'inscription, nous vous remercions de renseigner vos identifiants"
                             . "<br /> "
@@ -59,7 +116,17 @@ class PE_Member_Plugin {
             'accueil-module-inscription' => array(
                 'title' => "Accueil module d'inscription",
                 'content' => "",
-                'template' => plugin_dir_url( __FILE__ )."page-templates/module-inscription.php"
+                'template' => "module-inscription-accueil.php"
+            ),
+            'inscription-module-inscription' => array(
+                'title' => "Inscription module d'inscription",
+                'content' => "",
+                'template' => "module-inscription-etapes.php"
+            ),
+            'page-non-accessible' => array(
+                'title' => "Page du module d'inscription non accessible",
+                'content' => "<p>Page non accessible.</p><p><a href='".home_url('accueil-module-inscription')."' >Accueil du module d'inscription</a></p>",
+                'template' => "module-inscription-non-accessible.php"
             )
         );
         foreach ( $page_definitions as $slug => $page ) {
@@ -79,7 +146,7 @@ class PE_Member_Plugin {
                     )
                 );
                 if(!empty($page['template'])) {
-                    update_post_meta($page_id, "_wp_page_template", "page-templates/module-inscription.php");
+                    update_post_meta($page_id, "_wp_page_template", $page['template']);
                 }
             }
         }
@@ -88,9 +155,88 @@ class PE_Member_Plugin {
     /**
      * Plugin deactivation hook
      */
-     public static function plugin_deactivated() {
+    public static function plugin_deactivated() {
          //suppression du role chargé d'informations
         remove_role( 'pe-officer' );
+    }
+
+    /**
+     *  Adds our template to the page dropdown for v4.7+
+     *
+     */
+    public function add_new_template( $posts_templates ) {
+	$posts_templates = array_merge( $posts_templates, $this->templates );
+	return $posts_templates;
+    }
+
+    /**
+    * Adds our template to the pages cache in order to trick WordPress
+    * into thinking the template file exists where it doens't really exist.
+    */
+    public function register_project_templates( $atts ) {
+
+	// Create the key used for the themes cache
+	$cache_key = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
+
+	// Retrieve the cache list.
+	// If it doesn't exist, or it's empty prepare an array
+	$templates = wp_get_theme()->get_page_templates();
+	if ( empty( $templates ) ) {
+		$templates = array();
+	}
+
+	// New cache, therefore remove the old one
+	wp_cache_delete( $cache_key , 'themes');
+
+	// Now add our template to the list of templates by merging our templates
+	// with the existing templates array from the cache.
+	$templates = array_merge( $templates, $this->templates );
+
+	// Add the modified cache to allow WordPress to pick it up for listing
+	// available templates
+	wp_cache_add( $cache_key, $templates, 'themes', 1800 );
+
+	return $atts;
+
+    }
+
+    /**
+    * Checks if the template is assigned to the page
+    */
+    public function view_project_template( $template ) {
+        // Return the search template if we're searching (instead of the template for the first result)
+	if ( is_search() ) {
+            return $template;
+	}
+	// Get global post
+	global $post;
+
+	// Return template if post is empty
+	if ( ! $post ) {
+		return $template;
+	}
+
+	// Return default template if we don't have a custom one defined
+	if ( !isset( $this->templates[get_post_meta(
+		$post->ID, '_wp_page_template', true
+	)] ) ) {
+		return $template;
+	}
+
+	$file = plugin_dir_path(__FILE__). 'page-templates/' . get_post_meta(
+		$post->ID, '_wp_page_template', true
+	);
+
+	// Just to be safe, we check if the file exist first
+	if ( file_exists( $file ) ) {
+		return $file;
+	} else {
+		echo $file;
+	}
+
+	// Return template
+	return $template;
+
     }
 
     /**
@@ -123,7 +269,7 @@ class PE_Member_Plugin {
             exit;
         }
     }
-
+   
     /**
     * Hook to redirect the user to the custom login when default wp-login.php is called.
     */
@@ -139,14 +285,16 @@ class PE_Member_Plugin {
             }
 
             // The rest are redirected to the login page
-            $login_url = home_url( 'connexion' );
-            
-            if ( ! empty( $redirect_to ) ) {
-                $login_url = add_query_arg( 'redirect_to', $redirect_to, $login_url );
-            }
+            if($redirect_to!=site_url('/wp-admin/')) {
+                $login_url = home_url( 'connexion' );
 
-            wp_redirect( $login_url );
-            exit;
+                if ( ! empty( $redirect_to ) ) {
+                    $login_url = add_query_arg( 'redirect_to', $redirect_to, $login_url );
+                }
+
+                wp_redirect( $login_url );
+                exit;
+            }
         }
     }
 
@@ -244,7 +392,7 @@ class PE_Member_Plugin {
     * @return string Redirect URL
     */
     public function redirect_after_login( $redirect_to, $requested_redirect_to, $user ) {
-        $redirect_url = home_url('connexion');
+        $redirect_url = admin_url();
 
         if ( ! isset( $user->ID ) ) {
             return $redirect_url;
@@ -264,6 +412,14 @@ class PE_Member_Plugin {
         }
 
         return wp_validate_redirect( $redirect_url, home_url() );
+    }
+
+    function pemi_template_redirect() {
+        if( is_page( 'connexion' ) && is_user_logged_in() ) {
+            $redirect_to = isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : null;
+            $this->redirect_logged_in_user( $redirect_to );
+            exit;
+        }
     }
 
     /**
@@ -348,12 +504,87 @@ class PE_Member_Plugin {
             }
         }
     }
+    /**
+     * To add custom css of plugin
+     */
+    public function pemi_enqueue_style() {
+        wp_enqueue_style( 'pemicss', plugins_url('/css/plugin.css', __FILE__) );
+        //wp_enqueue_script( 'pemijs', plugins_url('/js/plugin.js', __FILE__), array( 'jquery' ) );
+    }
+
+    /**
+     * To get custom get parameter
+     */
+    public function pemi_add_custom_query_var($vars) {
+        $vars[]="type";
+        $vars[]="registration";
+        $vars[]="registration_email";
+
+        return $vars;
+
+    }
 
 }
 
-new PE_Member_Plugin();
+/**
+ * Function to check if user can access to module inscription
+ *
+ * @return boolean
+ */
+function check_access_to_module_inscription() {
+    $access=false;
+    if( current_user_can('access_module') ) {
+        $access=true;
+    }
+  
+
+  return $access;
+}
+
+/**
+ * Function that send email after inscription
+ */
+function send_email_inscription($to,$pwd,$type_compte,$token) {
+    $send=false;
+
+    $headers = ['From: Particulieremploi.fr <contact@particulieremploi.fr>'];
+    $subject="Particulier Emploi - création d'un compte";
+    $message = get_email_inscritpion_content($to,$pwd,$type_compte,$token);
+    
+    if(!empty($message) && !empty($to)) {
+        add_filter( 'wp_mail_content_type', 'pemi_email_content_type' );
+        $send=wp_mail($to,$subject,$message,$headers);
+        remove_filter( 'wp_mail_content_type', 'pemi_email_content_type' );
+    }
+
+    return $send;
+}
+/**
+* Funtion to get email content of the email sent after inscription
+*/
+function get_email_inscritpion_content($to,$pwd,$type_compte,$token) {
+    $email="";
+
+    $linkActivation= home_url("/pe/inscription/activation.php?login=".$to."&token=".$token);
+    ob_start();
+    require(__DIR__ ."/templates/email_activation_with_cgu.php");
+    $email = ob_get_contents();
+    ob_end_clean();
+
+    return $email;
+}
+/**
+ * To allow html emails
+ *
+ * @return string
+ */
+function pemi_email_content_type() {
+    return 'text/html';
+}
+
+new PE_Module_Inscription_Plugin();
 //gestion des données l'activation/désactivation du plugin
-register_activation_hook( __FILE__, array( 'PE_Member_Plugin', 'plugin_activated' ) );
-register_deactivation_hook( __FILE__, array( 'PE_Member_Plugin', 'plugin_deactivated' ) );
+register_activation_hook( __FILE__, array( 'PE_Module_Inscription_Plugin', 'plugin_activated' ) );
+register_deactivation_hook( __FILE__, array( 'PE_Module_Inscription_Plugin', 'plugin_deactivated' ) );
 
 

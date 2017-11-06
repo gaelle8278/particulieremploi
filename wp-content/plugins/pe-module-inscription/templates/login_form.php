@@ -30,7 +30,7 @@
     <div class="login-form-container">
         <form method="post" action="<?php echo wp_login_url(); ?>">
             <div class="bloc-field-form">
-                <label for="user_login">Votre e-mail </label>
+                <label class="field-label" for="user_login">Votre identifiant</label>
                 <div  class="field-label"class="field-value">
                     <input type="text" name="log" id="user_login" class="input-style">
                 </div>
