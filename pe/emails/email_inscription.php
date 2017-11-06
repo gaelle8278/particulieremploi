@@ -68,7 +68,7 @@ $content .= '</strong>
                         <font face="Verdana, sans-serif" color="#000000">
                         Vous trouverez ci-apr&egrave;s vos codes d\'acc&egrave;s pour vous connecter &agrave; votre compte et b&eacute;n&eacute;ficier de nos services de mise en relation.
                             <br/><br/><strong>Adresse e-mail : </strong>'.$email.'<br/>
-                        <strong>Mot de passe</strong> : seul vous le connaissez<br/><br/>
+                        <strong>Mot de passe</strong> : renseigné lors de l\'inscription<br/><br/>
                         </font>
                     </td>
                     <td width="30"></td>
@@ -83,7 +83,7 @@ $content .= '</strong>
             <table width="700" align="center" cellpadding="0" cellspacing="0" border="0">
             	<tr>
                 	<td width="700" valign="top" style="padding:0px;font-size:14px;font-family:Verdana, sans-serif;font-weight:bold;" align="center" bgcolor="#FFFFFF">
-                        <a href="http://'.$_SERVER['SERVER_NAME'].'/pe/espace-pe/connexion.php" target="_blank">Acc&eacute;der &agrave; mon compte</a></td>
+                        <a href="https://'.$_SERVER['SERVER_NAME'].'/pe/espace-pe/connexion.php" target="_blank">Acc&eacute;der &agrave; mon compte</a></td>
               </tr>
             </table>
             <table width="700" align="center" cellpadding="0" cellspacing="0" border="0">
@@ -98,7 +98,7 @@ $content .= '</strong>
                     <td width="640" valign="top" style="padding:0px; font-size:14px;" align="left" bgcolor="#FFFFFF">
                     <font face="Verdana, sans-serif" color="#000000">
                     Nous vous remercions de la confiance que vous nous accordez.<br>
-                    &Agrave; bient&ocirc;t sur <strong><a href="http://www.particulieremploi.fr" target="_blank" style="text-decoration:none;">
+                    &Agrave; bient&ocirc;t sur <strong><a href="https://www.particulieremploi.fr" target="_blank" style="text-decoration:none;">
                         <font color="#000000">www.particulieremploi.fr</font></a></strong><br><br>
                     L\'&eacute;quipe Particulier Emploi
                     </font></td>

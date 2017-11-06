@@ -152,7 +152,7 @@ if (isset($_POST['recap'])) {
                 'annonce_agenfants3' => $_SESSION['annonce']['annonce_agenfants3'],
                 'annonce_agenfants4' => $_SESSION['annonce']['annonce_agenfants4'],
                 'annonce_agenfants5' => $_SESSION['annonce']['annonce_agenfants5'],
-                'annonce_agenfants6' => $_SESSION['annonce']['annonce_agenfants'],
+                'annonce_agenfants6' => $_SESSION['annonce']['annonce_agenfants6'],
                 'annonce_nomprenom' => $_SESSION['inscription']['nom']." ".$_SESSION['inscription']['prenom'],
                 'annonce_diffusionpe' => $poleemploi
             );

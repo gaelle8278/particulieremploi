@@ -52,8 +52,8 @@ $content = '
                             $content .= '</span> a bien été prise en compte.<br>
                             <br>
                             Pour confirmer votre inscription, veuillez activer votre compte en cliquant sur le lien ci-après : <br>
-                            <a href="http://'.$_SERVER['SERVER_NAME'].$linkActivation.'">
-                                http://'.$_SERVER['SERVER_NAME'].$linkActivation.'
+                            <a href="https://'.$_SERVER['SERVER_NAME'].$linkActivation.'">
+                                https://'.$_SERVER['SERVER_NAME'].$linkActivation.'
                             </a><br>
                             <br>
                             L\'activation de votre compte vous donne un accès complet à votre espace de mise en relation.<br>

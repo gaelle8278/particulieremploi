@@ -1523,7 +1523,6 @@ aside {
 .header-section {
   position: relative;
   display: inline-block;
-  margin-bottom: 20px;
   box-sizing: border-box;
   vertical-align: middle;
   /*white-space: nowrap;
@@ -2951,6 +2950,7 @@ input[type="checkbox"]:checked + label:before {
   border-radius: 5px;
   background-color: #495765;
 }
+
 /************** message d'erreur ****/
 .field-required {
   color: #EE7F01;

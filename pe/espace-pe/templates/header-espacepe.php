@@ -48,7 +48,7 @@
                     <div class="content-central-column">
                         <div class="header-section logo-section">
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <img src="<?php echo get_template_directory_uri() ?>/images/logo.png" alt="logo de particulier emploi"/>
+                                <img src="<?php echo get_template_directory_uri() ?>/images/logo-new-pe.png" alt="logo de particulier emploi"/>
                             </a>
                         </div><!-- @whitespace
                         --><div class="header-section header-section-espacepe">
@@ -62,15 +62,9 @@
                         </div>
                     </div>
                     <div class="banner">
-                        <!--<a href="http://participons.emploietdomicile.org/?utm_source=pe&utm_medium=banner&utm_campaign=ban_site" target="_blank">
-                            <?php
-                            /*$img="FOED_Banniere_employeur.gif";
-                            if ($_SESSION['utilisateur_groupe'] == "SAL") {
-                                $img="FOED_Banniere_salarie.gif";
-                            }*/
-                            ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/banners/Banniere_Promo_Pe.fr_728x90.png" border="0" />
-                        </a>-->
+                        <a href="http://bit.ly/VideoPetiteEnfance" target="_blank">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/banners/Bannière-Particulieremploi.fr-TPEP-970x90.gif" border="0" />
+                        </a>
                     </div>
                     
                     <?php

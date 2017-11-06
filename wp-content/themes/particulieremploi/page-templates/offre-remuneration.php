@@ -237,7 +237,7 @@ get_header('without-nav');
                             <span class="text-bold">Je préfère souscrire par voie postale</span>
                             <p>
                                 Je télécharge <a class="content-link" 
-                                href="http://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
+                                href="https://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
                                                  target="_blank">le bulletin pour souscrire aux formules d’accompagnement juridique</a> 
                                 et le renvoie complété, accompagné d'un règlement par chèque du montant
                                 indiqué : à FEPEM, 79 rue de Monceau, 75008 Paris

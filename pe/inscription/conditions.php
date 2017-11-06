@@ -322,7 +322,7 @@ if(isset($_POST['emploi'])) {
             $_SESSION['annonce']['annonce_agenfants3'] = $params['agenfants3'];
             $_SESSION['annonce']['annonce_agenfants4'] = $params['agenfants4'];
             $_SESSION['annonce']['annonce_agenfants5'] = $params['agenfants5'];
-            $_SESSION['annonce']['annonce_agenfants6'] = $params['agenfants'];
+            $_SESSION['annonce']['annonce_agenfants6'] = $params['agenfants6'];
 
             $urlRedirect = "/pe/inscription/recapitulation.php";
             header("Location: " . $urlRedirect);

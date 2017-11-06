@@ -55,7 +55,7 @@
                     <div class="content-central-column">
                         <div class="header-section logo-section">
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <img src="<?php echo get_template_directory_uri() ?>/images/logo.png" alt="logo de particulier emploi"/>
+                                <img src="<?php echo get_template_directory_uri() ?>/images/logo-new-pe.png" alt="logo de particulier emploi"/>
                             </a>
                         </div><!-- @whitespace
                         --><div class="header-section buttons-section">

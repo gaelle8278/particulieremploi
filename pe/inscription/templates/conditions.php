@@ -140,7 +140,8 @@ else if(!isset($_SESSION['utilisateur_id'])) {
                             <span class="text-bold">Métier choisi : </span>
                             <span class='text-upper text-bold color_cat_<?php echo $metierCatId; ?>'>
                                 <?php echo $libelleMetier; ?>
-                            </span></p>
+                            </span>
+                        </p>
                         <p>
                             <span class="text-bold">Emploi(s)-repère(s) : </span><span class='color_cat_<?php echo $metierCatId; ?>'>
                             <?php 
@@ -1149,7 +1150,7 @@ else if(!isset($_SESSION['utilisateur_id'])) {
 
 <?php $key = getKey();?>
 
-<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=<?php echo $key;?>" type="text/javascript"></script>
+<script src="https://maps.google.com/maps?file=api&amp;v=2.x&amp;key=<?php echo $key;?>" type="text/javascript"></script>
 
 <script>
     //pour la vérification du taux horaire
@@ -1175,7 +1176,7 @@ else if(!isset($_SESSION['utilisateur_id'])) {
         }
     }
     
-    //pour la validation de l'adresse
+    //fonction appelée lors de la sélection d'une adresse
     function selectAdresse() {
         jQuery("#conditions-submit").show();
         jQuery("#valider").hide();

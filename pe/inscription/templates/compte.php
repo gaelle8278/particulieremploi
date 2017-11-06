@@ -11,7 +11,7 @@
 <div class="content-central-column">
     <?php
     $step_active="compte";
-     include_once('parcours-navigation.php');
+    include_once('parcours-navigation.php');
     ?>
     <section>
         <div class="bloc-content">

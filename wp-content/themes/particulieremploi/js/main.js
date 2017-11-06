@@ -48,10 +48,10 @@ jQuery(document).ready( function($) {
 	prevText: "Précédent",
 	nextText: "Suivant",
 	currentText: "Aujourd'hui",
-	monthNames: [ "janvier", "fÃ©vrier", "mars", "avril", "mai", "juin",
-		"juillet", "aoÃ»t", "septembre", "octobre", "novembre", "dÃ©cembre" ],
-	monthNamesShort: [ "janv.", "fÃ©vr.", "mars", "avr.", "mai", "juin",
-		"juil.", "aoÃ»t", "sept.", "oct.", "nov.", "dÃ©c." ],
+	monthNames: [ "janvier", "février", "mars", "avril", "mai", "juin",
+		"juillet", "août", "septembre", "octobre", "novembre", "décembre" ],
+	monthNamesShort: [ "janv.", "févr.", "mars", "avr.", "mai", "juin",
+		"juil.", "août", "sept.", "oct.", "nov.", "déc." ],
 	dayNames: [ "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi" ],
 	dayNamesShort: [ "dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam." ],
 	dayNamesMin: [ "D","L","M","M","J","V","S" ],
@@ -397,7 +397,7 @@ jQuery(document).ready( function($) {
     $(".submit_button_ins").click(function(event) {
         event.preventDefault();
 
-        //renseignement du bouton du formulaire qui a été
+        //renseignement du bouton du formulaire qui a été cliqué
         $('#form-inscription #form-button').val($(this).attr("name"));
 
         //vérification dispo email

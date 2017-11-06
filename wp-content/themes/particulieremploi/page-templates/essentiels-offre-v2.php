@@ -75,7 +75,7 @@ get_header('without-nav');
                 </div>
                 <p class="text-center"> 
                     Je préfère souscrire par voie postale. Je télécharge
-                    <a class="content-link" href="http://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
+                    <a class="content-link" href="https://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
                        title="bulletin d'adhesion FEPEM" target="_blank">le bulletin d'adhésion</a>
                      et le renvoie complété, accompagné <br> d'un règlement par chèque d'un montant de 
                      12€, à FEPEM, 79 rue de Monceau, 75008 Paris 
@@ -192,7 +192,7 @@ get_header('without-nav');
                             <span class="text-bold">Je préfère souscrire par voie postale</span>
                             <p>
                                 Je télécharge <a class="content-link" 
-                                href="http://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
+                                href="https://particulieremploi.fr/wp-content/uploads/2017/01/FEPEM_Souscription-services_Bulletin-papier.doc"
                                                  target="_blank">le bulletin d'adhésion</a>
                                 et le renvoie complété, accompagné d'un règlement par chèque d'un montant
                                 de 12€ à FEPEM, 79 rue de Monceau, 75008 Paris

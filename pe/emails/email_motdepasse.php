@@ -82,7 +82,7 @@ Mot de passe : <strong>'.$password.'</strong><br/><br/>Vous pouvez d&eacute;sorm
             <table width="700" align="center" cellpadding="0" cellspacing="0" border="0">
             	<tr>
                 	<td width="700" valign="top" style="padding:0px;" align="center" bgcolor="#FFFFFF">
-                        <a  href="http://'.$_SERVER['SERVER_NAME'].'/pe/espace-pe/connexion.php" target="_blank">';
+                        <a  href="https://'.$_SERVER['SERVER_NAME'].'/pe/espace-pe/connexion.php" target="_blank">';
 if($type_compte=="EMP") {
     $content .= '<img src="'.$server.'/images/email/btn-acces-compte_employeur.jpg" style="display:block;" border="0" />';
 } else {

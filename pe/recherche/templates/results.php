@@ -486,7 +486,7 @@ if(empty($message)) {
     </section> 
 </div>   
 <?php $key = getKey();?>
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<?php echo $key ?>" type="text/javascript"></script>
+<script src="https://maps.google.com/maps?file=api&amp;v=2&amp;key=<?php echo $key ?>" type="text/javascript"></script>
 <script>
     function affichecarte(){
         //a faire

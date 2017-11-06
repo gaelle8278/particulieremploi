@@ -28,7 +28,7 @@ if(isset($params['email']) && !empty($params['email'])) {
     $queryCheckEmail= " SELECT count(*) as nb "
             . " FROM ".TBL_UTILISATEURS." "
             . " WHERE utilisateur_mail = '".$params['email']."' "
-            . " and (utilisateur_etat='ACT' or utilisateur_etat='INS') ";
+            . " and (utilisateur_etat='ACT' or utilisateur_etat='INS' or utilisateur_etat='VAL') ";
     $checkEmailResult=$wpdb->get_row($queryCheckEmail);
     $nbDuplicate = $checkEmailResult->nb;
 

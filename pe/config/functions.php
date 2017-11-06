@@ -428,6 +428,9 @@ function getKey() {
         case 'perepeint.particulieremploi.fr':
             $key = 'ABQIAAAAGSunH-FG7HTykGeOLGTqrhQnl5vD2V19IYjNqZRkXaT4rLVf7xQ7ElWkxrzczSwLZYiP0EYWa6wg-A';
             break;
+        case 'localhost' :
+            $key="AIzaSyAegpMmfI2S-8T8D1VZBuBJJRJrQJPbtCY";
+            break;
         default:
             $key = 'ABQIAAAAkbxdoJYdtuelQkpLkPK3CxQN5rwnmdz20ejSjTDC116Y7jn3DxT5NrhI_QLX828csYM8R7SNzxdpQQ';
             break;
