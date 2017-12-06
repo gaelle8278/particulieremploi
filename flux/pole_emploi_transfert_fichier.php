@@ -1,14 +1,16 @@
 <?php
 /**
+ * Script de transfert de fichier csv vers Pole Emploi
+ */
+
+/**
  * Fonctions de Wordpress
  */
 require( dirname(dirname(__FILE__)).'/wp-load.php' );
 
 global $wpdb;
 
-//nom du fichier csv et destination
-// ici localisé dans le même dossier que le script de création du fichier
-//le dossier de destination doit être autorisé en écriture pour le serveur web
+//nom du fichier csv à transférer
 $filename = "offres_annonces_poleemploi.csv";
 $logfile = "log_transfert.txt";
 

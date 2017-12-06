@@ -22,6 +22,8 @@ global $wpdb;
 if(!check_access_to_module_inscription()) {
     header("Location: ".home_url( "page-non-accessible"));
     exit();
+} else {
+    $user_id = get_current_user_id();
 }
 
 
@@ -245,7 +247,8 @@ if(isset($_POST['emploi'])) {
                     'utilisateur_cnil' => 1,
                     'utilisateur_cgu' => 1,
                     'utilisateur_jeton' => $token,
-                    'utilisateur_jeton_valide' => $tokenValidity
+                    'utilisateur_jeton_valide' => $tokenValidity,
+                    'utilisateur_created_by' => $user_id
                 ),
                 array(
                     '%s',

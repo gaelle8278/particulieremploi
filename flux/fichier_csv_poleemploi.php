@@ -1,14 +1,12 @@
 <?php
 /**
- * Fonctions de Wordpress
+ * Script de création et transfert de fichier csv vers Pole Emploi
  */
 require( dirname(dirname(__FILE__)).'/wp-load.php' );
 
 global $wpdb;
 
-//nom du fichier csv et destination
-// ici localisé dans le même dossier que le script de création du fichier
-//le dossier de destination doit être autorisé en écriture pour le serveur web
+//nom du fichier csv à transférer
 $filename = "offres_annonces_poleemploi.csv";
 $logfile = "log_transfert.txt";
 
@@ -125,17 +123,14 @@ foreach ($resReqAnnonces as $result){
 fclose($handle);
 
 echo "Fichier créé.";
+fwrite($fplog, "Fin création fichier \r\n");
 
-fwrite($fplog, "Fin création fichier \r\n"); 
 fwrite($fplog, "Début transfert fichier\r\n"); 
-
-
 $cmd="curl -k -F login=FEPEM -F password=WaIOZ3iD -F nomFlux=FEPEMTTA -F fichierAenvoyer=@$filename -F periodeRef='''' -F nomDestinataire='' https://portail-partenaire.pole-emploi.fr/partenaire/depotcurl";
 exec($cmd,$output);
 $log=print_r($output, 1);
 print_r($log);
 fwrite($fplog, $log);
-
 fwrite($fplog, "Fin transfert fichier \r\n");
 
 fwrite($fplog, "Fin dernier transfert le ".$currentDate." à ".$currentHour."\r\n"); 

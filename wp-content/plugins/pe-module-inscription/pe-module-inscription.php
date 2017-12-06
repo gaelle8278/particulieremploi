@@ -61,9 +61,7 @@ class PE_Module_Inscription_Plugin {
 
         // shortcode pour afficher formulaire de connexion
         add_shortcode( 'pe-login-form', array( $this, 'render_login_form' ) );
-
-        //redirection vers la page de login perso lorsque la page de login par défaut est appelée
-        //add_action( 'login_form_login', array( $this, 'redirect_to_custom_login' ) );
+        
         //redirections notamment si accès page connexion et connecté
         add_action( 'template_redirect', array( $this,'pemi_template_redirect') );
         //interception du processus d'authentifcation pour rediriger vers la page de login perso si erreurs :
@@ -73,10 +71,18 @@ class PE_Module_Inscription_Plugin {
         add_action( 'wp_logout', array( $this, 'redirect_after_logout' ) );
         //redirection après connexion réussie
         add_filter( 'login_redirect', array( $this, 'redirect_after_login' ), 10, 3 );
+        
+        // affichage des champs spécifiques au profil utilisateur lors de son affichage, édition, ajout
+        add_action( 'show_user_profile', array( $this, 'pemi_user_profile_fields' ) );
+        add_action( 'edit_user_profile', array( $this, 'pemi_user_profile_fields' ) );
+        add_action( 'user_new_form', array( $this, 'pemi_user_profile_fields' ) );
+        // enregistrement des champs spécifiques au profil utilistauer
+        add_action('user_register', array( $this, 'pemi_save_user_profile_fields' ) );
+        add_action('profile_update', array( $this, 'pemi_save_user_profile_fields' ) );
 
         // ajout du css du plugin
         add_action( 'wp_enqueue_scripts', array( $this, 'pemi_enqueue_style' ) );
-        //récupératation paramètre get
+        //récupératation paramètre get (bouton choix type d'inscription sur la page d'acceuil)
         add_filter( 'query_vars', array( $this, 'pemi_add_custom_query_var') );
 
 
@@ -87,6 +93,9 @@ class PE_Module_Inscription_Plugin {
     * Plugin activation hook.
     */
     public static function plugin_activated() {
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        global $charset_collate;
+        
         //ajout du role pour les chargés d'informations
         ////////////////////////////////////////////////////
         add_role( 'pe-officer', "Chargé d'informations",
@@ -150,6 +159,18 @@ class PE_Module_Inscription_Plugin {
                 }
             }
         }
+        
+        // création de la table pour suivre les connexion des chargés d'informations
+        ///////////////////////////////////////////////////////////////////////////////
+        $sql_create_table = "CREATE TABLE activity_connections (
+                                connection_id int(10) unsigned NOT NULL auto_increment,
+                                user_id bigint(20) unsigned NOT NULL default '0',
+                                connection_date datetime NOT NULL default '0000-00-00 00:00:00',
+                            PRIMARY KEY  (connection_id),
+                            KEY user_id (user_id)
+        ); $charset_collate ";
+
+        dbDelta( $sql_create_table );
     }
 
     /**
@@ -269,6 +290,51 @@ class PE_Module_Inscription_Plugin {
             exit;
         }
     }
+    
+    /**
+     * Adds user field to specify a type for some users
+     * @param type $user
+     * 
+     */
+    public function pemi_user_profile_fields($user) {
+        if(is_object($user)) {
+            $type_ci = esc_attr( get_the_author_meta( 'type-ci', $user->ID ) );
+        } else {
+            $type_ci = null;
+         }
+        ?>
+        <h3>Informations relatives aux chargés d'informations</h3>
+        <table class="form-table">
+            <tr>
+               <th>Type</th>
+               <td>
+                    <select name="type-ci" id="type-ci">
+                        <option value="" <?php echo empty($type_ci) ? 'selected=\'selected\'':''; ?> >Aucun</option>
+                        <option value="acteur-emploi" <?php echo $type_ci=="acteur-emploi" ? 'selected=\'selected\'':''; ?> >Acteur de l'emploi</option>
+                        <option value="referent-info" <?php echo $type_ci=="referent-info" ? 'selected=\'selected\'':''; ?> >Référent point info</option>
+                    </select>
+               </td>
+            </tr>
+        </table>
+
+        <?php
+        
+    }
+    
+    /**
+     * Saves user custom fields
+     * @param type $user_id
+     */
+    public function pemi_save_user_profile_fields( $user_id ) {
+        if ( !current_user_can( 'edit_user', $user_id ) ) {
+		return false;
+        }
+        
+        // save custom field
+        if(isset($_POST['type-ci'])) {
+            update_user_meta($user_id, 'type-ci', $_POST['type-ci']);
+        }
+    }
    
     /**
     * Hook to redirect the user to the custom login when default wp-login.php is called.
@@ -367,6 +433,24 @@ class PE_Module_Inscription_Plugin {
 
                 wp_redirect( $login_url );
                 exit;
+            } else {
+                //si pas d'erreur de connexion
+                if( in_array( 'pe-officer', $user->roles ) ) {
+                    //si l'utilisateur est un chargé d'informations => ajout du log de sa connexion
+                    global $wpdb;
+                    $connection_date = date_i18n('Y-m-d H:i:s');
+                    $wpdb->insert(
+                        'activity_connections',
+                        array(
+                           'user_id'=>$user->ID,
+                           'connection_date'=> $connection_date,
+                         ),
+                        array (
+                           '%d',
+                           '%s'
+                        )
+                    );
+                }
             }
         }
 
@@ -536,9 +620,7 @@ function check_access_to_module_inscription() {
     if( current_user_can('access_module') ) {
         $access=true;
     }
-  
-
-  return $access;
+    return $access;
 }
 
 /**

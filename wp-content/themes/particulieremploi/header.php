@@ -91,7 +91,7 @@
                         </div>
                             
                          <div class="banner">
-                           <a href="http://bit.ly/VideoPetiteEnfance" target="_blank">
+                           <a href="http://particulieremploi.fr/offres-accompagnement-de-la-fepem/" target="_blank">
                                 <?php
                                /* $img="FOED_Banniere_employeur.gif";
                                 if (is_single()) { 
@@ -106,7 +106,7 @@
                                     } 
                                 }*/
                                 ?>
-                                <img src="<?php echo get_template_directory_uri() ?>/images/banners/Bannière-Particulieremploi.fr-TPEP-970x90.gif" border="0" />
+                                <img src="<?php echo get_template_directory_uri() ?>/images/banners/banniere-ods-970x90.gif" border="0" />
                             </a>
                         </div>
                         <?php
