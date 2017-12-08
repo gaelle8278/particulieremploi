@@ -32,6 +32,8 @@
                             </a>
                         </div><!-- @whitespace
                         --><div class="header-section links-section">
+                            <img src="images/Valenciennes-Metropole.png" alt="logo de Valenciennes Métropole"/>
+                            
                         </div>
                         <nav class='module-menu'>
                             

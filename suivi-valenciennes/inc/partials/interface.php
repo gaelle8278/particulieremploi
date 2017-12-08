@@ -6,6 +6,10 @@
 ?>
 <div class="content-central-column">
     <section>
+        <div class="block-msg">
+            <p>Si aucune date de début n'est indiquée la valeur par défaut utilisée est J-30.<br />
+            Si aucune date de fin n'est indiquée la valeur par défaut utilisée est J.</p>
+        </div>
         <div class="block-stats">
             <h2>Nombre de connexions par utilisateur</h2>
             <form method="POST" action="output.php">

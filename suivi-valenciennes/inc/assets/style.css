@@ -10,18 +10,17 @@ main {
 section {
     overflow: auto; /* prevent parent/child margins collapsing */
 }
-.block-stats {
+.block-stats, .block-msg   {
     display: inline-block;
     width: calc(100% - 20px);
     margin: 10px 0;
     padding: 10px;
     background-color: #fff;
-    text-align: center;
+    
 }
 
-.block-msg {
-    padding: 10px;
-    background-color: #fff;
+.block-stats {
+    text-align: center;
 }
 
 .input-style {
@@ -43,7 +42,6 @@ input[type="submit"] {
     vertical-align: top;
     border: none;
     padding: 10px 20px;
-    font-weight: bold;
     color: #fff;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
